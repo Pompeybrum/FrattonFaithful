@@ -253,6 +253,50 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
 .donate-amt{padding:9px 18px;border:1.5px solid var(--border);border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;cursor:pointer;background:var(--off);transition:all .15s;color:var(--navy)}
 .donate-amt:hover,.donate-amt.on{background:var(--navy);color:white;border-color:var(--navy)}
 .free-badge{display:inline-block;background:#DCFCE7;color:#166534;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;padding:3px 8px;border-radius:3px;text-transform:uppercase;margin-bottom:8px}
+/* ===== MATCH DETAIL OVERLAY ===== */
+.match-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:500;display:none;align-items:center;justify-content:center;padding:16px;overflow-y:auto}
+.match-overlay.open{display:flex}
+.match-box{background:var(--white);border-radius:12px;max-width:520px;width:100%;margin:auto;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.3)}
+.match-header{background:var(--grad);padding:20px 24px;position:relative}
+.match-close{position:absolute;top:12px;right:14px;background:rgba(255,255,255,0.2);border:none;color:white;width:28px;height:28px;border-radius:50%;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.match-teams-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.match-team{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;color:white;flex:1;text-align:center}
+.match-score-big{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;color:var(--gold);text-align:center;min-width:60px}
+.match-pill{font-family:'Space Mono',monospace;font-size:9px;padding:3px 8px;background:rgba(255,255,255,0.1);border-radius:3px;color:rgba(255,255,255,0.7)}
+.match-section{padding:14px 20px;border-bottom:1px solid rgba(0,30,90,0.07)}
+.match-section:last-child{border-bottom:none}
+.match-section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px}
+.scorers-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.scorer-item{font-size:12px;color:var(--text)}
+.scorer-item.away-item{text-align:right}
+.stat-row{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.stat-num{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:var(--navy);min-width:22px;text-align:center}
+.stat-name-c{font-size:11px;color:var(--muted);text-align:center;flex:1}
+.stat-bar-pair{display:flex;gap:4px;flex:1;align-items:center}
+.sbh{height:6px;background:var(--navy);border-radius:3px;flex-shrink:0}
+.sba{height:6px;background:var(--muted);border-radius:3px;flex-shrink:0}
+/* ===== FORM DOTS ===== */
+.form-dots{display:flex;gap:3px;margin-top:6px}
+.fdot{width:14px;height:14px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:white;font-family:'Space Mono',monospace}
+.fdot.W{background:#22C55E}.fdot.D{background:#F59E0B}.fdot.L{background:var(--red)}
+/* ===== RUMOUR OVERLAY ===== */
+.rumour-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:500;display:none;align-items:center;justify-content:center;padding:16px}
+.rumour-overlay.open{display:flex}
+.rumour-box{background:var(--white);border-radius:12px;max-width:420px;width:100%;box-shadow:0 24px 64px rgba(0,0,0,0.3);overflow:hidden}
+.rumour-header{background:linear-gradient(135deg,#92400E,var(--gold));padding:20px 24px;position:relative}
+.rumour-close{position:absolute;top:12px;right:14px;background:rgba(255,255,255,0.2);border:none;color:white;width:28px;height:28px;border-radius:50%;font-size:14px;cursor:pointer}
+.rumour-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:white;text-transform:uppercase}
+.rumour-meta{font-size:12px;color:rgba(255,255,255,0.8);margin-top:4px}
+.rumour-body{padding:20px}
+.rumour-stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.rstat{background:var(--off);border-radius:8px;padding:10px;text-align:center}
+.rstat-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:var(--navy);display:block}
+.rstat-l{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-family:'Space Mono',monospace}
+.value-tag{display:inline-block;background:var(--gold-pale);color:#92400E;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;margin-bottom:10px}
+.rumour-bio{font-size:13px;color:var(--muted);line-height:1.6;padding-top:12px;border-top:1px solid var(--border)}
+/* NEWS IMAGE */
+.news-img-photo{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.news-img{position:relative;overflow:hidden}
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy);color:var(--white);padding:11px 20px;border-radius:7px;font-size:13px;font-weight:600;z-index:600;transition:transform .3s;white-space:nowrap;font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px;border-left:3px solid var(--gold)}
 .toast.show{transform:translateX(-50%) translateY(0)}
 
@@ -351,9 +395,10 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
     </div>
     <div class="news-grid">
       <div class="news-card featured" onclick="openArticle(1)" style="cursor:pointer">
-        <div class="news-img">
-          <div class="news-img-bg">⚽</div>
-          <span class="news-cat cat-match">Match Report</span>
+        <div class="news-img" style="height:280px">
+          <img class="news-img-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Portsmouth_FC_2023-24_home_kit.jpg/640px-Portsmouth_FC_2023-24_home_kit.jpg" alt="Portsmouth FC" onerror="this.style.display='none'">
+          <div class="news-img-bg" style="position:relative;z-index:1">⚽</div>
+          <span class="news-cat cat-match" style="position:relative;z-index:1">Match Report</span>
         </div>
         <div class="news-body">
           <div class="news-title">POMPEY SECURE SURVIVAL WITH BOWAT HEADER AGAINST FOXES</div>
@@ -362,28 +407,44 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
         </div>
       </div>
       <div class="news-card" onclick="openArticle(2)" style="cursor:pointer">
-        <div class="news-img" style="height:120px"><div class="news-img-bg" style="font-size:50px">🔄</div><span class="news-cat cat-transfer">Transfer</span></div>
+        <div class="news-img" style="height:120px">
+          <img class="news-img-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Fratton_Park_-_geograph.org.uk_-_2025678.jpg/640px-Fratton_Park_-_geograph.org.uk_-_2025678.jpg" alt="Fratton Park" onerror="this.style.display='none'">
+          <div class="news-img-bg" style="position:relative;z-index:1;font-size:50px">🔄</div>
+          <span class="news-cat cat-transfer" style="position:relative;z-index:1">Transfer</span>
+        </div>
         <div class="news-body">
           <div class="news-title">MOUSINHO EYES SUMMER REINFORCEMENTS AFTER SURVIVAL CONFIRMED</div>
           <div class="news-meta">19 Apr 2026 · Transfer News</div>
         </div>
       </div>
       <div class="news-card" onclick="openArticle(3)" style="cursor:pointer">
-        <div class="news-img" style="height:120px"><div class="news-img-bg" style="font-size:50px">🏟️</div><span class="news-cat cat-news">Club News</span></div>
+        <div class="news-img" style="height:120px">
+          <img class="news-img-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Fratton_Park_-_geograph.org.uk_-_2025678.jpg/640px-Fratton_Park_-_geograph.org.uk_-_2025678.jpg" alt="" onerror="this.style.display='none'">
+          <div class="news-img-bg" style="position:relative;z-index:1;font-size:50px">🏟️</div>
+          <span class="news-cat cat-news" style="position:relative;z-index:1">Club News</span>
+        </div>
         <div class="news-body">
           <div class="news-title">CHAPLIN LOAN SPELL HAILED AS "HUGE SUCCESS" AHEAD OF IPSWICH RETURN</div>
           <div class="news-meta">17 Apr 2026 · Club News</div>
         </div>
       </div>
       <div class="news-card" onclick="openArticle(4)" style="cursor:pointer">
-        <div class="news-img" style="height:120px"><div class="news-img-bg" style="font-size:50px">📊</div><span class="news-cat cat-news">Analysis</span></div>
+        <div class="news-img" style="height:120px">
+          <img class="news-img-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Fratton_Park_-_geograph.org.uk_-_2025678.jpg/640px-Fratton_Park_-_geograph.org.uk_-_2025678.jpg" alt="" onerror="this.style.display='none'">
+          <div class="news-img-bg" style="position:relative;z-index:1;font-size:50px">📊</div>
+          <span class="news-cat cat-news" style="position:relative;z-index:1">Analysis</span>
+        </div>
         <div class="news-body">
           <div class="news-title">SEGECIC'S DEBUT SEASON: THE STATS BEHIND POMPEY'S AUSSIE STAR</div>
           <div class="news-meta">15 Apr 2026 · Analysis</div>
         </div>
       </div>
       <div class="news-card" onclick="openArticle(5)" style="cursor:pointer">
-        <div class="news-img" style="height:120px"><div class="news-img-bg" style="font-size:50px">⚠️</div><span class="news-cat cat-injury">Injury</span></div>
+        <div class="news-img" style="height:120px">
+          <img class="news-img-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Fratton_Park_-_geograph.org.uk_-_2025678.jpg/640px-Fratton_Park_-_geograph.org.uk_-_2025678.jpg" alt="" onerror="this.style.display='none'">
+          <div class="news-img-bg" style="position:relative;z-index:1;font-size:50px">⚠️</div>
+          <span class="news-cat cat-injury" style="position:relative;z-index:1">Injury</span>
+        </div>
         <div class="news-body">
           <div class="news-title">MURPHY, KOSZNOVSZKY OUT FOR SEASON — SWANSON RETURN DATE UNCLEAR</div>
           <div class="news-meta">14 Apr 2026 · Injury News</div>
@@ -488,8 +549,8 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
     <div class="zone-key">
       <div class="zk"><div class="zk-dot" style="background:#DCFCE7;border:1px solid #166534"></div>Promotion</div>
       <div class="zk"><div class="zk-dot" style="background:#DBEAFE;border:1px solid #1E40AF"></div>Play-offs</div>
-      <div class="zk"><div class="zk-dot" style="background:#FEF3C7;border:1px solid #92400E"></div>Danger zone</div>
       <div class="zk"><div class="zk-dot" style="background:#FEE2E2;border:1px solid #991B1B"></div>Relegation</div>
+      <div class="zk" style="margin-left:auto;font-size:10px">* Points deduction applied</div>
     </div>
   </div>
 </div>
@@ -529,6 +590,56 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
       <div style="font-size:28px;margin-bottom:8px">💙</div>
       <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;color:var(--navy);margin-bottom:6px">Thank You From The Bottom of Fratton Park</div>
       <div style="font-size:13px;color:var(--muted)">Up the Blues · Play Up Pompey · PUSB</div>
+    </div>
+  </div>
+</div>
+
+<!-- MATCH DETAIL OVERLAY -->
+<div class="match-overlay" id="match-overlay" onclick="closeMatchOnBg(event)">
+  <div class="match-box">
+    <div class="match-header">
+      <button class="match-close" onclick="closeMatch()">✕</button>
+      <div class="match-teams-row">
+        <div class="match-team" id="mo-home"></div>
+        <div class="match-score-big" id="mo-score"></div>
+        <div class="match-team" id="mo-away"></div>
+      </div>
+      <div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap">
+        <span class="match-pill" id="mo-comp"></span>
+        <span class="match-pill" id="mo-date"></span>
+        <span class="match-pill" id="mo-venue"></span>
+        <span class="match-pill" id="mo-att"></span>
+      </div>
+    </div>
+    <div class="match-body">
+      <div class="match-section">
+        <div class="match-section-title">⚽ Goal Scorers</div>
+        <div class="scorers-grid" id="mo-scorers"></div>
+      </div>
+      <div class="match-section" id="mo-cards-sec">
+        <div class="match-section-title">🟨 Cards</div>
+        <div id="mo-cards"></div>
+      </div>
+      <div class="match-section">
+        <div class="match-section-title">📊 Match Stats</div>
+        <div id="mo-stats"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RUMOUR PLAYER OVERLAY -->
+<div class="rumour-overlay" id="rumour-overlay" onclick="closeRumourOnBg(event)">
+  <div class="rumour-box">
+    <div class="rumour-header">
+      <button class="rumour-close" onclick="closeRumour()">✕</button>
+      <div class="rumour-name" id="ro-name"></div>
+      <div class="rumour-meta" id="ro-meta"></div>
+    </div>
+    <div class="rumour-body">
+      <div class="value-tag" id="ro-value"></div>
+      <div class="rumour-stats-grid" id="ro-stats"></div>
+      <div class="rumour-bio" id="ro-bio"></div>
     </div>
   </div>
 </div>
@@ -578,22 +689,58 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
 <script>
 // ===== DATA =====
 const RESULTS = [
-  {date:'21 Apr',comp:'Championship',home:'Coventry City',away:'Portsmouth',score:'5-1',pfcResult:'loss'},
-  {date:'18 Apr',comp:'Championship',home:'Portsmouth',away:'Leicester City',score:'1-0',pfcResult:'win'},
-  {date:'14 Apr',comp:'Championship',home:'Portsmouth',away:'Ipswich Town',score:'2-0',pfcResult:'win'},
-  {date:'11 Apr',comp:'Championship',home:'Middlesbrough',away:'Portsmouth',score:'0-1',pfcResult:'win'},
-  {date:'06 Apr',comp:'Championship',home:'Portsmouth',away:'Oxford United',score:'2-2',pfcResult:'draw'},
-  {date:'03 Apr',comp:'Championship',home:'Norwich City',away:'Portsmouth',score:'1-1',pfcResult:'draw'},
-  {date:'21 Mar',comp:'Championship',home:'QPR',away:'Portsmouth',score:'6-1',pfcResult:'loss'},
-  {date:'15 Mar',comp:'Championship',home:'Portsmouth',away:'Charlton Athletic',score:'2-1',pfcResult:'win'},
+  {date:'21 Apr',comp:'Championship',home:'Coventry City',away:'Portsmouth',score:'5-1',pfcResult:'loss',
+   scorers:{home:['Haji Wright 12\'','E. Mason-Clark 47\'','R. Poole OG 50\'','E. Mason-Clark 76\'','K. Kesler-Hayden 90+1\''],away:['Segecic 69\'']},
+   cards:{home:[],away:['Alli 62\' 🟨']},
+   attendance:31182,venue:'Coventry Building Society Arena',
+   stats:{possession:[71,29],shots:[15,4],shotsOnTarget:[6,2],corners:[3,1]}},
+  {date:'18 Apr',comp:'Championship',home:'Portsmouth',away:'Leicester City',score:'1-0',pfcResult:'win',
+   scorers:{home:['Bowat 63\''],away:[]},
+   cards:{home:[],away:['J. James 44\' 🟨']},
+   attendance:19842,venue:'Fratton Park',
+   stats:{possession:[44,56],shots:[9,11],shotsOnTarget:[3,2],corners:[5,4]}},
+  {date:'14 Apr',comp:'Championship',home:'Portsmouth',away:'Ipswich Town',score:'2-0',pfcResult:'win',
+   scorers:{home:['Shaughnessy 42\'','Bishop 44\''],away:[]},
+   cards:{home:['Dozzell 71\' 🟨','Williams 82\' 🟨'],away:['Dara O\'Shea 58\' 🟨','Chaplin 81\' 🟨']},
+   attendance:20251,venue:'Fratton Park',
+   stats:{possession:[40,60],shots:[11,11],shotsOnTarget:[4,2],corners:[3,7]}},
+  {date:'11 Apr',comp:'Championship',home:'Middlesbrough',away:'Portsmouth',score:'0-1',pfcResult:'win',
+   scorers:{home:[],away:['Chaplin 90+5\'']},
+   cards:{home:['Dael Fry 33\' 🟨'],away:['Pack 67\' 🟨']},
+   attendance:22814,venue:'Riverside Stadium',
+   stats:{possession:[58,42],shots:[14,8],shotsOnTarget:[3,3],corners:[7,3]}},
+  {date:'06 Apr',comp:'Championship',home:'Portsmouth',away:'Oxford United',score:'2-2',pfcResult:'draw',
+   scorers:{home:['Bishop 23\'','Segecic 55\''],away:['Brannagan 38\'','Bodin 78\'']},
+   cards:{home:['Adams 44\' 🟨'],away:['Elliott Moore 29\' 🟨']},
+   attendance:18744,venue:'Fratton Park',
+   stats:{possession:[47,53],shots:[12,10],shotsOnTarget:[4,4],corners:[4,5]}},
+  {date:'03 Apr',comp:'Championship',home:'Norwich City',away:'Portsmouth',score:'1-1',pfcResult:'draw',
+   scorers:{home:['Azaz 14\''],away:['Bishop 72\'']},
+   cards:{home:['McLean 55\' 🟨'],away:['Ogilvie 41\' 🟨']},
+   attendance:26318,venue:'Carrow Road',
+   stats:{possession:[62,38],shots:[16,7],shotsOnTarget:[4,2],corners:[8,2]}},
+  {date:'21 Mar',comp:'Championship',home:'QPR',away:'Portsmouth',score:'6-1',pfcResult:'loss',
+   scorers:{home:['Armstrong 8\'','De Barr 21\'','Bowen 34\'','Armstrong 51\'','Nájera 65\'','De Barr 80\''],away:['Swift 44\'']},
+   cards:{home:[],away:['Dozzell 28\' 🟨','Alese 72\' 🟨']},
+   attendance:14203,venue:'Loftus Road',
+   stats:{possession:[55,45],shots:[18,8],shotsOnTarget:[8,3],corners:[6,3]}},
+  {date:'15 Mar',comp:'Championship',home:'Portsmouth',away:'Charlton Athletic',score:'2-1',pfcResult:'win',
+   scorers:{home:['Bishop 34\'','Chaplin 62\''],away:['Carey 51\'']},
+   cards:{home:['Pack 78\' 🟨'],away:['Jones 44\' 🟨','Leaburn 88\' 🟨']},
+   attendance:17932,venue:'Fratton Park',
+   stats:{possession:[48,52],shots:[11,9],shotsOnTarget:[4,3],corners:[5,6]}},
 ];
 
 const FIXTURES = [
-  {date:'Sat 25 Apr',time:'3:00pm',comp:'Championship',home:'Stoke City',away:'Portsmouth',venue:"bet365 Stadium",next:true,odds:{home:'2/1',draw:'12/5',away:'6/4'}},
-  {date:'Sat 2 May',time:'3:00pm',comp:'Championship',home:'Portsmouth',away:'Birmingham City',venue:'Fratton Park',next:false,odds:{home:'6/5',draw:'9/4',away:'9/4'}},
+  {date:'Sat 25 Apr',time:'3:00pm',comp:'Championship',home:'Stoke City',away:'Portsmouth',venue:"bet365 Stadium",next:true,odds:{home:'2/1',draw:'12/5',away:'6/4'},form:['L','W','L','D','W']},
+  {date:'Sat 2 May',time:'3:00pm',comp:'Championship',home:'Portsmouth',away:'Birmingham City',venue:'Fratton Park',next:false,odds:{home:'6/5',draw:'9/4',away:'9/4'},form:['W','W','W','D','L']},
 ];
 
-const TRANSFERS_DONE = [
+const RUMOUR_DETAILS = {
+  'Jamal Lowe':{club:'Free Agent (ex Swansea City)',nation:'🏴󠁧󠁢󠁥󠁮󠁧󠁿 England',age:29,pos:'LW',lastSeason:'Swansea City — 24/25',goals:9,assists:6,apps:38,estValue:'Free',bio:'Pacy left winger who came through the Pompey academy and played here as a teenager. A romantic return would be popular with fans. Strong Championship pedigree.'},
+  'Pelle Mattsson':{club:'Malmö FF',nation:'🇸🇪 Sweden',age:24,pos:'CM',lastSeason:'Malmö FF — 24/25 (Allsvenskan)',goals:4,assists:7,apps:28,estValue:'£2.5m',bio:'Creative Swedish central midfielder with a reputation for dictating tempo. Linked with a move to English football following an impressive Allsvenskan campaign.'},
+  'Panagiotis Kikianis':{club:'Melbourne City (A-League)',nation:'🇦🇺 Australia',age:22,pos:'CB',lastSeason:'Melbourne City — 24/25 (A-League)',goals:2,assists:1,apps:22,estValue:'£3.5m',bio:'Powerful young centre-back who caught the eye in Australia\'s A-League. Mousinho has a history of targeting Australian talent after Segecic\'s strong debut season.'},
+};
   {name:'Conor Chaplin',detail:'Loan from Ipswich Town',dir:'in',init:'CC'},
   {name:'Makenzie Kirk',detail:'Signed from St. Johnstone',dir:'in',init:'MK'},
   {name:'Adrian Segecic',detail:'Signed from Sydney FC',dir:'in',init:'AS'},
@@ -666,30 +813,30 @@ const FORMATIONS = {
 };
 
 const TABLE_DATA = [
-  {pos:1, team:'Coventry City',    p:44,w:27,d:8, l:9, gd:47, pts:89, zone:'promo',  note:'(C)'},
-  {pos:2, team:'Ipswich Town',     p:44,w:22,d:11,l:11,gd:22, pts:77, zone:'promo',  note:''},
-  {pos:3, team:'Southampton',      p:44,w:22,d:9, l:13,gd:20, pts:75, zone:'playoff',note:''},
-  {pos:4, team:'Millwall',         p:43,w:21,d:10,l:12,gd:18, pts:73, zone:'playoff',note:''},
-  {pos:5, team:'Middlesbrough',    p:43,w:19,d:11,l:13,gd:12, pts:68, zone:'playoff',note:''},
-  {pos:6, team:'Wrexham',          p:44,w:18,d:11,l:15,gd:8,  pts:65, zone:'playoff',note:''},
-  {pos:7, team:'Derby County',     p:44,w:19,d:7, l:18,gd:14, pts:64, zone:'safe',   note:''},
-  {pos:8, team:'Norwich City',     p:43,w:18,d:10,l:15,gd:9,  pts:64, zone:'safe',   note:''},
-  {pos:9, team:'Hull City',        p:44,w:17,d:11,l:16,gd:3,  pts:62, zone:'safe',   note:''},
-  {pos:10,team:'Sheffield United', p:43,w:17,d:11,l:15,gd:10, pts:62, zone:'safe',   note:''},
-  {pos:11,team:'Birmingham City',  p:43,w:16,d:11,l:16,gd:-2, pts:59, zone:'safe',   note:''},
-  {pos:12,team:'Watford',          p:43,w:14,d:15,l:14,gd:-1, pts:57, zone:'safe',   note:''},
-  {pos:13,team:'Swansea City',     p:44,w:16,d:9, l:19,gd:-5, pts:57, zone:'safe',   note:''},
-  {pos:14,team:'Preston NE',       p:43,w:14,d:15,l:14,gd:-5, pts:57, zone:'safe',   note:''},
-  {pos:15,team:'Stoke City',       p:44,w:15,d:10,l:19,gd:1,  pts:55, zone:'safe',   note:''},
-  {pos:16,team:'West Brom',        p:43,w:12,d:13,l:18,gd:-12,pts:49, zone:'safe',   note:''},
-  {pos:17,team:'Blackburn Rovers', p:44,w:12,d:13,l:19,gd:-15,pts:49, zone:'safe',   note:''},
-  {pos:18,team:'Portsmouth',       p:44,w:13,d:12,l:19,gd:-13,pts:51, zone:'safe',   note:'',pompey:true},
-  {pos:19,team:'Charlton Athletic',p:43,w:12,d:14,l:17,gd:-12,pts:50, zone:'safe',   note:''},
-  {pos:20,team:'Oxford United',    p:43,w:10,d:14,l:19,gd:-14,pts:44, zone:'danger', note:''},
-  {pos:21,team:'Bristol City',     p:44,w:10,d:12,l:22,gd:-18,pts:42, zone:'rel',    note:''},
-  {pos:22,team:'QPR',              p:43,w:10,d:11,l:22,gd:-23,pts:41, zone:'rel',    note:''},
-  {pos:23,team:'Leicester City',   p:44,w:11,d:14,l:19,gd:-11,pts:41, zone:'rel',    note:'* -6pts'},
-  {pos:24,team:'Sheffield Wed',    p:43,w:1, d:12,l:30,gd:-57,pts:-3, zone:'rel',    note:'* -18pts'},
+  {pos:1, team:'Coventry City',    p:44,w:27,d:8, l:9, gd:46, pts:89, zone:'promo',  note:'(C)'},
+  {pos:2, team:'Ipswich Town',     p:45,w:23,d:11,l:11,gd:24, pts:80, zone:'promo',  note:''},
+  {pos:3, team:'Southampton',      p:44,w:22,d:9, l:13,gd:19, pts:75, zone:'playoff',note:''},
+  {pos:4, team:'Millwall',         p:45,w:22,d:10,l:13,gd:21, pts:76, zone:'playoff',note:''},
+  {pos:5, team:'Wrexham',          p:45,w:19,d:11,l:15,gd:9,  pts:68, zone:'playoff',note:''},
+  {pos:6, team:'Middlesbrough',    p:44,w:19,d:11,l:14,gd:12, pts:68, zone:'playoff',note:''},
+  {pos:7, team:'Derby County',     p:45,w:20,d:7, l:18,gd:15, pts:67, zone:'safe',   note:''},
+  {pos:8, team:'Norwich City',     p:45,w:19,d:10,l:16,gd:11, pts:67, zone:'safe',   note:''},
+  {pos:9, team:'Hull City',        p:45,w:17,d:12,l:16,gd:4,  pts:63, zone:'safe',   note:''},
+  {pos:10,team:'Sheffield United', p:44,w:18,d:11,l:15,gd:13, pts:65, zone:'safe',   note:''},
+  {pos:11,team:'Birmingham City',  p:44,w:16,d:12,l:16,gd:-1, pts:60, zone:'safe',   note:''},
+  {pos:12,team:'Watford',          p:44,w:14,d:15,l:15,gd:-1, pts:57, zone:'safe',   note:''},
+  {pos:13,team:'Swansea City',     p:45,w:17,d:9, l:19,gd:-3, pts:60, zone:'safe',   note:''},
+  {pos:14,team:'Preston NE',       p:44,w:14,d:15,l:15,gd:-4, pts:57, zone:'safe',   note:''},
+  {pos:15,team:'Stoke City',       p:45,w:15,d:10,l:20,gd:0,  pts:55, zone:'safe',   note:''},
+  {pos:16,team:'QPR',              p:44,w:15,d:9, l:20,gd:-6, pts:54, zone:'safe',   note:''},
+  {pos:17,team:'Bristol City',     p:44,w:13,d:12,l:19,gd:-8, pts:51, zone:'safe',   note:''},
+  {pos:18,team:'Portsmouth',       p:45,w:13,d:12,l:20,gd:-17,pts:51, zone:'safe',   note:'',pompey:true},
+  {pos:19,team:'Charlton Athletic',p:44,w:12,d:14,l:18,gd:-12,pts:50, zone:'safe',   note:''},
+  {pos:20,team:'West Brom',        p:44,w:12,d:13,l:19,gd:-12,pts:49, zone:'safe',   note:''},
+  {pos:21,team:'Blackburn Rovers', p:45,w:13,d:13,l:19,gd:-13,pts:52, zone:'safe',   note:''},
+  {pos:22,team:'Oxford United',    p:45,w:10,d:14,l:21,gd:-15,pts:44, zone:'rel',    note:''},
+  {pos:23,team:'Leicester City',   p:45,w:11,d:15,l:19,gd:-9, pts:42, zone:'rel',    note:'* -6pts'},
+  {pos:24,team:'Sheffield Wed',    p:44,w:1, d:12,l:31,gd:-61,pts:-3, zone:'rel',    note:'* -18pts'},
 ];
 
 // USER RATINGS STORAGE
@@ -697,7 +844,7 @@ let userRatings = JSON.parse(localStorage.getItem('ff_ratings')||'{}');
 let currentRating = 0;
 let ratingPlayerId = null;
 let curFormation = '4-2-3-1';
-let pitchXI = {0:1,1:2,2:17,3:5,4:3,5:7,6:21,7:36,8:10,9:11,10:9};
+let pitchXI = {0:1,1:2,2:55,3:5,4:3,5:38,6:21,7:10,8:36,9:27,10:9};
 
 function getAvgRating(id){
   const r = userRatings[id];
@@ -715,7 +862,7 @@ function go(page){
   if(page==='fixtures') renderFixtures();
   if(page==='transfers') renderTransfers();
   if(page==='lineup') renderLineup();
-  if(page==='ratings') renderRatings('all');
+  if(page==='ratings') renderRatings('GK');
   if(page==='table') renderTable();
   if(page==='donate'){/* static page, no render needed */}
   window.scrollTo(0,0);
@@ -724,21 +871,7 @@ function go(page){
 // ===== HOME =====
 function renderHome(){
   const el = document.getElementById('home-results');
-  el.innerHTML = RESULTS.slice(0,5).map(r=>resultHTML(r)).join('');
-}
-
-function resultHTML(r){
-  const isPFC = name => name==='Portsmouth';
-  const res = r.pfcResult || (isPFC(r.home)?r.result:(r.result==='win'?'loss':r.result==='loss'?'win':r.result));
-  return `<div class="result-item ${res}">
-    <div class="result-date">${r.date}</div>
-    <div class="result-comp">${r.comp}</div>
-    <div class="result-match">
-      <span class="result-home${isPFC(r.home)?' result-pfc':''}">${r.home}</span>
-      <span class="result-score ${res}">${r.score}</span>
-      <span class="result-away${isPFC(r.away)?' result-pfc':''}">${r.away}</span>
-    </div>
-  </div>`;
+  el.innerHTML = RESULTS.slice(0,5).map((r,i)=>resultHTML(r,i)).join('');
 }
 
 // ===== FIXTURES =====
@@ -749,15 +882,34 @@ function renderFixtures(){
       <div class="fixture-time">${f.time}</div>
       <div class="fixture-comp">${f.comp}</div>
       <div class="fixture-teams">${f.home} <span class="fixture-vs">vs</span> ${f.away}</div>
-      <div class="fixture-venue">${f.venue}</div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;flex-shrink:0">
+        <div class="fixture-venue">${f.venue}</div>
+        ${f.form?`<div class="form-dots">${f.form.map(r=>`<div class="fdot ${r}" title="${r==='W'?'Win':r==='D'?'Draw':'Loss'}">${r}</div>`).join('')}</div>`:''}
+      </div>
       ${f.next?'<span class="next-badge">Next</span>':''}
-      ${f.odds?`<div style="display:flex;gap:6px;margin-left:auto;flex-shrink:0">
-        <span style="font-size:10px;padding:3px 7px;background:rgba(0,30,90,0.06);border:1px solid var(--border);border-radius:4px;font-family:'Space Mono',monospace;white-space:nowrap"><span style="color:var(--muted)">H</span> ${f.odds.home}</span>
-        <span style="font-size:10px;padding:3px 7px;background:rgba(0,30,90,0.06);border:1px solid var(--border);border-radius:4px;font-family:'Space Mono',monospace;white-space:nowrap"><span style="color:var(--muted)">D</span> ${f.odds.draw}</span>
-        <span style="font-size:10px;padding:3px 7px;background:rgba(0,30,90,0.06);border:1px solid var(--border);border-radius:4px;font-family:'Space Mono',monospace;white-space:nowrap"><span style="color:var(--muted)">A</span> ${f.odds.away}</span>
+      ${f.odds?`<div style="display:flex;gap:4px;flex-shrink:0">
+        <span style="font-size:10px;padding:3px 6px;background:rgba(0,30,90,0.06);border:1px solid var(--border);border-radius:4px;font-family:'Space Mono',monospace;white-space:nowrap"><span style="color:var(--muted)">H</span> ${f.odds.home}</span>
+        <span style="font-size:10px;padding:3px 6px;background:rgba(0,30,90,0.06);border:1px solid var(--border);border-radius:4px;font-family:'Space Mono',monospace;white-space:nowrap"><span style="color:var(--muted)">D</span> ${f.odds.draw}</span>
+        <span style="font-size:10px;padding:3px 6px;background:rgba(0,30,90,0.06);border:1px solid var(--border);border-radius:4px;font-family:'Space Mono',monospace;white-space:nowrap"><span style="color:var(--muted)">A</span> ${f.odds.away}</span>
       </div>`:''}
     </div>`).join('');
-  document.getElementById('fixtures-results').innerHTML = RESULTS.map(r=>resultHTML(r)).join('');
+  document.getElementById('fixtures-results').innerHTML = RESULTS.map((r,i)=>resultHTML(r,i)).join('');
+}
+
+function resultHTML(r, idx){
+  const isPFC = name => name==='Portsmouth';
+  const res = r.pfcResult || (isPFC(r.home)?r.result:(r.result==='win'?'loss':r.result==='loss'?'win':r.result));
+  const clickable = r.scorers !== undefined;
+  return `<div class="result-item ${res}${clickable?' clickable':''}" ${clickable?`onclick="openMatch(${idx})" style="cursor:pointer"`:''}">
+    <div class="result-date">${r.date}</div>
+    <div class="result-comp">${r.comp}</div>
+    <div class="result-match">
+      <span class="result-home${isPFC(r.home)?' result-pfc':''}">${r.home}</span>
+      <span class="result-score ${res}">${r.score}</span>
+      <span class="result-away${isPFC(r.away)?' result-pfc':''}">${r.away}</span>
+    </div>
+    ${clickable?'<span style="font-size:10px;color:var(--muted);margin-left:auto;font-family:\'Space Mono\',monospace">stats →</span>':''}
+  </div>`;
 }
 
 // ===== TRANSFERS =====
@@ -765,11 +917,14 @@ function transferHTML(t){
   const dirClass = t.dir==='in'?'transfer-in':t.dir==='out'?'transfer-out':'transfer-rumour';
   const tagClass = t.dir==='in'?'tag-in':t.dir==='out'?'tag-out':'tag-rumour';
   const tagText = t.dir==='in'?'IN':t.dir==='out'?'OUT':'RUMOUR';
-  return `<div class="transfer-card ${dirClass}">
+  const isRumour = t.dir==='rumour' && RUMOUR_DETAILS[t.name];
+  return `<div class="transfer-card ${dirClass}" ${isRumour?`onclick="openRumour('${t.name.replace(/'/g,"\\'")}')" style="cursor:pointer"`:''}">
+    <div class="transfer-avatar">${t.init}</div>
+  return `<div class="transfer-card ${dirClass}" ${isRumour?`onclick="openRumour('${t.name.replace(/'/g,"\\'")}')" style="cursor:pointer"`:''}">
     <div class="transfer-avatar">${t.init}</div>
     <div class="transfer-info">
       <div class="transfer-name">${t.name}</div>
-      <div class="transfer-detail">${t.detail}</div>
+      <div class="transfer-detail">${t.detail}${isRumour?' · <span style="color:var(--gold)">tap for stats →</span>':''}</div>
     </div>
     <span class="transfer-tag ${tagClass}">${tagText}</span>
   </div>`;
@@ -979,7 +1134,7 @@ function submitRating(){
 
 // ===== TABLE =====
 function renderTable(){
-  const zoneClass = {promo:'promo-zone',playoff:'playoff-zone',safe:'safe-zone',danger:'danger-zone',rel:'rel-zone'};
+  const zoneClass = {promo:'promo-zone',playoff:'playoff-zone',safe:'safe-zone',rel:'rel-zone'};
   document.getElementById('league-table').innerHTML = `
     <thead><tr>
       <th>Pos</th><th>Team</th>
@@ -995,6 +1150,79 @@ function renderTable(){
         <td class="pts">${t.pts}</td>
       </tr>`).join('')+`</tbody>`;
 }
+
+// ===== MATCH OVERLAY =====
+function openMatch(idx){
+  const r=RESULTS[idx];
+  if(!r||!r.scorers) return;
+  document.getElementById('mo-home').textContent=r.home;
+  document.getElementById('mo-away').textContent=r.away;
+  document.getElementById('mo-score').textContent=r.score;
+  document.getElementById('mo-comp').textContent=r.comp;
+  document.getElementById('mo-date').textContent=r.date;
+  document.getElementById('mo-venue').textContent=r.venue||'';
+  document.getElementById('mo-att').textContent=r.attendance?'👥 '+r.attendance.toLocaleString():'';
+  // scorers
+  const homeScorers=r.scorers.home.map(s=>`<div class="scorer-item">⚽ ${s}</div>`).join('')||'<div class="scorer-item" style="color:var(--muted)">—</div>';
+  const awayScorers=r.scorers.away.map(s=>`<div class="scorer-item away-item">⚽ ${s}</div>`).join('')||'<div class="scorer-item away-item" style="color:var(--muted)">—</div>';
+  document.getElementById('mo-scorers').innerHTML=`<div class="scorer-col">${homeScorers}</div><div class="scorer-col" style="text-align:right">${awayScorers}</div>`;
+  // cards
+  const allCards=[...r.cards.home,...r.cards.away];
+  if(allCards.length){
+    document.getElementById('mo-cards-sec').style.display='block';
+    document.getElementById('mo-cards').innerHTML=allCards.map(c=>`<div style="font-size:12px;margin-bottom:4px">${c}</div>`).join('');
+  } else {
+    document.getElementById('mo-cards-sec').style.display='none';
+  }
+  // stats
+  if(r.stats){
+    const {possession,shots,shotsOnTarget,corners}=r.stats;
+    const statRows=[
+      {label:'Possession',home:possession[0],away:possession[1],unit:'%'},
+      {label:'Shots',home:shots[0],away:shots[1],unit:''},
+      {label:'On Target',home:shotsOnTarget[0],away:shotsOnTarget[1],unit:''},
+      {label:'Corners',home:corners[0],away:corners[1],unit:''},
+    ];
+    document.getElementById('mo-stats').innerHTML=statRows.map(s=>{
+      const total=s.home+s.away||1;
+      const hw=Math.round(s.home/total*100);
+      const aw=Math.round(s.away/total*100);
+      return `<div class="stat-row">
+        <span class="stat-num">${s.home}${s.unit}</span>
+        <div style="flex:1;display:flex;flex-direction:column;gap:2px">
+          <div style="font-size:10px;color:var(--muted);text-align:center;font-weight:600">${s.label}</div>
+          <div style="display:flex;gap:3px;height:6px">
+            <div style="flex:${s.home};background:var(--navy);border-radius:3px 0 0 3px;min-width:${s.home?4:0}px"></div>
+            <div style="flex:${s.away};background:var(--muted);border-radius:0 3px 3px 0;min-width:${s.away?4:0}px"></div>
+          </div>
+        </div>
+        <span class="stat-num">${s.away}${s.unit}</span>
+      </div>`;
+    }).join('');
+  }
+  document.getElementById('match-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeMatch(){document.getElementById('match-overlay').classList.remove('open');document.body.style.overflow='';}
+function closeMatchOnBg(e){if(e.target===document.getElementById('match-overlay'))closeMatch();}
+
+// ===== RUMOUR OVERLAY =====
+function openRumour(name){
+  const d=RUMOUR_DETAILS[name];
+  if(!d) return;
+  document.getElementById('ro-name').textContent=name;
+  document.getElementById('ro-meta').textContent=`${d.nation} · ${d.pos} · Age ${d.age} · ${d.club}`;
+  document.getElementById('ro-value').textContent=`Est. Value: ${d.estValue}`;
+  document.getElementById('ro-stats').innerHTML=`
+    <div class="rstat"><span class="rstat-n">${d.goals}</span><span class="rstat-l">Goals</span></div>
+    <div class="rstat"><span class="rstat-n">${d.assists}</span><span class="rstat-l">Assists</span></div>
+    <div class="rstat"><span class="rstat-n">${d.apps}</span><span class="rstat-l">Apps</span></div>`;
+  document.getElementById('ro-bio').innerHTML=`<div style="font-size:10px;color:var(--gold);font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">${d.lastSeason}</div>${d.bio}`;
+  document.getElementById('rumour-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeRumour(){document.getElementById('rumour-overlay').classList.remove('open');document.body.style.overflow='';}
+function closeRumourOnBg(e){if(e.target===document.getElementById('rumour-overlay'))closeRumour();}
 
 // ===== ARTICLES =====
 const ARTICLES = [
