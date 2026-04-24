@@ -22,11 +22,11 @@ h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif;letter-spacing:.3px}
 
 /* ===== NAV ===== */
 nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:3px solid var(--gold)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:58px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.nav-brand{display:flex;align-items:center;gap:10px;cursor:pointer}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;height:58px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.nav-brand{display:flex;align-items:center;gap:10px;cursor:pointer;min-width:0;flex-shrink:1}
 .nav-crest{width:36px;height:36px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;color:var(--navy-dark);letter-spacing:-.5px;flex-shrink:0}
-.nav-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--white);letter-spacing:.5px;text-transform:uppercase;line-height:1}
-.nav-title span{color:var(--gold);display:block;font-size:11px;font-weight:600;letter-spacing:2px}
+.nav-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;color:var(--white);letter-spacing:.5px;text-transform:uppercase;line-height:1;white-space:nowrap}
+.nav-title span{color:var(--gold);display:block;font-size:10px;font-weight:600;letter-spacing:1.5px;opacity:.85}
 .nav-links{display:flex;gap:2px}
 .nl{padding:8px 12px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;border:none;background:transparent;color:rgba(255,255,255,0.6);transition:all .15s;border-radius:4px}
 .nl:hover{color:var(--white);background:rgba(255,255,255,0.07)}
@@ -36,9 +36,10 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
 
 /* ===== HERO ===== */
 .hero{background:var(--grad);position:relative;overflow:hidden;padding:64px 24px 0}
-.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
-.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:end}
-.hero-left{padding-bottom:40px}
+.hero::before{content:'';position:absolute;inset:0;background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Fratton_Park_-_geograph.org.uk_-_2025678.jpg/1280px-Fratton_Park_-_geograph.org.uk_-_2025678.jpg');background-size:cover;background-position:center;opacity:0.4;z-index:0}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,17,58,0.7),rgba(0,43,122,0.5));z-index:0}
+.hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:end}
+.hero-left{padding-bottom:40px;position:relative;z-index:1}
 .hero-eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;opacity:.9}
 .hero-h{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;line-height:.9;letter-spacing:-1px;color:var(--white);text-transform:uppercase;margin-bottom:16px}
 .hero-h em{font-style:italic;color:var(--gold)}
@@ -47,7 +48,7 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
 .hstat{text-align:center}
 .hstat-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;color:var(--gold);line-height:1;display:block}
 .hstat-l{font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:1px;text-transform:uppercase;font-family:'Space Mono',monospace}
-.hero-right{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-bottom:none;border-radius:10px 10px 0 0;padding:20px}
+.hero-right{background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.12);border-bottom:none;border-radius:10px 10px 0 0;padding:20px;position:relative;z-index:1;backdrop-filter:blur(6px)}
 .next-match-label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;opacity:.8}
 .next-match-teams{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px}
 .nm-team{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--white);text-align:center;flex:1}
@@ -140,16 +141,17 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
 .pitch-row:last-child{margin-bottom:0}
 .player-slot{cursor:pointer;text-align:center;min-width:64px;transition:transform .15s}
 .player-slot:hover{transform:scale(1.08)}
-.player-circle.selected{background:var(--gold);color:var(--navy-dark);border-color:var(--white);box-shadow:0 0 0 3px var(--gold)}
-.player-slot.selected .player-name{color:var(--gold)}
+.player-circle{width:46px;height:46px;border-radius:50%;background:var(--navy);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 4px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:11px;color:var(--white);transition:all .15s;position:relative}
 .player-circle:hover{background:var(--navy-mid);border-color:var(--gold-light)}
 .player-circle .num{position:absolute;top:-4px;right:-4px;background:var(--gold);color:var(--navy-dark);width:16px;height:16px;border-radius:50%;font-size:8px;font-weight:900;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace}
+.player-circle.selected{background:var(--gold);color:var(--navy-dark);border-color:var(--white);box-shadow:0 0 0 3px rgba(200,150,12,0.5)}
+.player-slot.selected .player-name{color:var(--gold)}
 .player-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;color:var(--white);line-height:1.2;text-shadow:0 1px 3px rgba(0,0,0,0.8)}
 .formation-select{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
 .fsel{padding:6px 14px;border:1.5px solid var(--border);border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;background:var(--white);transition:all .15s;font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px;color:var(--navy)}
 .fsel:hover,.fsel.on{background:var(--navy);color:var(--white);border-color:var(--navy)}
 .lineup-side{display:flex;flex-direction:column;gap:10px}
-.sub-list{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px;padding-top:12px;border-top:1.5px solid var(--border)}
+.sub-list{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:12px;padding-top:12px;border-top:1.5px solid var(--border)}
 .sub-slot{background:var(--white);border:1.5px solid var(--border);border-radius:7px;padding:8px;text-align:center;cursor:pointer;transition:all .15s}
 .sub-slot:hover{border-color:var(--navy);background:var(--off)}
 .sub-num{font-family:'Space Mono',monospace;font-size:9px;color:var(--gold);font-weight:700;margin-bottom:2px}
@@ -235,7 +237,22 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
 .sbar-fill{height:100%;border-radius:3px;background:var(--navy);transition:width .5s}
 .sbar-val{width:28px;text-align:right;font-family:'Space Mono',monospace;font-size:11px;font-weight:700}
 
-/* TOAST */
+/* ===== DONATE PAGE ===== */
+.donate-wrap{max-width:620px;margin:0 auto;padding:48px 24px}
+.donate-hero{background:var(--grad);border-radius:12px;padding:36px;text-align:center;margin-bottom:24px;position:relative;overflow:hidden}
+.donate-hero::before{content:'💙';font-size:120px;position:absolute;top:-20px;right:-10px;opacity:.08}
+.donate-eyebrow{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.donate-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;color:var(--white);text-transform:uppercase;line-height:1;margin-bottom:12px}
+.donate-msg{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.6}
+.donate-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:24px;margin-bottom:16px}
+.donate-card-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.donate-card p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:16px}
+.donate-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:#0070BA;color:white;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px;transition:opacity .15s;text-decoration:none}
+.donate-btn:hover{opacity:.88}
+.donate-amounts{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.donate-amt{padding:9px 18px;border:1.5px solid var(--border);border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;cursor:pointer;background:var(--off);transition:all .15s;color:var(--navy)}
+.donate-amt:hover,.donate-amt.on{background:var(--navy);color:white;border-color:var(--navy)}
+.free-badge{display:inline-block;background:#DCFCE7;color:#166534;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;padding:3px 8px;border-radius:3px;text-transform:uppercase;margin-bottom:8px}
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy);color:var(--white);padding:11px 20px;border-radius:7px;font-size:13px;font-weight:600;z-index:600;transition:transform .3s;white-space:nowrap;font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px;border-left:3px solid var(--gold)}
 .toast.show{transform:translateX(-50%) translateY(0)}
 
@@ -267,6 +284,7 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
       <button class="nl" id="nl-lineup" onclick="go('lineup')">Lineup</button>
       <button class="nl" id="nl-ratings" onclick="go('ratings')">Ratings</button>
       <button class="nl" id="nl-table" onclick="go('table')">Table</button>
+      <button class="nl" id="nl-donate" onclick="go('donate')" style="color:var(--gold)">💙 Donate</button>
     </div>
     <div class="survival-tag">🎉 Championship Survival Secured!</div>
   </div>
@@ -476,6 +494,45 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
   </div>
 </div>
 
+<!-- ===== DONATE PAGE ===== -->
+<div class="page" id="pg-donate">
+  <div class="donate-wrap">
+    <div class="donate-hero">
+      <div class="donate-eyebrow">Fratton Faithful</div>
+      <h1 class="donate-title">Keep The Blue Flag Flying</h1>
+      <p class="donate-msg">This site is built and maintained by a Pompey fan, for Pompey fans. It will always be completely free to use — no paywalls, no subscription, no login required. We run ads to cover hosting costs, but if you'd like to show your appreciation with a donation, every penny is genuinely appreciated and helps keep the site going.</p>
+    </div>
+
+    <div class="donate-card">
+      <div class="free-badge">✓ Always Free</div>
+      <div class="donate-card-title">🌐 What Your Support Covers</div>
+      <p>Running costs for hosting, keeping fixtures & results up to date, writing match reports, and building new features for the Pompey community. No middle-men, no corporation — just one fan keeping the lights on at Fratton Faithful.</p>
+    </div>
+
+    <div class="donate-card">
+      <div class="donate-card-title">💳 Buy Me a Pint (via PayPal)</div>
+      <p>Choose an amount below or pay whatever you feel like. Every donation goes directly to Jon who runs this site. Cheers!</p>
+      <div class="donate-amounts">
+        <button class="donate-amt" onclick="setDonateAmt(2, this)">£2</button>
+        <button class="donate-amt on" onclick="setDonateAmt(5, this)">£5</button>
+        <button class="donate-amt" onclick="setDonateAmt(10, this)">£10</button>
+        <button class="donate-amt" onclick="setDonateAmt(20, this)">£20</button>
+      </div>
+      <a id="donate-paypal-btn" class="donate-btn" href="#" onclick="doDonate(event)" target="_blank">
+        <span style="font-family:'Space Mono',monospace;font-size:15px">Pay<em style="color:#009BE1;font-style:normal">Pal</em></span>
+        <span>Donate £<span id="donate-amount-label">5</span></span>
+      </a>
+      <div style="font-size:11px;color:var(--muted);margin-top:10px">Secure payment via PayPal · jonpompey@gmail.com · No account needed</div>
+    </div>
+
+    <div class="donate-card" style="text-align:center;padding:20px">
+      <div style="font-size:28px;margin-bottom:8px">💙</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;color:var(--navy);margin-bottom:6px">Thank You From The Bottom of Fratton Park</div>
+      <div style="font-size:13px;color:var(--muted)">Up the Blues · Play Up Pompey · PUSB</div>
+    </div>
+  </div>
+</div>
+
 <!-- ARTICLE OVERLAY -->
 <div class="article-overlay" id="article-overlay" onclick="closeArticleOnBg(event)">
   <div class="article-box" id="article-box">
@@ -660,6 +717,7 @@ function go(page){
   if(page==='lineup') renderLineup();
   if(page==='ratings') renderRatings('all');
   if(page==='table') renderTable();
+  if(page==='donate'){/* static page, no render needed */}
   window.scrollTo(0,0);
 }
 
@@ -771,7 +829,7 @@ function renderPitch(){
   }).join('');
 
   const usedIds=Object.values(pitchXI);
-  const subPlayers=SQUAD.filter(p=>!usedIds.includes(p.num)).slice(0,5);
+  const subPlayers=SQUAD.filter(p=>!usedIds.includes(p.num)).slice(0,7);
   document.getElementById('subs').innerHTML=
     `<div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;grid-column:1/-1">Substitutes</div>`+
     subPlayers.map(p=>`<div class="sub-slot"><div class="sub-num">#${p.num}</div><div class="sub-name">${p.name}</div></div>`).join('');
@@ -849,19 +907,32 @@ function renderRatings(filter){
   const grid=document.getElementById('ratings-grid');
   if(!players.length){grid.innerHTML='<div style="color:var(--muted);font-size:13px;">No players in this position</div>';return;}
   grid.innerHTML=players.map(p=>{
-    const fanAvg=getAvgRating(p.num);
-    const displayRating=fanAvg||p.rating;
-    const col=displayRating>=7?'green':displayRating>=6.5?'gold':displayRating>=6?'amber':'red';
-    const barW=((displayRating-5)/5*100).toFixed(0);
-    const fanCount=userRatings[p.num]?.count||0;
+    const fanData=userRatings[p.num];
+    const fanAvg=fanData&&fanData.count?(fanData.total/fanData.count).toFixed(1):null;
+    const wsRating=p.rating;
+    const col=r=>r>=7?'green':r>=6.5?'gold':r>=6?'amber':'red';
+    const barCol=c=>c==='green'?'#22C55E':c==='gold'?'var(--gold)':c==='amber'?'#F59E0B':'var(--red)';
     return `<div class="rating-card" onclick="openRateModal(${p.num})">
       <div class="rating-avatar">${p.name.slice(0,2).toUpperCase()}</div>
-      <div class="rating-num-big ${col}">${displayRating}</div>
-      <div style="font-size:9px;color:var(--muted);font-family:'Space Mono',monospace;margin-bottom:4px">${fanCount?`Fan avg (${fanCount} votes)`:'WhoScored avg'}</div>
       <div class="rating-name">${p.full}</div>
       <div class="rating-pos">#${p.num} · ${p.pos} · ${p.apps} apps · ${p.goals}⚽</div>
-      <div class="rating-bar-wrap"><div class="rating-bar" style="width:${barW}%;background:${col==='green'?'#22C55E':col==='gold'?'var(--gold)':col==='amber'?'#F59E0B':'var(--red)'}"></div></div>
-      <div class="rating-apps" style="margin-top:4px">${fanCount?fanCount+' fan rating'+(fanCount>1?'s':''):'Click to rate'}</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;margin-bottom:6px">
+        <div style="background:var(--off);border-radius:7px;padding:8px 6px;text-align:center">
+          <div style="font-size:9px;font-family:'Space Mono',monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">WhoScored</div>
+          <div class="rating-num-big ${col(wsRating)}" style="font-size:28px">${wsRating}</div>
+          <div class="rating-bar-wrap" style="margin-top:4px"><div class="rating-bar" style="width:${((wsRating-5)/5*100).toFixed(0)}%;background:${barCol(col(wsRating))}"></div></div>
+        </div>
+        <div style="background:var(--off);border-radius:7px;padding:8px 6px;text-align:center">
+          <div style="font-size:9px;font-family:'Space Mono',monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Fan Avg</div>
+          ${fanAvg
+            ?`<div class="rating-num-big ${col(parseFloat(fanAvg))}" style="font-size:28px">${fanAvg}</div>
+               <div class="rating-bar-wrap" style="margin-top:4px"><div class="rating-bar" style="width:${((parseFloat(fanAvg)-5)/5*100).toFixed(0)}%;background:${barCol(col(parseFloat(fanAvg)))}"></div></div>`
+            :`<div style="font-size:22px;color:var(--muted);margin:4px 0">—</div>
+               <div style="font-size:9px;color:var(--gold);font-family:'Space Mono',monospace">tap to rate</div>`
+          }
+        </div>
+      </div>
+      <div class="rating-apps">${fanData?.count?fanData.count+' fan vote'+(fanData.count>1?'s':''):'Be first to rate!'}</div>
     </div>`;
   }).join('');
 }
@@ -989,7 +1060,19 @@ function closeArticleOnBg(e){
   if(e.target===document.getElementById('article-overlay')) closeArticle();
 }
 
-// ===== TOAST =====
+// ===== DONATE =====
+let donateAmt=5;
+function setDonateAmt(amt,el){
+  donateAmt=amt;
+  document.querySelectorAll('.donate-amt').forEach(b=>b.classList.remove('on'));
+  el.classList.add('on');
+  document.getElementById('donate-amount-label').textContent=amt;
+}
+function doDonate(e){
+  e.preventDefault();
+  const url=`https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jonpompey%40gmail.com&amount=${donateAmt}&currency_code=GBP&item_name=Fratton+Faithful+Donation&no_shipping=1`;
+  window.open(url,'_blank');
+}
 let tt;
 function showToast(msg){
   const el=document.getElementById('toast');
