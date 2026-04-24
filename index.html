@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fratton Faithful — Portsmouth FC Fan Site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Barlow:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#001E5A;--navy-dark:#00113A;--navy-mid:#002B7A;
+  --gold:#C8960C;--gold-light:#E8B020;--gold-pale:#FFF3CC;
+  --red:#CC0000;--white:#FFFFFF;--off:#F4F2ED;
+  --text:#1A1A2A;--muted:#6B6B85;--border:rgba(0,30,90,0.1);
+  --grad:linear-gradient(135deg,var(--navy-dark),var(--navy-mid));
+}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:var(--off);color:var(--text);min-height:100vh}
+h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif;letter-spacing:.3px}
+.page{display:none}.page.active{display:block}
+
+/* ===== NAV ===== */
+nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:3px solid var(--gold)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:58px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-brand{display:flex;align-items:center;gap:10px;cursor:pointer}
+.nav-crest{width:36px;height:36px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;color:var(--navy-dark);letter-spacing:-.5px;flex-shrink:0}
+.nav-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--white);letter-spacing:.5px;text-transform:uppercase;line-height:1}
+.nav-title span{color:var(--gold);display:block;font-size:11px;font-weight:600;letter-spacing:2px}
+.nav-links{display:flex;gap:2px}
+.nl{padding:8px 12px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;border:none;background:transparent;color:rgba(255,255,255,0.6);transition:all .15s;border-radius:4px}
+.nl:hover{color:var(--white);background:rgba(255,255,255,0.07)}
+.nl.on{color:var(--gold);background:rgba(200,150,12,0.12)}
+.survival-tag{background:var(--gold);color:var(--navy-dark);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:11px;letter-spacing:1.5px;padding:5px 12px;border-radius:3px;text-transform:uppercase;white-space:nowrap;animation:glow 2s infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 6px rgba(200,150,12,0.4)}50%{box-shadow:0 0 16px rgba(200,150,12,0.8)}}
+
+/* ===== HERO ===== */
+.hero{background:var(--grad);position:relative;overflow:hidden;padding:64px 24px 0}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:end}
+.hero-left{padding-bottom:40px}
+.hero-eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;opacity:.9}
+.hero-h{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;line-height:.9;letter-spacing:-1px;color:var(--white);text-transform:uppercase;margin-bottom:16px}
+.hero-h em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.65);max-width:440px;line-height:1.6;margin-bottom:24px}
+.hero-stats{display:flex;gap:24px;flex-wrap:wrap}
+.hstat{text-align:center}
+.hstat-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;color:var(--gold);line-height:1;display:block}
+.hstat-l{font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:1px;text-transform:uppercase;font-family:'Space Mono',monospace}
+.hero-right{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-bottom:none;border-radius:10px 10px 0 0;padding:20px}
+.next-match-label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;opacity:.8}
+.next-match-teams{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px}
+.nm-team{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--white);text-align:center;flex:1}
+.nm-vs{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:rgba(255,255,255,0.4);font-weight:700}
+.nm-meta{display:flex;gap:8px;flex-wrap:wrap}
+.nm-pill{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:4px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,0.6);font-family:'Space Mono',monospace}
+.nm-pill.gold{background:rgba(200,150,12,0.15);border-color:rgba(200,150,12,0.3);color:var(--gold)}
+.survival-banner{background:var(--gold);padding:14px 24px;text-align:center}
+.survival-banner p{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--navy-dark);text-transform:uppercase;letter-spacing:1px}
+.survival-banner span{font-weight:600;font-size:14px;display:block;letter-spacing:.5px;opacity:.8;margin-top:2px}
+
+/* ===== SECTION WRAPPER ===== */
+.section{max-width:1200px;margin:0 auto;padding:40px 24px}
+.section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;border-bottom:2px solid var(--navy);padding-bottom:10px}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--navy);letter-spacing:.5px}
+.section-title span{color:var(--gold)}
+.section-link{font-size:12px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:1px;cursor:pointer;text-decoration:none;font-family:'Space Mono',monospace}
+
+/* ===== NEWS GRID ===== */
+.news-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px}
+.news-card{background:var(--white);border:1.5px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;transition:all .2s}
+.news-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,30,90,0.12)}
+.news-card.featured{grid-row:span 2}
+.news-img{height:200px;background:var(--grad);display:flex;align-items:flex-end;padding:16px;position:relative;overflow:hidden}
+.news-card.featured .news-img{height:280px}
+.news-img-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:80px;opacity:.15}
+.news-cat{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:3px 8px;border-radius:3px;font-weight:700;position:relative;z-index:1}
+.cat-news{background:var(--navy);color:var(--white)}
+.cat-match{background:var(--gold);color:var(--navy-dark)}
+.cat-transfer{background:var(--red);color:var(--white)}
+.cat-injury{background:#888;color:var(--white)}
+.news-body{padding:14px}
+.news-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;line-height:1.2;margin-bottom:6px;color:var(--text)}
+.news-card.featured .news-title{font-size:22px}
+.news-meta{font-size:11px;color:var(--muted);font-family:'Space Mono',monospace}
+.news-excerpt{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.5}
+
+/* ===== RESULTS ===== */
+.results-list{display:flex;flex-direction:column;gap:8px}
+.result-item{background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:12px 16px;display:flex;align-items:center;gap:16px}
+.result-item.win{border-left:4px solid #22C55E}
+.result-item.draw{border-left:4px solid var(--gold)}
+.result-item.loss{border-left:4px solid var(--red)}
+.result-score.win{background:#22C55E}
+.result-score.loss{background:var(--red)}
+.result-score.draw{background:var(--gold);color:var(--navy-dark)}
+.result-date{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);width:60px;flex-shrink:0}
+.result-comp{font-size:10px;color:var(--muted);width:90px;flex-shrink:0;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.result-match{flex:1;display:flex;align-items:center;gap:8px}
+.result-home{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;flex:1;text-align:right}
+.result-score{font-family:'Space Mono',monospace;font-weight:700;font-size:14px;background:var(--navy);color:var(--white);padding:4px 10px;border-radius:4px;white-space:nowrap}
+.result-score.win{background:#22C55E}
+.result-score.loss{background:var(--red)}
+.result-score.draw{background:var(--gold);color:var(--navy-dark)}
+.result-away{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;flex:1}
+.result-pfc{color:var(--navy);font-weight:900}
+
+/* ===== FIXTURES ===== */
+.fixtures-list{display:flex;flex-direction:column;gap:6px}
+.fixture-item{background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:12px 16px;display:flex;align-items:center;gap:16px}
+.fixture-item.next{border-color:var(--gold);background:var(--gold-pale)}
+.fixture-date{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);width:70px;flex-shrink:0}
+.fixture-comp{font-size:10px;color:var(--muted);width:90px;flex-shrink:0;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.fixture-teams{flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;gap:10px}
+.fixture-vs{font-size:11px;color:var(--muted);font-weight:400}
+.fixture-venue{font-size:11px;color:var(--muted);font-family:'Space Mono',monospace}
+.fixture-time{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:var(--navy);white-space:nowrap}
+.next-badge{background:var(--gold);color:var(--navy-dark);font-size:9px;font-weight:700;font-family:'Space Mono',monospace;padding:2px 7px;border-radius:3px;text-transform:uppercase;letter-spacing:1px;flex-shrink:0}
+
+/* ===== TRANSFERS ===== */
+.transfers-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.transfer-card{background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:14px;display:flex;align-items:center;gap:12px}
+.transfer-avatar{width:44px;height:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:14px;color:var(--white);flex-shrink:0}
+.transfer-in .transfer-avatar{background:linear-gradient(135deg,#166534,#22C55E)}
+.transfer-out .transfer-avatar{background:linear-gradient(135deg,#991B1B,var(--red))}
+.transfer-rumour .transfer-avatar{background:linear-gradient(135deg,#92400E,var(--gold))}
+.transfer-info{flex:1;min-width:0}
+.transfer-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;line-height:1}
+.transfer-detail{font-size:12px;color:var(--muted);margin-top:2px}
+.transfer-tag{font-size:9px;font-weight:700;font-family:'Space Mono',monospace;padding:2px 7px;border-radius:3px;text-transform:uppercase;letter-spacing:1px;flex-shrink:0}
+.tag-in{background:#DCFCE7;color:#166534}
+.tag-out{background:#FEE2E2;color:#991B1B}
+.tag-rumour{background:var(--gold-pale);color:#92400E}
+
+/* ===== LINEUP PREDICTOR ===== */
+.pitch{background:linear-gradient(180deg,#2D7A3A 0%,#2D7A3A 8%,#267033 8%,#267033 16%,#2D7A3A 16%,#2D7A3A 24%,#267033 24%,#267033 32%,#2D7A3A 32%,#2D7A3A 40%,#267033 40%,#267033 48%,#2D7A3A 48%,#2D7A3A 56%,#267033 56%,#267033 64%,#2D7A3A 64%,#2D7A3A 72%,#267033 72%,#267033 80%,#2D7A3A 80%,#2D7A3A 88%,#267033 88%,#267033 100%);border-radius:10px;padding:20px 16px;position:relative;max-width:520px;margin:0 auto;border:2px solid rgba(255,255,255,0.1)}
+.pitch::before{content:'';position:absolute;top:50%;left:10%;right:10%;height:1px;background:rgba(255,255,255,0.25)}
+.pitch::after{content:'';position:absolute;top:calc(50% - 60px);left:50%;transform:translateX(-50%);width:120px;height:120px;border-radius:50%;border:2px solid rgba(255,255,255,0.2)}
+.pitch-row{display:flex;justify-content:center;gap:8px;margin-bottom:14px;position:relative;z-index:1}
+.pitch-row:last-child{margin-bottom:0}
+.player-slot{cursor:pointer;text-align:center;min-width:64px;transition:transform .15s}
+.player-slot:hover{transform:scale(1.08)}
+.player-circle.selected{background:var(--gold);color:var(--navy-dark);border-color:var(--white);box-shadow:0 0 0 3px var(--gold)}
+.player-slot.selected .player-name{color:var(--gold)}
+.player-circle:hover{background:var(--navy-mid);border-color:var(--gold-light)}
+.player-circle .num{position:absolute;top:-4px;right:-4px;background:var(--gold);color:var(--navy-dark);width:16px;height:16px;border-radius:50%;font-size:8px;font-weight:900;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace}
+.player-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;color:var(--white);line-height:1.2;text-shadow:0 1px 3px rgba(0,0,0,0.8)}
+.formation-select{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.fsel{padding:6px 14px;border:1.5px solid var(--border);border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;background:var(--white);transition:all .15s;font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px;color:var(--navy)}
+.fsel:hover,.fsel.on{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.lineup-side{display:flex;flex-direction:column;gap:10px}
+.sub-list{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px;padding-top:12px;border-top:1.5px solid var(--border)}
+.sub-slot{background:var(--white);border:1.5px solid var(--border);border-radius:7px;padding:8px;text-align:center;cursor:pointer;transition:all .15s}
+.sub-slot:hover{border-color:var(--navy);background:var(--off)}
+.sub-num{font-family:'Space Mono',monospace;font-size:9px;color:var(--gold);font-weight:700;margin-bottom:2px}
+.sub-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;color:var(--navy)}
+.share-lineup{padding:10px 20px;background:var(--navy);color:var(--white);border:none;border-radius:7px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;cursor:pointer;letter-spacing:.5px;transition:all .15s;margin-top:12px}
+.share-lineup:hover{background:var(--navy-mid)}
+
+/* ===== PLAYER RATINGS ===== */
+.ratings-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.rating-card{background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:14px;text-align:center;transition:all .2s;cursor:pointer}
+.rating-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,30,90,0.1)}
+.rating-avatar{width:52px;height:52px;border-radius:50%;background:var(--grad);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--white);border:2px solid var(--gold)}
+.rating-num-big{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:40px;line-height:1;margin-bottom:2px}
+.rating-num-big.gold{color:var(--gold)}
+.rating-num-big.green{color:#22C55E}
+.rating-num-big.amber{color:#F59E0B}
+.rating-num-big.red{color:var(--red)}
+.rating-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--navy);margin-bottom:2px}
+.rating-pos{font-size:10px;color:var(--muted);font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.rating-bar-wrap{height:4px;background:var(--off);border-radius:2px;overflow:hidden;margin-bottom:4px}
+.rating-bar{height:100%;border-radius:2px;transition:width .6s}
+.rating-apps{font-size:10px;color:var(--muted);font-family:'Space Mono',monospace}
+.ratings-filter{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.rf{padding:6px 14px;border:1.5px solid var(--border);border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;background:var(--white);transition:all .15s;font-family:'Barlow Condensed',sans-serif;color:var(--navy)}
+.rf:hover,.rf.on{background:var(--navy);color:var(--white);border-color:var(--navy)}
+
+/* ===== LEAGUE TABLE ===== */
+.table-wrap{background:var(--white);border:1.5px solid var(--border);border-radius:8px;overflow:hidden}
+.lt{width:100%;border-collapse:collapse;font-size:13px}
+.lt th{background:var(--navy);color:var(--white);padding:10px 12px;text-align:left;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.lt th.r{text-align:right}
+.lt td{padding:9px 12px;border-bottom:1px solid var(--border)}
+.lt tr:last-child td{border-bottom:none}
+.lt tr:hover td{background:var(--off)}
+.lt tr.pompey td{background:rgba(0,30,90,0.05);font-weight:600}
+.lt tr.pompey td:first-child{border-left:3px solid var(--gold)}
+.lt .pos{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;width:28px;color:var(--muted);text-align:center}
+.lt .team-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px}
+.lt .r{text-align:right;font-family:'Space Mono',monospace;font-size:12px}
+.lt .pts{font-family:'Space Mono',monospace;font-weight:700;font-size:13px;text-align:right;color:var(--navy)}
+.promo-zone{background:#DCFCE7}
+.playoff-zone{background:#DBEAFE}
+.safe-zone{}
+.danger-zone{background:#FEF3C7}
+.rel-zone{background:#FEE2E2}
+.zone-key{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap}
+.zk{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);font-family:'Space Mono',monospace}
+.zk-dot{width:10px;height:10px;border-radius:2px}
+
+/* ===== ARTICLE OVERLAY ===== */
+.article-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:500;display:none;align-items:flex-start;justify-content:center;padding:24px 16px;overflow-y:auto}
+.article-overlay.open{display:flex}
+.article-box{background:var(--white);border-radius:12px;max-width:680px;width:100%;margin:auto;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.3)}
+.article-img{height:200px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:72px;position:relative}
+.article-header{padding:24px 28px 16px}
+.article-cat{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.article-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;line-height:1.1;color:var(--navy);margin-bottom:8px;text-transform:uppercase}
+.article-meta{font-size:11px;color:var(--muted);font-family:'Space Mono',monospace;margin-bottom:0}
+.article-body{padding:0 28px 28px;font-size:15px;line-height:1.7;color:var(--text)}
+.article-body p{margin-bottom:14px}
+.article-close{position:absolute;top:12px;right:14px;background:rgba(0,0,0,0.4);border:none;color:white;width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:1}
+.ad-slot{background:var(--white);border:1.5px dashed var(--border);border-radius:8px;padding:16px;text-align:center;margin:16px 0}
+.ad-slot-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:8px;display:block}
+.ad-slot-placeholder{height:90px;background:var(--off);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--muted);font-family:'Space Mono',monospace}
+
+/* ===== MODALS ===== */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:400;display:none;align-items:center;justify-content:center;padding:16px}
+.modal-bg.open{display:flex}
+.modal{background:var(--white);border-radius:12px;padding:24px;max-width:480px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 24px 64px rgba(0,0,0,0.25)}
+.modal h3{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:var(--navy);margin-bottom:4px;text-transform:uppercase}
+.modal-sub{font-size:12px;color:var(--muted);font-family:'Space Mono',monospace;margin-bottom:16px}
+.modal-close{float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--muted);margin-top:-4px}
+.rate-stars{display:flex;gap:6px;margin:12px 0;justify-content:center}
+.star{font-size:32px;cursor:pointer;transition:transform .1s;color:#ddd;line-height:1}
+.star:hover,.star.on{color:var(--gold);transform:scale(1.15)}
+.rate-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;text-align:center;color:var(--navy);margin-bottom:8px}
+.btn-rate{width:100%;padding:11px;background:var(--navy);color:var(--white);border:none;border-radius:7px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;cursor:pointer;transition:opacity .15s;margin-top:8px;letter-spacing:.5px;text-transform:uppercase}
+.btn-rate:hover{opacity:.85}
+.stat-bars{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.sbar-row{display:flex;align-items:center;gap:8px;font-size:12px}
+.sbar-label{width:90px;color:var(--muted);font-size:11px;font-weight:600;flex-shrink:0}
+.sbar-track{flex:1;height:6px;background:var(--off);border-radius:3px;overflow:hidden}
+.sbar-fill{height:100%;border-radius:3px;background:var(--navy);transition:width .5s}
+.sbar-val{width:28px;text-align:right;font-family:'Space Mono',monospace;font-size:11px;font-weight:700}
+
+/* TOAST */
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy);color:var(--white);padding:11px 20px;border-radius:7px;font-size:13px;font-weight:600;z-index:600;transition:transform .3s;white-space:nowrap;font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px;border-left:3px solid var(--gold)}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+@media(max-width:768px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-h{font-size:52px}
+  .news-grid{grid-template-columns:1fr}
+  .transfers-grid{grid-template-columns:1fr}
+  .ratings-grid{grid-template-columns:repeat(2,1fr)}
+  nav .nav-links .nl{font-size:12px;padding:6px 8px}
+  .survival-tag{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand" onclick="go('home')">
+      <div class="nav-crest">PFC</div>
+      <div class="nav-title">Fratton Faithful<span>Portsmouth FC Fan Site</span></div>
+    </div>
+    <div class="nav-links">
+      <button class="nl on" id="nl-home" onclick="go('home')">Home</button>
+      <button class="nl" id="nl-fixtures" onclick="go('fixtures')">Fixtures</button>
+      <button class="nl" id="nl-transfers" onclick="go('transfers')">Transfers</button>
+      <button class="nl" id="nl-lineup" onclick="go('lineup')">Lineup</button>
+      <button class="nl" id="nl-ratings" onclick="go('ratings')">Ratings</button>
+      <button class="nl" id="nl-table" onclick="go('table')">Table</button>
+    </div>
+    <div class="survival-tag">🎉 Championship Survival Secured!</div>
+  </div>
+</nav>
+
+<!-- ===== HOME PAGE ===== -->
+<div class="page active" id="pg-home">
+
+  <!-- SURVIVAL BANNER -->
+  <div class="survival-banner">
+    <p>🏆 Championship Survival Confirmed — Bowat 63' vs Leicester (1-0) · 18 April 2026</p>
+    <span>Pompey stay up for a second consecutive Championship season · Up the Blues!</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-eyebrow">2025–26 EFL Championship</div>
+        <h1 class="hero-h">Play Up<br><em>Pompey</em></h1>
+        <p class="hero-sub">The independent voice of Portsmouth FC fans. News, results, transfer rumours, lineup predictions and player ratings — all in one place.</p>
+        <div class="hero-stats">
+          <div class="hstat"><span class="hstat-n">20th</span><span class="hstat-l">League Pos</span></div>
+          <div class="hstat"><span class="hstat-n">48</span><span class="hstat-l">Points</span></div>
+          <div class="hstat"><span class="hstat-n">12W</span><span class="hstat-l">Season Wins</span></div>
+          <div class="hstat"><span class="hstat-n">SAFE</span><span class="hstat-l">Status</span></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="next-match-label">Next Match</div>
+        <div class="next-match-teams">
+          <div class="nm-team">Stoke City</div>
+          <div class="nm-vs">vs</div>
+          <div class="nm-team">Portsmouth</div>
+        </div>
+        <div class="nm-meta">
+          <span class="nm-pill gold">Sat 25 Apr · 3:00pm</span>
+          <span class="nm-pill">bet365 Stadium</span>
+          <span class="nm-pill">GW45 · Championship</span>
+        </div>
+        <div class="nm-meta" style="margin-top:8px">
+          <span class="nm-pill">H: 2/1</span>
+          <span class="nm-pill">D: 12/5</span>
+          <span class="nm-pill gold">A: 6/4</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AD SLOT -->
+  <div class="section" style="padding-bottom:0">
+    <div class="ad-slot">
+      <span class="ad-slot-label">Advertisement</span>
+      <!-- Replace with your AdSense code: <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+      <div class="ad-slot-placeholder">728×90 Leaderboard Ad — Replace with AdSense code</div>
+    </div>
+  </div>
+
+  <!-- NEWS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Latest <span>News</span></div>
+      <span class="section-link">All Stories →</span>
+    </div>
+    <div class="news-grid">
+      <div class="news-card featured" onclick="openArticle(1)" style="cursor:pointer">
+        <div class="news-img">
+          <div class="news-img-bg">⚽</div>
+          <span class="news-cat cat-match">Match Report</span>
+        </div>
+        <div class="news-body">
+          <div class="news-title">POMPEY SECURE SURVIVAL WITH BOWAT HEADER AGAINST FOXES</div>
+          <div class="news-meta">18 Apr 2026 · Match Report</div>
+          <div class="news-excerpt">Ibane Bowat's 63rd-minute header sealed a crucial 1-0 win over Leicester City at Fratton Park, securing Portsmouth's Championship status with three games to spare.</div>
+        </div>
+      </div>
+      <div class="news-card" onclick="openArticle(2)" style="cursor:pointer">
+        <div class="news-img" style="height:120px"><div class="news-img-bg" style="font-size:50px">🔄</div><span class="news-cat cat-transfer">Transfer</span></div>
+        <div class="news-body">
+          <div class="news-title">MOUSINHO EYES SUMMER REINFORCEMENTS AFTER SURVIVAL CONFIRMED</div>
+          <div class="news-meta">19 Apr 2026 · Transfer News</div>
+        </div>
+      </div>
+      <div class="news-card" onclick="openArticle(3)" style="cursor:pointer">
+        <div class="news-img" style="height:120px"><div class="news-img-bg" style="font-size:50px">🏟️</div><span class="news-cat cat-news">Club News</span></div>
+        <div class="news-body">
+          <div class="news-title">CHAPLIN LOAN SPELL HAILED AS "HUGE SUCCESS" AHEAD OF IPSWICH RETURN</div>
+          <div class="news-meta">17 Apr 2026 · Club News</div>
+        </div>
+      </div>
+      <div class="news-card" onclick="openArticle(4)" style="cursor:pointer">
+        <div class="news-img" style="height:120px"><div class="news-img-bg" style="font-size:50px">📊</div><span class="news-cat cat-news">Analysis</span></div>
+        <div class="news-body">
+          <div class="news-title">SEGECIC'S DEBUT SEASON: THE STATS BEHIND POMPEY'S AUSSIE STAR</div>
+          <div class="news-meta">15 Apr 2026 · Analysis</div>
+        </div>
+      </div>
+      <div class="news-card" onclick="openArticle(5)" style="cursor:pointer">
+        <div class="news-img" style="height:120px"><div class="news-img-bg" style="font-size:50px">⚠️</div><span class="news-cat cat-injury">Injury</span></div>
+        <div class="news-body">
+          <div class="news-title">MURPHY, KOSZNOVSZKY OUT FOR SEASON — SWANSON RETURN DATE UNCLEAR</div>
+          <div class="news-meta">14 Apr 2026 · Injury News</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECENT RESULTS -->
+  <div class="section" style="padding-top:0">
+    <div class="section-header">
+      <div class="section-title">Recent <span>Results</span></div>
+      <span class="section-link" onclick="go('fixtures')">All Fixtures →</span>
+    </div>
+    <div class="results-list" id="home-results"></div>
+  </div>
+
+  <!-- AD SLOT -->
+  <div class="section" style="padding-top:0">
+    <div class="ad-slot">
+      <span class="ad-slot-label">Advertisement</span>
+      <div class="ad-slot-placeholder">300×250 Rectangle Ad — Replace with AdSense code</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== FIXTURES PAGE ===== -->
+<div class="page" id="pg-fixtures">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Fixtures & <span>Results</span></div>
+    </div>
+    <div class="ad-slot"><span class="ad-slot-label">Advertisement</span><div class="ad-slot-placeholder">728×90 Leaderboard Ad</div></div>
+    <div class="section-header" style="margin-top:24px"><div class="section-title" style="font-size:20px">Upcoming <span>Fixtures</span></div></div>
+    <div class="fixtures-list" id="fixtures-upcoming"></div>
+    <div class="section-header" style="margin-top:32px"><div class="section-title" style="font-size:20px">Recent <span>Results</span></div></div>
+    <div class="results-list" id="fixtures-results"></div>
+  </div>
+</div>
+
+<!-- ===== TRANSFERS PAGE ===== -->
+<div class="page" id="pg-transfers">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Transfer <span>News & Rumours</span></div>
+    </div>
+    <div class="ad-slot"><span class="ad-slot-label">Advertisement</span><div class="ad-slot-placeholder">728×90 Leaderboard Ad</div></div>
+    <div class="section-header" style="margin-top:24px"><div class="section-title" style="font-size:20px">Done <span>Deals</span></div></div>
+    <div class="transfers-grid" id="transfers-done"></div>
+    <div class="section-header" style="margin-top:32px"><div class="section-title" style="font-size:20px">🔥 Hot <span>Rumours</span></div></div>
+    <div class="transfers-grid" id="transfers-rumours"></div>
+    <div class="section-header" style="margin-top:32px"><div class="section-title" style="font-size:20px">Departures</div></div>
+    <div class="transfers-grid" id="transfers-out"></div>
+  </div>
+</div>
+
+<!-- ===== LINEUP PREDICTOR ===== -->
+<div class="page" id="pg-lineup">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Lineup <span>Predictor</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:start" id="lineup-layout">
+      <div>
+        <div class="formation-select" id="formation-btns"></div>
+        <div class="pitch" id="pitch"></div>
+        <div class="sub-list" id="subs"></div>
+        <button class="share-lineup" onclick="shareLineup()">📋 Share My Lineup</button>
+      </div>
+      <div class="lineup-side">
+        <div style="background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:16px">
+          <div class="section-title" style="font-size:18px;margin-bottom:12px">Pick Your <span>XI</span></div>
+          <div id="player-picker"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PLAYER RATINGS ===== -->
+<div class="page" id="pg-ratings">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Player <span>Ratings</span> 2025–26</div>
+    </div>
+    <div class="ratings-filter" id="ratings-filter"></div>
+    <div class="ratings-grid" id="ratings-grid"></div>
+  </div>
+</div>
+
+<!-- ===== LEAGUE TABLE ===== -->
+<div class="page" id="pg-table">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Championship <span>Table</span> 2025–26</div>
+    </div>
+    <div class="ad-slot"><span class="ad-slot-label">Advertisement</span><div class="ad-slot-placeholder">728×90 Leaderboard Ad</div></div>
+    <div class="table-wrap" style="margin-top:16px">
+      <table class="lt" id="league-table"></table>
+    </div>
+    <div class="zone-key">
+      <div class="zk"><div class="zk-dot" style="background:#DCFCE7;border:1px solid #166534"></div>Promotion</div>
+      <div class="zk"><div class="zk-dot" style="background:#DBEAFE;border:1px solid #1E40AF"></div>Play-offs</div>
+      <div class="zk"><div class="zk-dot" style="background:#FEF3C7;border:1px solid #92400E"></div>Danger zone</div>
+      <div class="zk"><div class="zk-dot" style="background:#FEE2E2;border:1px solid #991B1B"></div>Relegation</div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE OVERLAY -->
+<div class="article-overlay" id="article-overlay" onclick="closeArticleOnBg(event)">
+  <div class="article-box" id="article-box">
+    <div class="article-img" id="article-img">
+      <button class="article-close" onclick="closeArticle()">✕</button>
+      <span id="article-emoji">⚽</span>
+    </div>
+    <div class="article-header">
+      <div class="article-cat" id="article-cat"></div>
+      <h2 class="article-title" id="article-title"></h2>
+      <div class="article-meta" id="article-meta"></div>
+    </div>
+    <div class="article-body" id="article-body"></div>
+  </div>
+</div>
+
+<!-- RATING MODAL -->
+<div class="modal-bg" id="rate-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeRateModal()">✕</button>
+    <h3 id="rm-name">Player Name</h3>
+    <div class="modal-sub" id="rm-pos">Position · Apps</div>
+    <div class="rate-stars" id="rm-stars">
+      <span class="star" onclick="setStar(1)">★</span>
+      <span class="star" onclick="setStar(2)">★</span>
+      <span class="star" onclick="setStar(3)">★</span>
+      <span class="star" onclick="setStar(4)">★</span>
+      <span class="star" onclick="setStar(5)">★</span>
+      <span class="star" onclick="setStar(6)">★</span>
+      <span class="star" onclick="setStar(7)">★</span>
+      <span class="star" onclick="setStar(8)">★</span>
+      <span class="star" onclick="setStar(9)">★</span>
+      <span class="star" onclick="setStar(10)">★</span>
+    </div>
+    <div class="rate-label" id="rm-rating-label">Tap to rate out of 10</div>
+    <div class="stat-bars" id="rm-stats"></div>
+    <button class="btn-rate" onclick="submitRating()">Submit Rating</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ===== DATA =====
+const RESULTS = [
+  {date:'21 Apr',comp:'Championship',home:'Coventry City',away:'Portsmouth',score:'5-1',pfcResult:'loss'},
+  {date:'18 Apr',comp:'Championship',home:'Portsmouth',away:'Leicester City',score:'1-0',pfcResult:'win'},
+  {date:'14 Apr',comp:'Championship',home:'Portsmouth',away:'Ipswich Town',score:'2-0',pfcResult:'win'},
+  {date:'11 Apr',comp:'Championship',home:'Middlesbrough',away:'Portsmouth',score:'0-1',pfcResult:'win'},
+  {date:'06 Apr',comp:'Championship',home:'Portsmouth',away:'Oxford United',score:'2-2',pfcResult:'draw'},
+  {date:'03 Apr',comp:'Championship',home:'Norwich City',away:'Portsmouth',score:'1-1',pfcResult:'draw'},
+  {date:'21 Mar',comp:'Championship',home:'QPR',away:'Portsmouth',score:'6-1',pfcResult:'loss'},
+  {date:'15 Mar',comp:'Championship',home:'Portsmouth',away:'Charlton Athletic',score:'2-1',pfcResult:'win'},
+];
+
+const FIXTURES = [
+  {date:'Sat 25 Apr',time:'3:00pm',comp:'Championship',home:'Stoke City',away:'Portsmouth',venue:"bet365 Stadium",next:true,odds:{home:'2/1',draw:'12/5',away:'6/4'}},
+  {date:'Sat 2 May',time:'3:00pm',comp:'Championship',home:'Portsmouth',away:'Birmingham City',venue:'Fratton Park',next:false,odds:{home:'6/5',draw:'9/4',away:'9/4'}},
+];
+
+const TRANSFERS_DONE = [
+  {name:'Conor Chaplin',detail:'Loan from Ipswich Town',dir:'in',init:'CC'},
+  {name:'Makenzie Kirk',detail:'Signed from St. Johnstone',dir:'in',init:'MK'},
+  {name:'Adrian Segecic',detail:'Signed from Sydney FC',dir:'in',init:'AS'},
+  {name:'Franco Umeh',detail:'Signed from Crystal Palace',dir:'in',init:'FU'},
+  {name:'Ebou Adams',detail:'Signed from Derby County',dir:'in',init:'EA'},
+  {name:'Ajibola Alese',detail:'Signed from Sunderland',dir:'in',init:'AA'},
+  {name:'Jacob Brown',detail:'Signed from Luton Town',dir:'in',init:'JB'},
+  {name:'Gustavo Caballero',detail:'Signed from Santos FC',dir:'in',init:'GC'},
+  {name:'Madiodio Dia',detail:'Signed from FK Haugesund',dir:'in',init:'MD'},
+  {name:'John Swift',detail:'Signed — free agent (ex West Brom)',dir:'in',init:'JS'},
+];
+const TRANSFERS_RUMOURS = [
+  {name:'Jamal Lowe',detail:'Interest reported · Free agent',dir:'rumour',init:'JL'},
+  {name:'Pelle Mattsson',detail:'Danish midfielder · Linked',dir:'rumour',init:'PM'},
+  {name:'Panagiotis Kikianis',detail:'A-League defender · £3.5m reported',dir:'rumour',init:'PK'},
+];
+const TRANSFERS_OUT = [
+  {name:'Christian Saydee',detail:'Sold to Wigan Athletic',dir:'out',init:'CS'},
+  {name:'Kusini Yengi',detail:'Released',dir:'out',init:'KY'},
+  {name:'Cohen Bramall',detail:'Released',dir:'out',init:'CB'},
+  {name:'Tom Lowery',detail:'Released',dir:'out',init:'TL'},
+  {name:'Alexander Milosevic',detail:'Released',dir:'out',init:'AM'},
+  {name:'Anthony Scully',detail:'Released',dir:'out',init:'AS'},
+  {name:'Yang Min-hyeok',detail:'Recalled to Tottenham (Jan)',dir:'out',init:'YM'},
+  {name:'Callum Lang',detail:'Joined Preston North End',dir:'out',init:'CL'},
+  {name:'Tom McIntyre',detail:'Joined Aberdeen',dir:'out',init:'TM'},
+  {name:'Jacob Farrell',detail:'Joined Western Sydney',dir:'out',init:'JF'},
+];
+
+const SQUAD = [
+  // Goalkeepers
+  {num:1, name:'Schmid',     full:'Nicolas Schmid',      pos:'GK', section:'GK', apps:36, rating:6.39, goals:0, stats:{Distribution:72,Commanding:68,Reflexes:75,Communication:70}},
+  {num:26,name:'Bursik',     full:'Josef Bursik',         pos:'GK', section:'GK', apps:8,  rating:6.42, goals:0, stats:{Distribution:70,Commanding:65,Reflexes:74,Communication:68}},
+  {num:30,name:'Killip',     full:'Ben Killip',           pos:'GK', section:'GK', apps:2,  rating:6.10, goals:0, stats:{Distribution:65,Commanding:62,Reflexes:68,Communication:64}},
+  // Defenders
+  {num:5, name:'Poole',      full:'Regan Poole',          pos:'CB', section:'DEF', apps:36, rating:6.86, goals:1, stats:{Aerial:78,Tackling:76,Passing:66,Positioning:74}},
+  {num:6, name:'Shaughnessy',full:'Conor Shaughnessy',    pos:'CB', section:'DEF', apps:32, rating:6.91, goals:2, stats:{Aerial:80,Tackling:74,Passing:64,Positioning:72}},
+  {num:17,name:'Bowat',      full:'Ibane Bowat',          pos:'CB', section:'DEF', apps:26, rating:6.45, goals:3, stats:{Aerial:82,Tackling:76,Passing:68,Positioning:75}},
+  {num:4, name:'Knight',     full:'Josh Knight',          pos:'CB', section:'DEF', apps:18, rating:6.62, goals:1, stats:{Aerial:76,Tackling:72,Passing:65,Positioning:70}},
+  {num:55,name:'Dia',        full:'Madiodio Dia',         pos:'CB', section:'DEF', apps:14, rating:6.40, goals:0, stats:{Aerial:74,Tackling:70,Passing:62,Positioning:68}},
+  {num:34,name:'Alese',      full:'Ajibola Alese',        pos:'CB', section:'DEF', apps:10, rating:6.35, goals:0, stats:{Aerial:72,Tackling:70,Passing:60,Positioning:66}},
+  {num:2, name:'Williams',   full:'Jordan Williams',      pos:'RB', section:'DEF', apps:38, rating:6.48, goals:1, stats:{Defending:72,Attacking:68,Crossing:65,Tackling:74}},
+  {num:3, name:'Ogilvie',    full:'Connor Ogilvie',       pos:'LB', section:'DEF', apps:32, rating:6.68, goals:2, stats:{Defending:70,Attacking:72,Crossing:69,Tackling:68}},
+  {num:24,name:'Devlin',     full:'Terry Devlin',         pos:'RB', section:'DEF', apps:24, rating:6.72, goals:0, stats:{Defending:68,Attacking:74,Crossing:70,Tackling:66}},
+  {num:22,name:'Swanson',    full:'Zak Swanson',          pos:'RB', section:'DEF', apps:12, rating:6.69, goals:0, stats:{Defending:66,Attacking:72,Crossing:70,Tackling:64}},
+  // Midfielders
+  {num:7, name:'Pack',       full:'Marlon Pack',          pos:'CM', section:'MID', apps:40, rating:6.45, goals:2, stats:{Passing:82,Tackling:78,Vision:76,Work_Rate:85}},
+  {num:21,name:'Dozzell',    full:'Andre Dozzell',        pos:'CM', section:'MID', apps:34, rating:6.51, goals:3, stats:{Passing:78,Tackling:72,Vision:74,Work_Rate:76}},
+  {num:8, name:'Swift',      full:'John Swift',           pos:'AM', section:'MID', apps:28, rating:6.60, goals:4, stats:{Passing:80,Dribbling:74,Vision:78,Goals:68}},
+  {num:38,name:'Adams',      full:'Ebou Adams',           pos:'CM', section:'MID', apps:38, rating:6.92, goals:1, stats:{Passing:72,Tackling:76,Vision:68,Work_Rate:82}},
+  {num:16,name:'Le Roux',    full:'Luke Le Roux',         pos:'CM', section:'MID', apps:16, rating:6.40, goals:1, stats:{Passing:70,Tackling:70,Vision:66,Work_Rate:74}},
+  {num:18,name:'Kosznovszky',full:'Mark Kosznovszky',     pos:'CM', section:'MID', apps:10, rating:6.35, goals:1, stats:{Passing:72,Tackling:68,Vision:70,Work_Rate:74}},
+  {num:27,name:'Alli',       full:'Millenic Alli',        pos:'AM', section:'MID', apps:24, rating:6.55, goals:3, stats:{Dribbling:74,Creativity:72,Goals:68,Pressing:70}},
+  // Forwards
+  {num:36,name:'Chaplin',    full:'Conor Chaplin',        pos:'AM', section:'FWD', apps:26, rating:6.54, goals:8, stats:{Dribbling:78,Creativity:80,Goals:76,Pressing:72}},
+  {num:10,name:'Segecic',    full:'Adrian Segecic',       pos:'RW', section:'FWD', apps:30, rating:6.54, goals:5, stats:{Dribbling:76,Creativity:74,Goals:72,Pressing:74}},
+  {num:23,name:'Murphy',     full:'Josh Murphy',          pos:'LW', section:'FWD', apps:14, rating:6.58, goals:2, stats:{Pace:84,Dribbling:76,Goals:66,Crossing:74}},
+  {num:11,name:'Bianchini',  full:'Florian Bianchini',    pos:'ST', section:'FWD', apps:16, rating:6.42, goals:3, stats:{Finishing:72,Aerial:68,Pressing:70,Hold_Up:68}},
+  {num:9, name:'Bishop',     full:'Colby Bishop',         pos:'ST', section:'FWD', apps:40, rating:6.64, goals:12, stats:{Finishing:80,Aerial:76,Pressing:78,Hold_Up:74}},
+  {num:25,name:'Kirk',       full:'Makenzie Kirk',        pos:'ST', section:'FWD', apps:12, rating:6.48, goals:3, stats:{Finishing:70,Aerial:66,Pressing:72,Hold_Up:64}},
+  {num:40,name:'Brown',      full:'Jacob Brown',          pos:'ST', section:'FWD', apps:8,  rating:6.20, goals:1, stats:{Finishing:68,Aerial:72,Pressing:68,Hold_Up:70}},
+  {num:15,name:'Umeh',       full:'Millenic Alli',        pos:'LW', section:'FWD', apps:10, rating:6.38, goals:2, stats:{Pace:80,Dribbling:72,Goals:64,Crossing:68}},
+];
+
+const FORMATIONS = {
+  '4-2-3-1': [[9],[36,10,11],[7,21],[2,17,5,3],[1]],
+  '4-3-3':   [[9,36,11],[8,7,21],[2,17,5,3],[1]],
+  '4-4-2':   [[9,36],[10,7,21,11],[2,17,5,3],[1]],
+  '3-5-2':   [[9,36],[24,8,7,21,11],[17,5,3],[1]],
+};
+
+const TABLE_DATA = [
+  {pos:1, team:'Coventry City',    p:44,w:27,d:8, l:9, gd:47, pts:89, zone:'promo',  note:'(C)'},
+  {pos:2, team:'Ipswich Town',     p:44,w:22,d:11,l:11,gd:22, pts:77, zone:'promo',  note:''},
+  {pos:3, team:'Southampton',      p:44,w:22,d:9, l:13,gd:20, pts:75, zone:'playoff',note:''},
+  {pos:4, team:'Millwall',         p:43,w:21,d:10,l:12,gd:18, pts:73, zone:'playoff',note:''},
+  {pos:5, team:'Middlesbrough',    p:43,w:19,d:11,l:13,gd:12, pts:68, zone:'playoff',note:''},
+  {pos:6, team:'Wrexham',          p:44,w:18,d:11,l:15,gd:8,  pts:65, zone:'playoff',note:''},
+  {pos:7, team:'Derby County',     p:44,w:19,d:7, l:18,gd:14, pts:64, zone:'safe',   note:''},
+  {pos:8, team:'Norwich City',     p:43,w:18,d:10,l:15,gd:9,  pts:64, zone:'safe',   note:''},
+  {pos:9, team:'Hull City',        p:44,w:17,d:11,l:16,gd:3,  pts:62, zone:'safe',   note:''},
+  {pos:10,team:'Sheffield United', p:43,w:17,d:11,l:15,gd:10, pts:62, zone:'safe',   note:''},
+  {pos:11,team:'Birmingham City',  p:43,w:16,d:11,l:16,gd:-2, pts:59, zone:'safe',   note:''},
+  {pos:12,team:'Watford',          p:43,w:14,d:15,l:14,gd:-1, pts:57, zone:'safe',   note:''},
+  {pos:13,team:'Swansea City',     p:44,w:16,d:9, l:19,gd:-5, pts:57, zone:'safe',   note:''},
+  {pos:14,team:'Preston NE',       p:43,w:14,d:15,l:14,gd:-5, pts:57, zone:'safe',   note:''},
+  {pos:15,team:'Stoke City',       p:44,w:15,d:10,l:19,gd:1,  pts:55, zone:'safe',   note:''},
+  {pos:16,team:'West Brom',        p:43,w:12,d:13,l:18,gd:-12,pts:49, zone:'safe',   note:''},
+  {pos:17,team:'Blackburn Rovers', p:44,w:12,d:13,l:19,gd:-15,pts:49, zone:'safe',   note:''},
+  {pos:18,team:'Portsmouth',       p:44,w:13,d:12,l:19,gd:-13,pts:51, zone:'safe',   note:'',pompey:true},
+  {pos:19,team:'Charlton Athletic',p:43,w:12,d:14,l:17,gd:-12,pts:50, zone:'safe',   note:''},
+  {pos:20,team:'Oxford United',    p:43,w:10,d:14,l:19,gd:-14,pts:44, zone:'danger', note:''},
+  {pos:21,team:'Bristol City',     p:44,w:10,d:12,l:22,gd:-18,pts:42, zone:'rel',    note:''},
+  {pos:22,team:'QPR',              p:43,w:10,d:11,l:22,gd:-23,pts:41, zone:'rel',    note:''},
+  {pos:23,team:'Leicester City',   p:44,w:11,d:14,l:19,gd:-11,pts:41, zone:'rel',    note:'* -6pts'},
+  {pos:24,team:'Sheffield Wed',    p:43,w:1, d:12,l:30,gd:-57,pts:-3, zone:'rel',    note:'* -18pts'},
+];
+
+// USER RATINGS STORAGE
+let userRatings = JSON.parse(localStorage.getItem('ff_ratings')||'{}');
+let currentRating = 0;
+let ratingPlayerId = null;
+let curFormation = '4-2-3-1';
+let pitchXI = {0:1,1:2,2:17,3:5,4:3,5:7,6:21,7:36,8:10,9:11,10:9};
+
+function getAvgRating(id){
+  const r = userRatings[id];
+  if(!r||!r.count) return null;
+  return (r.total/r.count).toFixed(1);
+}
+
+// ===== NAVIGATION =====
+function go(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('pg-'+page).classList.add('active');
+  document.querySelectorAll('.nl').forEach(l=>l.classList.remove('on'));
+  document.getElementById('nl-'+page)?.classList.add('on');
+  if(page==='home') renderHome();
+  if(page==='fixtures') renderFixtures();
+  if(page==='transfers') renderTransfers();
+  if(page==='lineup') renderLineup();
+  if(page==='ratings') renderRatings('all');
+  if(page==='table') renderTable();
+  window.scrollTo(0,0);
+}
+
+// ===== HOME =====
+function renderHome(){
+  const el = document.getElementById('home-results');
+  el.innerHTML = RESULTS.slice(0,5).map(r=>resultHTML(r)).join('');
+}
+
+function resultHTML(r){
+  const isPFC = name => name==='Portsmouth';
+  const res = r.pfcResult || (isPFC(r.home)?r.result:(r.result==='win'?'loss':r.result==='loss'?'win':r.result));
+  return `<div class="result-item ${res}">
+    <div class="result-date">${r.date}</div>
+    <div class="result-comp">${r.comp}</div>
+    <div class="result-match">
+      <span class="result-home${isPFC(r.home)?' result-pfc':''}">${r.home}</span>
+      <span class="result-score ${res}">${r.score}</span>
+      <span class="result-away${isPFC(r.away)?' result-pfc':''}">${r.away}</span>
+    </div>
+  </div>`;
+}
+
+// ===== FIXTURES =====
+function renderFixtures(){
+  document.getElementById('fixtures-upcoming').innerHTML = FIXTURES.map(f=>`
+    <div class="fixture-item${f.next?' next':''}">
+      <div class="fixture-date">${f.date}</div>
+      <div class="fixture-time">${f.time}</div>
+      <div class="fixture-comp">${f.comp}</div>
+      <div class="fixture-teams">${f.home} <span class="fixture-vs">vs</span> ${f.away}</div>
+      <div class="fixture-venue">${f.venue}</div>
+      ${f.next?'<span class="next-badge">Next</span>':''}
+      ${f.odds?`<div style="display:flex;gap:6px;margin-left:auto;flex-shrink:0">
+        <span style="font-size:10px;padding:3px 7px;background:rgba(0,30,90,0.06);border:1px solid var(--border);border-radius:4px;font-family:'Space Mono',monospace;white-space:nowrap"><span style="color:var(--muted)">H</span> ${f.odds.home}</span>
+        <span style="font-size:10px;padding:3px 7px;background:rgba(0,30,90,0.06);border:1px solid var(--border);border-radius:4px;font-family:'Space Mono',monospace;white-space:nowrap"><span style="color:var(--muted)">D</span> ${f.odds.draw}</span>
+        <span style="font-size:10px;padding:3px 7px;background:rgba(0,30,90,0.06);border:1px solid var(--border);border-radius:4px;font-family:'Space Mono',monospace;white-space:nowrap"><span style="color:var(--muted)">A</span> ${f.odds.away}</span>
+      </div>`:''}
+    </div>`).join('');
+  document.getElementById('fixtures-results').innerHTML = RESULTS.map(r=>resultHTML(r)).join('');
+}
+
+// ===== TRANSFERS =====
+function transferHTML(t){
+  const dirClass = t.dir==='in'?'transfer-in':t.dir==='out'?'transfer-out':'transfer-rumour';
+  const tagClass = t.dir==='in'?'tag-in':t.dir==='out'?'tag-out':'tag-rumour';
+  const tagText = t.dir==='in'?'IN':t.dir==='out'?'OUT':'RUMOUR';
+  return `<div class="transfer-card ${dirClass}">
+    <div class="transfer-avatar">${t.init}</div>
+    <div class="transfer-info">
+      <div class="transfer-name">${t.name}</div>
+      <div class="transfer-detail">${t.detail}</div>
+    </div>
+    <span class="transfer-tag ${tagClass}">${tagText}</span>
+  </div>`;
+}
+function renderTransfers(){
+  document.getElementById('transfers-done').innerHTML = TRANSFERS_DONE.map(transferHTML).join('');
+  document.getElementById('transfers-rumours').innerHTML = TRANSFERS_RUMOURS.map(transferHTML).join('');
+  document.getElementById('transfers-out').innerHTML = TRANSFERS_OUT.map(transferHTML).join('');
+}
+
+// ===== LINEUP =====
+function renderLineup(){
+  const fBtns = document.getElementById('formation-btns');
+  fBtns.innerHTML = Object.keys(FORMATIONS).map(f=>`<button class="fsel${f===curFormation?' on':''}" onclick="setFormation('${f}')">${f}</button>`).join('');
+  renderPitch();
+  renderPlayerPicker();
+}
+
+function setFormation(f){
+  curFormation=f;
+  pickerSlot=null;
+  document.querySelectorAll('.fsel').forEach(b=>{b.classList.toggle('on',b.textContent===f)});
+  // rebuild pitchXI from formation template
+  const rows=FORMATIONS[f];
+  const flat=rows.flat();
+  flat.forEach((num,i)=>{ pitchXI[i]=num; });
+  renderPitch();
+  renderPlayerPicker();
+}
+
+function renderPitch(){
+  const rows=FORMATIONS[curFormation];
+  const pitch=document.getElementById('pitch');
+  // rows[0]=GK, rows[1]=DEF, ... rows[last]=FWD
+  // display from top (FWD) to bottom (GK) on pitch visually
+  let slotIdx=0;
+  const rowsWithIdx=rows.map(row=>{
+    const r={nums:row,startIdx:slotIdx};
+    slotIdx+=row.length;
+    return r;
+  });
+  // reverse so forwards appear at top of pitch
+  pitch.innerHTML=[...rowsWithIdx].reverse().map(({nums,startIdx})=>{
+    return `<div class="pitch-row">${nums.map((_, ci)=>{
+      const idx=startIdx+ci;
+      const pid=pitchXI[idx];
+      const p=SQUAD.find(s=>s.num===pid);
+      const initials=p?p.name.slice(0,3).toUpperCase():'?';
+      const isSelected=pickerSlot===idx;
+      return `<div class="player-slot${isSelected?' selected':''}" onclick="openPicker(${idx})">
+        <div class="player-circle${isSelected?' selected':''}">
+          <div class="num">${p?p.num:'?'}</div>${initials}
+        </div>
+        <div class="player-name">${p?p.name:'Click'}</div>
+      </div>`;
+    }).join('')}</div>`;
+  }).join('');
+
+  const usedIds=Object.values(pitchXI);
+  const subPlayers=SQUAD.filter(p=>!usedIds.includes(p.num)).slice(0,5);
+  document.getElementById('subs').innerHTML=
+    `<div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;grid-column:1/-1">Substitutes</div>`+
+    subPlayers.map(p=>`<div class="sub-slot"><div class="sub-num">#${p.num}</div><div class="sub-name">${p.name}</div></div>`).join('');
+}
+
+function openPicker(slot){
+  pickerSlot=slot;
+  renderPitch();
+  renderPlayerPicker();
+}
+
+function renderPlayerPicker(){
+  const pp=document.getElementById('player-picker');
+  const usedIds=Object.values(pitchXI);
+  if(pickerSlot===null){
+    pp.innerHTML=`<div style="text-align:center;padding:20px 10px;color:var(--muted);">
+      <div style="font-size:28px;margin-bottom:8px">👆</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--navy)">Click a shirt on the pitch</div>
+      <div style="font-size:12px;margin-top:4px">to swap that player</div>
+    </div>`+SQUAD.map(p=>`
+    <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:7px;opacity:.5;font-size:12px;font-family:'Barlow Condensed',sans-serif;font-weight:700">
+      <div style="width:26px;height:26px;border-radius:50%;background:var(--off);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);flex-shrink:0">${p.num}</div>
+      ${p.full}${usedIds.includes(p.num)?' <span style="font-size:9px;background:var(--navy);color:white;padding:1px 5px;border-radius:3px;margin-left:auto">XI</span>':''}
+    </div>`).join('');
+    return;
+  }
+  const curPlayer=SQUAD.find(s=>s.num===pitchXI[pickerSlot]);
+  pp.innerHTML=`<div style="background:rgba(0,30,90,0.06);border:1.5px solid var(--navy);border-radius:8px;padding:10px 12px;margin-bottom:12px;">
+    <div style="font-size:10px;color:var(--muted);font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px">Replacing</div>
+    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--navy)">${curPlayer?curPlayer.full:'Unknown'}</div>
+    <div style="font-size:11px;color:var(--gold);margin-top:2px">👇 Select a player below</div>
+  </div>`+
+  SQUAD.map(p=>{
+    const inXI=usedIds.includes(p.num)&&pitchXI[pickerSlot]!==p.num;
+    return `<div onclick="${inXI?'':'assignPlayer('+p.num+')'}" style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:7px;cursor:${inXI?'default':'pointer'};transition:background .1s;${inXI?'opacity:.35;':''}${pitchXI[pickerSlot]===p.num?'background:rgba(0,30,90,0.06);border:1.5px solid var(--navy);':''}" ${inXI?'':'onmouseover="this.style.background=\'var(--off)\'" onmouseout="this.style.background=\'\'"'}>
+      <div style="width:28px;height:28px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;flex-shrink:0">${p.num}</div>
+      <div style="flex:1">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px">${p.full}</div>
+        <div style="font-size:10px;color:var(--muted);font-family:'Space Mono',monospace">${p.section} · ${p.apps} apps</div>
+      </div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--gold)">${p.rating}</div>
+    </div>`;
+  }).join('');
+}
+
+function assignPlayer(num){
+  if(pickerSlot===null) return;
+  const existingSlot=Object.entries(pitchXI).find(([k,v])=>v===num);
+  if(existingSlot) pitchXI[existingSlot[0]]=pitchXI[pickerSlot];
+  pitchXI[pickerSlot]=num;
+  pickerSlot=null;
+  renderPitch();
+  renderPlayerPicker();
+}
+
+function shareLineup(){
+  const rows=FORMATIONS[curFormation];
+  let slotIdx=0;
+  const byRow=rows.map(row=>{
+    const names=row.map((_,ci)=>{const p=SQUAD.find(s=>s.num===pitchXI[slotIdx+ci]);return p?p.name:'?';});
+    slotIdx+=row.length;
+    return names.join(', ');
+  });
+  const text=`My Pompey XI (${curFormation}):\n`+[...byRow].reverse().join('\n')+'\n#Pompey #PUSB';
+  navigator.clipboard?.writeText(text).then(()=>showToast('Lineup copied to clipboard! 💙')).catch(()=>showToast('Lineup ready to share! 💙'));
+}
+
+// ===== RATINGS =====
+let ratFilter='GK';
+function renderRatings(filter){
+  ratFilter=filter;
+  const sections=['GK','DEF','MID','FWD'];
+  document.getElementById('ratings-filter').innerHTML=sections.map(s=>`<button class="rf${ratFilter===s?' on':''}" onclick="renderRatings('${s}')">${s==='GK'?'Goalkeepers':s==='DEF'?'Defenders':s==='MID'?'Midfielders':'Forwards'}</button>`).join('');
+  const players=SQUAD.filter(p=>p.section===filter).sort((a,b)=>b.rating-a.rating);
+  const grid=document.getElementById('ratings-grid');
+  if(!players.length){grid.innerHTML='<div style="color:var(--muted);font-size:13px;">No players in this position</div>';return;}
+  grid.innerHTML=players.map(p=>{
+    const fanAvg=getAvgRating(p.num);
+    const displayRating=fanAvg||p.rating;
+    const col=displayRating>=7?'green':displayRating>=6.5?'gold':displayRating>=6?'amber':'red';
+    const barW=((displayRating-5)/5*100).toFixed(0);
+    const fanCount=userRatings[p.num]?.count||0;
+    return `<div class="rating-card" onclick="openRateModal(${p.num})">
+      <div class="rating-avatar">${p.name.slice(0,2).toUpperCase()}</div>
+      <div class="rating-num-big ${col}">${displayRating}</div>
+      <div style="font-size:9px;color:var(--muted);font-family:'Space Mono',monospace;margin-bottom:4px">${fanCount?`Fan avg (${fanCount} votes)`:'WhoScored avg'}</div>
+      <div class="rating-name">${p.full}</div>
+      <div class="rating-pos">#${p.num} · ${p.pos} · ${p.apps} apps · ${p.goals}⚽</div>
+      <div class="rating-bar-wrap"><div class="rating-bar" style="width:${barW}%;background:${col==='green'?'#22C55E':col==='gold'?'var(--gold)':col==='amber'?'#F59E0B':'var(--red)'}"></div></div>
+      <div class="rating-apps" style="margin-top:4px">${fanCount?fanCount+' fan rating'+(fanCount>1?'s':''):'Click to rate'}</div>
+    </div>`;
+  }).join('');
+}
+
+// RATING MODAL
+function openRateModal(num){
+  const p = SQUAD.find(s=>s.num===num);
+  if(!p) return;
+  ratingPlayerId = num;
+  currentRating = 0;
+  document.getElementById('rm-name').textContent = p.full;
+  document.getElementById('rm-pos').textContent = `#${p.num} · ${p.pos} · ${p.apps} apps · ${p.goals} goals`;
+  updateStars(0);
+  document.getElementById('rm-stats').innerHTML = Object.entries(p.stats).map(([k,v])=>`
+    <div class="sbar-row">
+      <span class="sbar-label">${k.replace(/_/g,' ')}</span>
+      <div class="sbar-track"><div class="sbar-fill" style="width:${v}%"></div></div>
+      <span class="sbar-val">${v}</span>
+    </div>`).join('');
+  document.getElementById('rm-rating-label').textContent = 'Tap to rate out of 10';
+  document.getElementById('rate-modal').classList.add('open');
+}
+function closeRateModal(){ document.getElementById('rate-modal').classList.remove('open'); }
+function setStar(n){
+  currentRating = n;
+  updateStars(n);
+  const labels = ['','Awful','Poor','Below Average','Average','Decent','Good','Very Good','Excellent','Outstanding','World Class!'];
+  document.getElementById('rm-rating-label').textContent = `${n}/10 — ${labels[n]}`;
+}
+function updateStars(n){
+  document.querySelectorAll('.star').forEach((s,i)=>s.classList.toggle('on',i<n));
+}
+function submitRating(){
+  if(!currentRating){ showToast('Please select a rating!'); return; }
+  if(!userRatings[ratingPlayerId]) userRatings[ratingPlayerId]={total:0,count:0};
+  userRatings[ratingPlayerId].total += currentRating;
+  userRatings[ratingPlayerId].count += 1;
+  localStorage.setItem('ff_ratings',JSON.stringify(userRatings));
+  closeRateModal();
+  renderRatings(ratFilter);
+  const p = SQUAD.find(s=>s.num===ratingPlayerId);
+  showToast(`Rated ${p.name} ${currentRating}/10! 💙`);
+}
+
+// ===== TABLE =====
+function renderTable(){
+  const zoneClass = {promo:'promo-zone',playoff:'playoff-zone',safe:'safe-zone',danger:'danger-zone',rel:'rel-zone'};
+  document.getElementById('league-table').innerHTML = `
+    <thead><tr>
+      <th>Pos</th><th>Team</th>
+      <th class="r">P</th><th class="r">W</th><th class="r">D</th><th class="r">L</th>
+      <th class="r">GD</th><th class="r">Pts</th>
+    </tr></thead>
+    <tbody>`+TABLE_DATA.map(t=>`
+      <tr class="${zoneClass[t.zone]||''}${t.pompey?' pompey':''}">
+        <td class="pos">${t.pos}</td>
+        <td class="team-name">${t.team}${t.pompey?' ⭐':''}${t.note?` <span style="font-size:9px;color:var(--red);font-family:'Space Mono',monospace">${t.note}</span>`:''}</td>
+        <td class="r">${t.p}</td><td class="r">${t.w}</td><td class="r">${t.d}</td><td class="r">${t.l}</td>
+        <td class="r">${t.gd>0?'+'+t.gd:t.gd}</td>
+        <td class="pts">${t.pts}</td>
+      </tr>`).join('')+`</tbody>`;
+}
+
+// ===== ARTICLES =====
+const ARTICLES = [
+  {
+    id:1, cat:'Match Report', catClass:'cat-match', emoji:'⚽', date:'18 Apr 2026',
+    title:'POMPEY SECURE SURVIVAL WITH BOWAT HEADER AGAINST FOXES',
+    body:`<p>Portsmouth Football Club secured their EFL Championship status for another season with a hard-fought 1-0 victory over already-doomed Leicester City at Fratton Park on Saturday afternoon.</p>
+<p>Ibane Bowat was the hero, rising highest to power home a Conor Chaplin corner in the 63rd minute — sending the home support into raptures and all but mathematically confirming Pompey's survival with three games to spare.</p>
+<p>The Blues had come into the game in fine form following back-to-back wins over Middlesbrough and Ipswich Town, and John Mousinho's side were solid and disciplined throughout, limiting the relegated Foxes to very little of note.</p>
+<p>Chaplin, on loan from Ipswich, was a constant threat and deserved his assist. Colby Bishop led the line well, and Nicolas Schmid was rarely troubled in goal as Leicester's players — now condemned to League One — showed little appetite for the battle.</p>
+<p>The final whistle was met with scenes of jubilation at Fratton Park. Survival in the Championship for a second successive season represents a genuine achievement for a squad assembled on a shoestring budget. Up the Blues!</p>`
+  },
+  {
+    id:2, cat:'Transfer News', catClass:'cat-transfer', emoji:'🔄', date:'19 Apr 2026',
+    title:'MOUSINHO EYES SUMMER REINFORCEMENTS AFTER SURVIVAL CONFIRMED',
+    body:`<p>With Championship survival secured, John Mousinho is now turning his attention to shaping Portsmouth's squad for the 2026-27 season — and the manager has reportedly identified several targets as he looks to build on another creditable campaign.</p>
+<p>Sources close to the club suggest Mousinho is keen to add more creativity and pace in wide areas, with the departure of loan players Conor Chaplin (back to Ipswich) and potentially John Swift creating gaps to fill.</p>
+<p>The club is expected to be active in the market this summer but will again operate carefully within financial constraints. Ebou Adams, who has been one of the standout performers in the second half of the season, is expected to remain.</p>
+<p>Permanent deals for some of the summer signings, including Makenzie Kirk and Jacob Brown, are also understood to be under consideration depending on discussions with parent clubs.</p>`
+  },
+  {
+    id:3, cat:'Club News', catClass:'cat-news', emoji:'🏟️', date:'17 Apr 2026',
+    title:"CHAPLIN LOAN SPELL HAILED AS 'HUGE SUCCESS' AHEAD OF IPSWICH RETURN",
+    body:`<p>Conor Chaplin's season-long loan from Ipswich Town has been widely celebrated as one of the shrewdest pieces of business Pompey have conducted in recent memory, with the attacking midfielder contributing 8 goals and 6 assists in 26 appearances.</p>
+<p>The Portsmouth-born player, who came through the Pompey academy before leaving as a teenager, has spoken emotionally about his return to the south coast and the meaning the club holds for him personally.</p>
+<p>"This place will always be special to me," Chaplin said after the Leicester win. "The fans have been brilliant and I've loved every minute. I just want to give something back before I head back to Ipswich."</p>
+<p>Whether a permanent deal is possible this summer remains to be seen, with Ipswich unlikely to let him go cheaply given his performances. Pompey fans will be hoping the club can find a way to bring him back.</p>`
+  },
+  {
+    id:4, cat:'Analysis', catClass:'cat-news', emoji:'📊', date:'15 Apr 2026',
+    title:"SEGECIC'S DEBUT SEASON: THE STATS BEHIND POMPEY'S AUSSIE STAR",
+    body:`<p>When Portsmouth signed Adrian Segecic from Sydney FC last summer for an undisclosed fee, many eyebrows were raised. A 21-year-old from the A-League arriving in the EFL Championship seemed like a sizeable gamble. Twelve months on, the numbers tell an encouraging story.</p>
+<p>The Australian has made 30 Championship appearances, contributing 5 goals and 4 assists. His WhoScored average rating of 6.54 ranks him among the more consistent performers in Mousinho's side, and his ability to play across the front line has given the manager valuable tactical flexibility.</p>
+<p>His direct running and willingness to press have been particular assets, and he has grown significantly as the season has progressed. Pompey fans will be hoping the technical level of the Championship hasn't been too steep a learning curve for the young attacker.</p>
+<p>With the international window approaching, there is also speculation that Segecic could earn his first senior Australia call-up — recognition that would be thoroughly deserved based on his debut season in English football.</p>`
+  },
+  {
+    id:5, cat:'Injury News', catClass:'cat-injury', emoji:'⚠️', date:'14 Apr 2026',
+    title:'MURPHY, KOSZNOVSZKY OUT FOR SEASON — SWANSON RETURN DATE UNCLEAR',
+    body:`<p>Portsmouth manager John Mousinho has confirmed that both Josh Murphy and Márk Kosznovszky will play no further part in the 2025-26 season due to injury, while Zak Swanson's return remains uncertain ahead of the final two games.</p>
+<p>Murphy, 30, has been sidelined since late February with a hamstring problem that has required surgery. The winger had been in excellent form before his injury and will be eager to return to fitness ahead of pre-season.</p>
+<p>Kosznovszky, the young Hungarian midfielder, suffered a knee injury in training that has proved more serious than initially feared. The 23-year-old is expected to make a full recovery during the summer.</p>
+<p>Swanson returned to light training this week but Mousinho is not willing to risk him ahead of the Stoke and Birmingham fixtures given Pompey's survival is already secured. Gustavo Caballero and Josh Knight also remain unavailable.</p>`
+  }
+];
+
+function openArticle(id){
+  const a=ARTICLES.find(x=>x.id===id);
+  if(!a) return;
+  document.getElementById('article-cat').innerHTML=`<span class="news-cat ${a.catClass}">${a.cat}</span>`;
+  document.getElementById('article-emoji').textContent=a.emoji;
+  document.getElementById('article-title').textContent=a.title;
+  document.getElementById('article-meta').textContent=a.date;
+  document.getElementById('article-body').innerHTML=a.body;
+  document.getElementById('article-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeArticle(){
+  document.getElementById('article-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function closeArticleOnBg(e){
+  if(e.target===document.getElementById('article-overlay')) closeArticle();
+}
+
+// ===== TOAST =====
+let tt;
+function showToast(msg){
+  const el=document.getElementById('toast');
+  el.textContent=msg; el.classList.add('show');
+  clearTimeout(tt); tt=setTimeout(()=>el.classList.remove('show'),2800);
+}
+
+renderHome();
+renderRatings('GK');
+</script>
+</body>
+</html>
