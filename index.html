@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fratton Faithful — Portsmouth FC Fan Site</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Barlow:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,900&family=Barlow:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -17,30 +17,29 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'Barlow',sans-serif;background:var(--off);color:var(--text);min-height:100vh}
-h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif;letter-spacing:.3px}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif}
 .page{display:none}.page.active{display:block}
 
-/* ===== NAV ===== */
+/* NAV */
 nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:3px solid var(--gold)}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;height:58px;display:flex;align-items:center;justify-content:space-between;gap:8px}
 .nav-brand{display:flex;align-items:center;gap:10px;cursor:pointer;min-width:0;flex-shrink:1}
-.nav-crest{width:36px;height:36px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;color:var(--navy-dark);letter-spacing:-.5px;flex-shrink:0}
-.nav-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;color:var(--white);letter-spacing:.5px;text-transform:uppercase;line-height:1;white-space:nowrap}
+.nav-crest{width:36px;height:36px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;color:var(--navy-dark);flex-shrink:0}
+.nav-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;color:var(--white);text-transform:uppercase;line-height:1;white-space:nowrap}
 .nav-title span{color:var(--gold);display:block;font-size:10px;font-weight:600;letter-spacing:1.5px;opacity:.85}
 .nav-links{display:flex;gap:2px}
-.nl{padding:8px 12px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;border:none;background:transparent;color:rgba(255,255,255,0.6);transition:all .15s;border-radius:4px}
+.nl{padding:7px 10px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;border:none;background:transparent;color:rgba(255,255,255,0.6);transition:all .15s;border-radius:4px}
 .nl:hover{color:var(--white);background:rgba(255,255,255,0.07)}
 .nl.on{color:var(--gold);background:rgba(200,150,12,0.12)}
-.survival-tag{background:var(--gold);color:var(--navy-dark);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:11px;letter-spacing:1.5px;padding:5px 12px;border-radius:3px;text-transform:uppercase;white-space:nowrap;animation:glow 2s infinite}
-@keyframes glow{0%,100%{box-shadow:0 0 6px rgba(200,150,12,0.4)}50%{box-shadow:0 0 16px rgba(200,150,12,0.8)}}
+.survival-tag{background:var(--gold);color:var(--navy-dark);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:11px;letter-spacing:1px;padding:5px 10px;border-radius:3px;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{background:var(--grad);position:relative;overflow:hidden;padding:64px 24px 0}
-.hero::before{content:'';position:absolute;inset:0;background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Fratton_Park_-_geograph.org.uk_-_2025678.jpg/1280px-Fratton_Park_-_geograph.org.uk_-_2025678.jpg');background-size:cover;background-position:center;opacity:0.4;z-index:0}
-.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,17,58,0.7),rgba(0,43,122,0.5));z-index:0}
+.hero-bg{position:absolute;inset:0;background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Fratton_Park_-_geograph.org.uk_-_2025678.jpg/1280px-Fratton_Park_-_geograph.org.uk_-_2025678.jpg');background-size:cover;background-position:center;opacity:0.4}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,17,58,0.65),rgba(0,43,122,0.45))}
 .hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:end}
-.hero-left{padding-bottom:40px;position:relative;z-index:1}
-.hero-eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;opacity:.9}
+.hero-left{padding-bottom:40px}
+.hero-eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
 .hero-h{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;line-height:.9;letter-spacing:-1px;color:var(--white);text-transform:uppercase;margin-bottom:16px}
 .hero-h em{font-style:italic;color:var(--gold)}
 .hero-sub{font-size:15px;color:rgba(255,255,255,0.65);max-width:440px;line-height:1.6;margin-bottom:24px}
@@ -48,79 +47,88 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
 .hstat{text-align:center}
 .hstat-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;color:var(--gold);line-height:1;display:block}
 .hstat-l{font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:1px;text-transform:uppercase;font-family:'Space Mono',monospace}
-.hero-right{background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.12);border-bottom:none;border-radius:10px 10px 0 0;padding:20px;position:relative;z-index:1;backdrop-filter:blur(6px)}
+.hero-right{background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.12);border-bottom:none;border-radius:10px 10px 0 0;padding:20px;backdrop-filter:blur(6px)}
 .next-match-label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;opacity:.8}
 .next-match-teams{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px}
 .nm-team{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--white);text-align:center;flex:1}
 .nm-vs{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:rgba(255,255,255,0.4);font-weight:700}
-.nm-meta{display:flex;gap:8px;flex-wrap:wrap}
+.nm-meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
 .nm-pill{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:4px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,0.6);font-family:'Space Mono',monospace}
 .nm-pill.gold{background:rgba(200,150,12,0.15);border-color:rgba(200,150,12,0.3);color:var(--gold)}
 .survival-banner{background:var(--gold);padding:14px 24px;text-align:center}
 .survival-banner p{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--navy-dark);text-transform:uppercase;letter-spacing:1px}
 .survival-banner span{font-weight:600;font-size:14px;display:block;letter-spacing:.5px;opacity:.8;margin-top:2px}
 
-/* ===== SECTION WRAPPER ===== */
+/* FORM DOTS */
+.form-dots{display:flex;gap:3px;margin-top:8px}
+.fdot{width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:white;font-family:'Space Mono',monospace}
+.fdot.W{background:#22C55E}.fdot.D{background:#F59E0B}.fdot.L{background:var(--red)}
+.form-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(255,255,255,0.45);text-transform:uppercase;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.1)}
+
+/* SECTION */
 .section{max-width:1200px;margin:0 auto;padding:40px 24px}
 .section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;border-bottom:2px solid var(--navy);padding-bottom:10px}
-.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--navy);letter-spacing:.5px}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--navy)}
 .section-title span{color:var(--gold)}
-.section-link{font-size:12px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:1px;cursor:pointer;text-decoration:none;font-family:'Space Mono',monospace}
+.section-link{font-size:12px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:1px;cursor:pointer;font-family:'Space Mono',monospace}
 
-/* ===== NEWS GRID ===== */
+/* NEWS */
 .news-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px}
 .news-card{background:var(--white);border:1.5px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;transition:all .2s}
 .news-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,30,90,0.12)}
 .news-card.featured{grid-row:span 2}
-.news-img{height:200px;background:var(--grad);display:flex;align-items:flex-end;padding:16px;position:relative;overflow:hidden}
+.news-img{height:200px;display:flex;align-items:flex-end;padding:14px;position:relative;overflow:hidden}
 .news-card.featured .news-img{height:280px}
-.news-img-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:80px;opacity:.15}
+.news-img-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:80px;opacity:.25;pointer-events:none;z-index:0}
 .news-cat{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:3px 8px;border-radius:3px;font-weight:700;position:relative;z-index:1}
 .cat-news{background:var(--navy);color:var(--white)}
 .cat-match{background:var(--gold);color:var(--navy-dark)}
-.cat-transfer{background:var(--red);color:var(--white)}
+.cat-transfer{background:#22C55E;color:#fff}
 .cat-injury{background:#888;color:var(--white)}
 .news-body{padding:14px}
-.news-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;line-height:1.2;margin-bottom:6px;color:var(--text)}
-.news-card.featured .news-title{font-size:22px}
+.news-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;line-height:1.2;margin-bottom:6px;color:var(--text)}
+.news-card.featured .news-title{font-size:21px}
 .news-meta{font-size:11px;color:var(--muted);font-family:'Space Mono',monospace}
 .news-excerpt{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.5}
 
-/* ===== RESULTS ===== */
+/* RESULTS */
 .results-list{display:flex;flex-direction:column;gap:8px}
-.result-item{background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:12px 16px;display:flex;align-items:center;gap:16px}
+.result-item{background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:12px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .15s}
+.result-item:hover{box-shadow:0 4px 12px rgba(0,30,90,0.1);transform:translateX(2px)}
 .result-item.win{border-left:4px solid #22C55E}
 .result-item.draw{border-left:4px solid var(--gold)}
 .result-item.loss{border-left:4px solid var(--red)}
-.result-score.win{background:#22C55E}
-.result-score.loss{background:var(--red)}
-.result-score.draw{background:var(--gold);color:var(--navy-dark)}
-.result-date{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);width:60px;flex-shrink:0}
-.result-comp{font-size:10px;color:var(--muted);width:90px;flex-shrink:0;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.result-date{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);width:52px;flex-shrink:0}
+.result-comp{font-size:10px;color:var(--muted);width:86px;flex-shrink:0;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
 .result-match{flex:1;display:flex;align-items:center;gap:8px}
 .result-home{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;flex:1;text-align:right}
-.result-score{font-family:'Space Mono',monospace;font-weight:700;font-size:14px;background:var(--navy);color:var(--white);padding:4px 10px;border-radius:4px;white-space:nowrap}
-.result-score.win{background:#22C55E}
-.result-score.loss{background:var(--red)}
+.result-score{font-family:'Space Mono',monospace;font-weight:700;font-size:13px;padding:4px 10px;border-radius:4px;white-space:nowrap}
+.result-score.win{background:#22C55E;color:white}
+.result-score.loss{background:var(--red);color:white}
 .result-score.draw{background:var(--gold);color:var(--navy-dark)}
 .result-away{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;flex:1}
 .result-pfc{color:var(--navy);font-weight:900}
+.result-hint{font-size:10px;color:var(--muted);font-family:'Space Mono',monospace;flex-shrink:0}
 
-/* ===== FIXTURES ===== */
-.fixtures-list{display:flex;flex-direction:column;gap:6px}
-.fixture-item{background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:12px 16px;display:flex;align-items:center;gap:16px}
+/* FIXTURES */
+.fixtures-list{display:flex;flex-direction:column;gap:8px}
+.fixture-item{background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:12px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .fixture-item.next{border-color:var(--gold);background:var(--gold-pale)}
 .fixture-date{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);width:70px;flex-shrink:0}
-.fixture-comp{font-size:10px;color:var(--muted);width:90px;flex-shrink:0;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
-.fixture-teams{flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;gap:10px}
-.fixture-vs{font-size:11px;color:var(--muted);font-weight:400}
-.fixture-venue{font-size:11px;color:var(--muted);font-family:'Space Mono',monospace}
 .fixture-time{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:var(--navy);white-space:nowrap}
-.next-badge{background:var(--gold);color:var(--navy-dark);font-size:9px;font-weight:700;font-family:'Space Mono',monospace;padding:2px 7px;border-radius:3px;text-transform:uppercase;letter-spacing:1px;flex-shrink:0}
+.fixture-comp{font-size:10px;color:var(--muted);width:90px;flex-shrink:0;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.fixture-teams{flex:1;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;gap:12px}
+.fixture-teams > div{min-width:120px}
+.fixture-vs{font-size:11px;color:var(--muted);font-weight:400}
+.next-badge{background:var(--gold);color:var(--navy-dark);font-size:9px;font-weight:700;font-family:'Space Mono',monospace;padding:2px 7px;border-radius:3px;text-transform:uppercase;letter-spacing:1px}
+.odds-wrap{display:flex;gap:4px;flex-shrink:0}
+.odd-pill{font-size:10px;padding:3px 6px;background:rgba(0,30,90,0.06);border:1px solid var(--border);border-radius:4px;font-family:'Space Mono',monospace;white-space:nowrap}
+.fixture-form-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
 
-/* ===== TRANSFERS ===== */
+/* TRANSFERS */
 .transfers-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.transfer-card{background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:14px;display:flex;align-items:center;gap:12px}
+.transfer-card{background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:14px;display:flex;align-items:center;gap:12px;transition:all .15s}
+.transfer-card.clickable:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,30,90,0.1);cursor:pointer}
 .transfer-avatar{width:44px;height:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:14px;color:var(--white);flex-shrink:0}
 .transfer-in .transfer-avatar{background:linear-gradient(135deg,#166534,#22C55E)}
 .transfer-out .transfer-avatar{background:linear-gradient(135deg,#991B1B,var(--red))}
@@ -128,57 +136,60 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
 .transfer-info{flex:1;min-width:0}
 .transfer-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;line-height:1}
 .transfer-detail{font-size:12px;color:var(--muted);margin-top:2px}
+.transfer-hint{font-size:10px;color:var(--gold);font-weight:600}
 .transfer-tag{font-size:9px;font-weight:700;font-family:'Space Mono',monospace;padding:2px 7px;border-radius:3px;text-transform:uppercase;letter-spacing:1px;flex-shrink:0}
 .tag-in{background:#DCFCE7;color:#166534}
 .tag-out{background:#FEE2E2;color:#991B1B}
 .tag-rumour{background:var(--gold-pale);color:#92400E}
 
-/* ===== LINEUP PREDICTOR ===== */
+/* LINEUP */
 .pitch{background:linear-gradient(180deg,#2D7A3A 0%,#2D7A3A 8%,#267033 8%,#267033 16%,#2D7A3A 16%,#2D7A3A 24%,#267033 24%,#267033 32%,#2D7A3A 32%,#2D7A3A 40%,#267033 40%,#267033 48%,#2D7A3A 48%,#2D7A3A 56%,#267033 56%,#267033 64%,#2D7A3A 64%,#2D7A3A 72%,#267033 72%,#267033 80%,#2D7A3A 80%,#2D7A3A 88%,#267033 88%,#267033 100%);border-radius:10px;padding:20px 16px;position:relative;max-width:520px;margin:0 auto;border:2px solid rgba(255,255,255,0.1)}
 .pitch::before{content:'';position:absolute;top:50%;left:10%;right:10%;height:1px;background:rgba(255,255,255,0.25)}
 .pitch::after{content:'';position:absolute;top:calc(50% - 60px);left:50%;transform:translateX(-50%);width:120px;height:120px;border-radius:50%;border:2px solid rgba(255,255,255,0.2)}
 .pitch-row{display:flex;justify-content:center;gap:8px;margin-bottom:14px;position:relative;z-index:1}
 .pitch-row:last-child{margin-bottom:0}
-.player-slot{cursor:pointer;text-align:center;min-width:64px;transition:transform .15s}
+.player-slot{cursor:pointer;text-align:center;min-width:60px;transition:transform .15s}
 .player-slot:hover{transform:scale(1.08)}
 .player-circle{width:46px;height:46px;border-radius:50%;background:var(--navy);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 4px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:11px;color:var(--white);transition:all .15s;position:relative}
-.player-circle:hover{background:var(--navy-mid);border-color:var(--gold-light)}
+.player-circle:hover{background:var(--navy-mid)}
 .player-circle .num{position:absolute;top:-4px;right:-4px;background:var(--gold);color:var(--navy-dark);width:16px;height:16px;border-radius:50%;font-size:8px;font-weight:900;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace}
-.player-circle.selected{background:var(--gold);color:var(--navy-dark);border-color:var(--white);box-shadow:0 0 0 3px rgba(200,150,12,0.5)}
-.player-slot.selected .player-name{color:var(--gold)}
+.player-circle.sel{background:var(--gold);color:var(--navy-dark);border-color:white}
 .player-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;color:var(--white);line-height:1.2;text-shadow:0 1px 3px rgba(0,0,0,0.8)}
+.player-slot.sel .player-name{color:var(--gold)}
 .formation-select{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
 .fsel{padding:6px 14px;border:1.5px solid var(--border);border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;background:var(--white);transition:all .15s;font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px;color:var(--navy)}
 .fsel:hover,.fsel.on{background:var(--navy);color:var(--white);border-color:var(--navy)}
-.lineup-side{display:flex;flex-direction:column;gap:10px}
 .sub-list{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:12px;padding-top:12px;border-top:1.5px solid var(--border)}
-.sub-slot{background:var(--white);border:1.5px solid var(--border);border-radius:7px;padding:8px;text-align:center;cursor:pointer;transition:all .15s}
-.sub-slot:hover{border-color:var(--navy);background:var(--off)}
+.sub-slot{background:var(--white);border:1.5px solid var(--border);border-radius:7px;padding:8px 4px;text-align:center}
 .sub-num{font-family:'Space Mono',monospace;font-size:9px;color:var(--gold);font-weight:700;margin-bottom:2px}
-.sub-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;color:var(--navy)}
+.sub-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;color:var(--navy)}
 .share-lineup{padding:10px 20px;background:var(--navy);color:var(--white);border:none;border-radius:7px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;cursor:pointer;letter-spacing:.5px;transition:all .15s;margin-top:12px}
-.share-lineup:hover{background:var(--navy-mid)}
+.lineup-layout{display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:start}
+.player-picker-box{background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:16px;max-height:600px;overflow-y:auto}
+.picker-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:7px;cursor:pointer;transition:background .1s}
+.picker-item:hover{background:var(--off)}
+.picker-item.in-xi{opacity:.35;pointer-events:none}
 
-/* ===== PLAYER RATINGS ===== */
-.ratings-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+/* RATINGS */
+.ratings-filter{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.rf{padding:8px 18px;border:1.5px solid var(--border);border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;background:var(--white);transition:all .15s;font-family:'Barlow Condensed',sans-serif;color:var(--navy)}
+.rf:hover,.rf.on{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.ratings-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
 .rating-card{background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:14px;text-align:center;transition:all .2s;cursor:pointer}
 .rating-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,30,90,0.1)}
-.rating-avatar{width:52px;height:52px;border-radius:50%;background:var(--grad);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--white);border:2px solid var(--gold)}
-.rating-num-big{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:40px;line-height:1;margin-bottom:2px}
-.rating-num-big.gold{color:var(--gold)}
-.rating-num-big.green{color:#22C55E}
-.rating-num-big.amber{color:#F59E0B}
-.rating-num-big.red{color:var(--red)}
+.rating-avatar{width:48px;height:48px;border-radius:50%;background:var(--grad);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:14px;color:var(--white);border:2px solid var(--gold)}
 .rating-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;color:var(--navy);margin-bottom:2px}
-.rating-pos{font-size:10px;color:var(--muted);font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
-.rating-bar-wrap{height:4px;background:var(--off);border-radius:2px;overflow:hidden;margin-bottom:4px}
-.rating-bar{height:100%;border-radius:2px;transition:width .6s}
+.rating-pos{font-size:10px;color:var(--muted);font-family:'Space Mono',monospace;margin-bottom:10px}
+.dual-ratings{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.rating-box{background:var(--off);border-radius:7px;padding:8px 6px}
+.rating-box-label{font-size:9px;font-family:'Space Mono',monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.rating-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;line-height:1}
+.rating-num.green{color:#22C55E}.rating-num.gold{color:var(--gold)}.rating-num.amber{color:#F59E0B}.rating-num.red{color:var(--red)}
+.rating-bar-wrap{height:4px;background:rgba(0,0,0,0.08);border-radius:2px;overflow:hidden;margin-top:4px}
+.rating-bar{height:100%;border-radius:2px}
 .rating-apps{font-size:10px;color:var(--muted);font-family:'Space Mono',monospace}
-.ratings-filter{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
-.rf{padding:6px 14px;border:1.5px solid var(--border);border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;background:var(--white);transition:all .15s;font-family:'Barlow Condensed',sans-serif;color:var(--navy)}
-.rf:hover,.rf.on{background:var(--navy);color:var(--white);border-color:var(--navy)}
 
-/* ===== LEAGUE TABLE ===== */
+/* TABLE */
 .table-wrap{background:var(--white);border:1.5px solid var(--border);border-radius:8px;overflow:hidden}
 .lt{width:100%;border-collapse:collapse;font-size:13px}
 .lt th{background:var(--navy);color:var(--white);padding:10px 12px;text-align:left;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase}
@@ -194,127 +205,123 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
 .lt .pts{font-family:'Space Mono',monospace;font-weight:700;font-size:13px;text-align:right;color:var(--navy)}
 .promo-zone{background:#DCFCE7}
 .playoff-zone{background:#DBEAFE}
-.safe-zone{}
-.danger-zone{background:#FEF3C7}
 .rel-zone{background:#FEE2E2}
-.zone-key{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap}
+.zone-key{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap;align-items:center}
 .zk{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);font-family:'Space Mono',monospace}
 .zk-dot{width:10px;height:10px;border-radius:2px}
 
-/* ===== ARTICLE OVERLAY ===== */
-.article-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:500;display:none;align-items:flex-start;justify-content:center;padding:24px 16px;overflow-y:auto}
-.article-overlay.open{display:flex}
-.article-box{background:var(--white);border-radius:12px;max-width:680px;width:100%;margin:auto;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.3)}
-.article-img{height:200px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:72px;position:relative}
-.article-header{padding:24px 28px 16px}
-.article-cat{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
-.article-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;line-height:1.1;color:var(--navy);margin-bottom:8px;text-transform:uppercase}
-.article-meta{font-size:11px;color:var(--muted);font-family:'Space Mono',monospace;margin-bottom:0}
-.article-body{padding:0 28px 28px;font-size:15px;line-height:1.7;color:var(--text)}
-.article-body p{margin-bottom:14px}
-.article-close{position:absolute;top:12px;right:14px;background:rgba(0,0,0,0.4);border:none;color:white;width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:1}
+/* AD SLOT */
 .ad-slot{background:var(--white);border:1.5px dashed var(--border);border-radius:8px;padding:16px;text-align:center;margin:16px 0}
 .ad-slot-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:8px;display:block}
 .ad-slot-placeholder{height:90px;background:var(--off);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--muted);font-family:'Space Mono',monospace}
 
-/* ===== MODALS ===== */
-.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:400;display:none;align-items:center;justify-content:center;padding:16px}
-.modal-bg.open{display:flex}
-.modal{background:var(--white);border-radius:12px;padding:24px;max-width:480px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 24px 64px rgba(0,0,0,0.25)}
-.modal h3{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:var(--navy);margin-bottom:4px;text-transform:uppercase}
-.modal-sub{font-size:12px;color:var(--muted);font-family:'Space Mono',monospace;margin-bottom:16px}
-.modal-close{float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--muted);margin-top:-4px}
-.rate-stars{display:flex;gap:6px;margin:12px 0;justify-content:center}
-.star{font-size:32px;cursor:pointer;transition:transform .1s;color:#ddd;line-height:1}
-.star:hover,.star.on{color:var(--gold);transform:scale(1.15)}
-.rate-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;text-align:center;color:var(--navy);margin-bottom:8px}
-.btn-rate{width:100%;padding:11px;background:var(--navy);color:var(--white);border:none;border-radius:7px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;cursor:pointer;transition:opacity .15s;margin-top:8px;letter-spacing:.5px;text-transform:uppercase}
-.btn-rate:hover{opacity:.85}
-.stat-bars{display:flex;flex-direction:column;gap:8px;margin-top:12px}
-.sbar-row{display:flex;align-items:center;gap:8px;font-size:12px}
-.sbar-label{width:90px;color:var(--muted);font-size:11px;font-weight:600;flex-shrink:0}
-.sbar-track{flex:1;height:6px;background:var(--off);border-radius:3px;overflow:hidden}
-.sbar-fill{height:100%;border-radius:3px;background:var(--navy);transition:width .5s}
-.sbar-val{width:28px;text-align:right;font-family:'Space Mono',monospace;font-size:11px;font-weight:700}
-
-/* ===== DONATE PAGE ===== */
+/* DONATE */
 .donate-wrap{max-width:620px;margin:0 auto;padding:48px 24px}
-.donate-hero{background:var(--grad);border-radius:12px;padding:36px;text-align:center;margin-bottom:24px;position:relative;overflow:hidden}
-.donate-hero::before{content:'💙';font-size:120px;position:absolute;top:-20px;right:-10px;opacity:.08}
+.donate-hero{background:var(--grad);border-radius:12px;padding:36px;text-align:center;margin-bottom:24px}
 .donate-eyebrow{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
 .donate-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;color:var(--white);text-transform:uppercase;line-height:1;margin-bottom:12px}
 .donate-msg{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.6}
 .donate-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:24px;margin-bottom:16px}
-.donate-card-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.donate-card-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;color:var(--navy);margin-bottom:10px}
 .donate-card p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:16px}
-.donate-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:#0070BA;color:white;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px;transition:opacity .15s;text-decoration:none}
-.donate-btn:hover{opacity:.88}
 .donate-amounts{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
 .donate-amt{padding:9px 18px;border:1.5px solid var(--border);border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;cursor:pointer;background:var(--off);transition:all .15s;color:var(--navy)}
 .donate-amt:hover,.donate-amt.on{background:var(--navy);color:white;border-color:var(--navy)}
+.donate-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:#0070BA;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px;transition:opacity .15s}
+.donate-btn:hover{opacity:.88}
 .free-badge{display:inline-block;background:#DCFCE7;color:#166534;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;padding:3px 8px;border-radius:3px;text-transform:uppercase;margin-bottom:8px}
-/* ===== MATCH DETAIL OVERLAY ===== */
-.match-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:500;display:none;align-items:center;justify-content:center;padding:16px;overflow-y:auto}
-.match-overlay.open{display:flex}
+
+/* OVERLAYS */
+.overlay-bg{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:500;display:none;align-items:center;justify-content:center;padding:16px;overflow-y:auto}
+.overlay-bg.open{display:flex}
+/* Match overlay */
 .match-box{background:var(--white);border-radius:12px;max-width:520px;width:100%;margin:auto;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.3)}
-.match-header{background:var(--grad);padding:20px 24px;position:relative}
-.match-close{position:absolute;top:12px;right:14px;background:rgba(255,255,255,0.2);border:none;color:white;width:28px;height:28px;border-radius:50%;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.match-teams-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.match-hdr{background:var(--grad);padding:20px 24px;position:relative}
+.ov-close{position:absolute;top:12px;right:14px;background:rgba(255,255,255,0.2);border:none;color:white;width:30px;height:30px;border-radius:50%;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.match-teams-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
 .match-team{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;color:white;flex:1;text-align:center}
-.match-score-big{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;color:var(--gold);text-align:center;min-width:60px}
-.match-pill{font-family:'Space Mono',monospace;font-size:9px;padding:3px 8px;background:rgba(255,255,255,0.1);border-radius:3px;color:rgba(255,255,255,0.7)}
+.match-score-big{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;color:var(--gold);min-width:60px;text-align:center}
+.match-pills{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+.mpill{font-family:'Space Mono',monospace;font-size:9px;padding:3px 8px;background:rgba(255,255,255,0.1);border-radius:3px;color:rgba(255,255,255,0.7)}
 .match-section{padding:14px 20px;border-bottom:1px solid rgba(0,30,90,0.07)}
 .match-section:last-child{border-bottom:none}
-.match-section-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px}
+.ms-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px}
 .scorers-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
 .scorer-item{font-size:12px;color:var(--text)}
-.scorer-item.away-item{text-align:right}
-.stat-row{display:flex;align-items:center;gap:6px;margin-bottom:6px}
-.stat-num{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:var(--navy);min-width:22px;text-align:center}
-.stat-name-c{font-size:11px;color:var(--muted);text-align:center;flex:1}
-.stat-bar-pair{display:flex;gap:4px;flex:1;align-items:center}
-.sbh{height:6px;background:var(--navy);border-radius:3px;flex-shrink:0}
-.sba{height:6px;background:var(--muted);border-radius:3px;flex-shrink:0}
-/* ===== FORM DOTS ===== */
-.form-dots{display:flex;gap:3px;margin-top:6px}
-.fdot{width:14px;height:14px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:white;font-family:'Space Mono',monospace}
-.fdot.W{background:#22C55E}.fdot.D{background:#F59E0B}.fdot.L{background:var(--red)}
-/* ===== RUMOUR OVERLAY ===== */
-.rumour-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:500;display:none;align-items:center;justify-content:center;padding:16px}
-.rumour-overlay.open{display:flex}
+.scorer-away{text-align:right}
+.stat-row{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.stat-num{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:var(--navy);min-width:24px;text-align:center}
+.stat-label{font-size:10px;color:var(--muted);text-align:center;flex:1;font-weight:600}
+.stat-bars-wrap{display:flex;flex:2;gap:2px;height:6px;align-items:center}
+/* Rumour overlay */
 .rumour-box{background:var(--white);border-radius:12px;max-width:420px;width:100%;box-shadow:0 24px 64px rgba(0,0,0,0.3);overflow:hidden}
-.rumour-header{background:linear-gradient(135deg,#92400E,var(--gold));padding:20px 24px;position:relative}
-.rumour-close{position:absolute;top:12px;right:14px;background:rgba(255,255,255,0.2);border:none;color:white;width:28px;height:28px;border-radius:50%;font-size:14px;cursor:pointer}
-.rumour-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:white;text-transform:uppercase}
-.rumour-meta{font-size:12px;color:rgba(255,255,255,0.8);margin-top:4px}
+.rumour-hdr{background:linear-gradient(135deg,#92400E,#C8960C);padding:20px 24px;position:relative}
+.rumour-pname{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:white;text-transform:uppercase}
+.rumour-pmeta{font-size:12px;color:rgba(255,255,255,0.8);margin-top:4px}
 .rumour-body{padding:20px}
 .rumour-stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
 .rstat{background:var(--off);border-radius:8px;padding:10px;text-align:center}
 .rstat-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:var(--navy);display:block}
 .rstat-l{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-family:'Space Mono',monospace}
-.value-tag{display:inline-block;background:var(--gold-pale);color:#92400E;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;margin-bottom:10px}
+.value-badge{display:inline-block;background:var(--gold-pale);color:#92400E;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;margin-bottom:12px}
 .rumour-bio{font-size:13px;color:var(--muted);line-height:1.6;padding-top:12px;border-top:1px solid var(--border)}
-/* NEWS IMAGE */
-.news-img-photo{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.news-img{position:relative;overflow:hidden}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy);color:var(--white);padding:11px 20px;border-radius:7px;font-size:13px;font-weight:600;z-index:600;transition:transform .3s;white-space:nowrap;font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px;border-left:3px solid var(--gold)}
+/* Article overlay */
+.article-box{background:var(--white);border-radius:12px;max-width:680px;width:100%;margin:auto;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.3)}
+.article-img-hdr{height:180px;display:flex;align-items:flex-end;padding:16px;position:relative}
+.article-close{position:absolute;top:12px;right:14px;background:rgba(0,0,0,0.4);border:none;color:white;width:30px;height:30px;border-radius:50%;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.article-content{padding:24px 28px 28px}
+.article-h{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;line-height:1.1;color:var(--navy);text-transform:uppercase;margin-bottom:8px}
+.article-meta{font-size:11px;color:var(--muted);font-family:'Space Mono',monospace;margin-bottom:16px}
+.article-body{font-size:15px;line-height:1.7;color:var(--text)}
+.article-body p{margin-bottom:14px}
+/* Rating modal */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:500;display:none;align-items:center;justify-content:center;padding:16px}
+.modal-bg.open{display:flex}
+.modal{background:var(--white);border-radius:12px;padding:24px;max-width:440px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 20px 56px rgba(0,0,0,0.2)}
+.modal h3{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:var(--navy);margin-bottom:4px;text-transform:uppercase}
+.modal-close{float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--muted);margin-top:-4px}
+.modal-sub{font-size:12px;color:var(--muted);font-family:'Space Mono',monospace;margin-bottom:16px}
+.rate-stars{display:flex;gap:4px;margin:12px 0;justify-content:center}
+.star{font-size:28px;cursor:pointer;color:#ddd;transition:color .1s;line-height:1}
+.star.on{color:var(--gold)}
+.rate-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;text-align:center;color:var(--navy);margin-bottom:8px}
+.btn-rate{width:100%;padding:11px;background:var(--navy);color:var(--white);border:none;border-radius:7px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;cursor:pointer;margin-top:8px;letter-spacing:.5px;text-transform:uppercase}
+.sbar-row{display:flex;align-items:center;gap:8px;font-size:12px;margin-bottom:6px}
+.sbar-label{width:90px;color:var(--muted);font-size:11px;font-weight:600;flex-shrink:0}
+.sbar-track{flex:1;height:6px;background:var(--off);border-radius:3px;overflow:hidden}
+.sbar-fill{height:100%;border-radius:3px;background:var(--navy)}
+.sbar-val{width:28px;text-align:right;font-family:'Space Mono',monospace;font-size:11px;font-weight:700}
+
+/* PAGE HEADERS */
+.pg-header{padding:44px 48px 28px}
+.pg-header-row{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.pg-eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.pg-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:40px;letter-spacing:-1.5px;line-height:1}
+.count-badge{font-family:'Space Mono',monospace;font-size:11px;padding:5px 13px;border-radius:20px;font-weight:700}
+.poke-page .pg-header{background:var(--poke-yellow,#FFCB05)}
+.ygo-page .pg-header{background:var(--ygo-dark,#0A0010)}
+.toolbar{padding:16px 48px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;border-bottom:1.5px solid rgba(0,0,0,0.07);background:#fff}
+.si{flex:1;min-width:180px;padding:8px 10px;border:1.5px solid rgba(0,0,0,0.12);border-radius:8px;font-size:13px;background:var(--off);font-family:'Barlow',sans-serif}
+.si:focus{outline:none;border-color:var(--navy)}
+.fp{padding:7px 13px;border:1.5px solid rgba(0,0,0,0.11);border-radius:20px;font-size:12px;font-weight:500;background:#fff;cursor:pointer;transition:all .15s;color:var(--muted)}
+.fp:hover,.fp.on{border-color:var(--navy);color:var(--navy);background:rgba(0,30,90,0.06)}
+
+/* TOAST */
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy);color:var(--white);padding:11px 20px;border-radius:7px;font-size:13px;font-weight:600;z-index:600;transition:transform .3s;white-space:nowrap;font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px;border-left:3px solid var(--gold);pointer-events:none}
 .toast.show{transform:translateX(-50%) translateY(0)}
 
 @media(max-width:768px){
-  .hero-inner{grid-template-columns:1fr}
-  .hero-right{display:none}
-  .hero-h{font-size:52px}
-  .news-grid{grid-template-columns:1fr}
-  .transfers-grid{grid-template-columns:1fr}
-  .ratings-grid{grid-template-columns:repeat(2,1fr)}
-  nav .nav-links .nl{font-size:12px;padding:6px 8px}
-  .survival-tag{display:none}
+  .hero-inner{grid-template-columns:1fr}.hero-right{display:none}
+  .hero-h{font-size:52px}.news-grid{grid-template-columns:1fr}
+  .transfers-grid{grid-template-columns:1fr}.ratings-grid{grid-template-columns:repeat(2,1fr)}
+  nav .nav-links .nl{font-size:11px;padding:6px 7px}.survival-tag{display:none}
+  .lineup-layout{grid-template-columns:1fr}.pg-header{padding:24px 20px 18px}
+  .toolbar{padding:12px 16px}.section{padding:24px 16px}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <div class="nav-brand" onclick="go('home')">
@@ -330,30 +337,28 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
       <button class="nl" id="nl-table" onclick="go('table')">Table</button>
       <button class="nl" id="nl-donate" onclick="go('donate')" style="color:var(--gold)">💙 Donate</button>
     </div>
-    <div class="survival-tag">🎉 Championship Survival Secured!</div>
+    <div class="survival-tag">🎉 Survival Secured!</div>
   </div>
 </nav>
 
-<!-- ===== HOME PAGE ===== -->
+<!-- HOME -->
 <div class="page active" id="pg-home">
-
-  <!-- SURVIVAL BANNER -->
   <div class="survival-banner">
     <p>🏆 Championship Survival Confirmed — Bowat 63' vs Leicester (1-0) · 18 April 2026</p>
     <span>Pompey stay up for a second consecutive Championship season · Up the Blues!</span>
   </div>
-
-  <!-- HERO -->
   <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
     <div class="hero-inner">
       <div class="hero-left">
         <div class="hero-eyebrow">2025–26 EFL Championship</div>
         <h1 class="hero-h">Play Up<br><em>Pompey</em></h1>
-        <p class="hero-sub">The independent voice of Portsmouth FC fans. News, results, transfer rumours, lineup predictions and player ratings — all in one place.</p>
+        <p class="hero-sub">The independent voice of Portsmouth FC fans. News, results, transfer rumours, lineup predictions and player ratings.</p>
         <div class="hero-stats">
           <div class="hstat"><span class="hstat-n">20th</span><span class="hstat-l">League Pos</span></div>
-          <div class="hstat"><span class="hstat-n">48</span><span class="hstat-l">Points</span></div>
-          <div class="hstat"><span class="hstat-n">12W</span><span class="hstat-l">Season Wins</span></div>
+          <div class="hstat"><span class="hstat-n">51</span><span class="hstat-l">Points</span></div>
+          <div class="hstat"><span class="hstat-n">13W</span><span class="hstat-l">Season Wins</span></div>
           <div class="hstat"><span class="hstat-n">SAFE</span><span class="hstat-l">Status</span></div>
         </div>
       </div>
@@ -367,93 +372,98 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
         <div class="nm-meta">
           <span class="nm-pill gold">Sat 25 Apr · 3:00pm</span>
           <span class="nm-pill">bet365 Stadium</span>
-          <span class="nm-pill">GW45 · Championship</span>
         </div>
-        <div class="nm-meta" style="margin-top:8px">
+        <div class="nm-meta">
           <span class="nm-pill">H: 2/1</span>
           <span class="nm-pill">D: 12/5</span>
-          <span class="nm-pill gold">A: 6/4</span>
+          <span class="nm-pill gold">A: 6/4 ← Pompey</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.1)">
+          <div>
+            <div class="form-label" style="margin-top:0">Stoke form</div>
+            <div class="form-dots">
+              <div class="fdot W">W</div>
+              <div class="fdot L">L</div>
+              <div class="fdot W">W</div>
+              <div class="fdot D">D</div>
+              <div class="fdot L">L</div>
+            </div>
+          </div>
+          <div>
+            <div class="form-label" style="margin-top:0">Pompey form</div>
+            <div class="form-dots">
+              <div class="fdot L">L</div>
+              <div class="fdot W">W</div>
+              <div class="fdot W">W</div>
+              <div class="fdot W">W</div>
+              <div class="fdot L">L</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- AD SLOT -->
   <div class="section" style="padding-bottom:0">
-    <div class="ad-slot">
-      <span class="ad-slot-label">Advertisement</span>
-      <!-- Replace with your AdSense code: <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-      <div class="ad-slot-placeholder">728×90 Leaderboard Ad — Replace with AdSense code</div>
-    </div>
+    <div class="ad-slot"><span class="ad-slot-label">Advertisement</span><div class="ad-slot-placeholder">728x90 — Replace with AdSense code</div></div>
   </div>
-
-  <!-- NEWS -->
   <div class="section">
     <div class="section-header">
       <div class="section-title">Latest <span>News</span></div>
-      <span class="section-link">All Stories →</span>
     </div>
     <div class="news-grid">
-      <div class="news-card featured" onclick="openArticle(1)" style="cursor:pointer">
-        <div class="news-img" style="height:280px">
-          <img class="news-img-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Portsmouth_FC_2023-24_home_kit.jpg/640px-Portsmouth_FC_2023-24_home_kit.jpg" alt="Portsmouth FC" onerror="this.style.display='none'">
-          <div class="news-img-bg" style="position:relative;z-index:1">⚽</div>
-          <span class="news-cat cat-match" style="position:relative;z-index:1">Match Report</span>
+      <div class="news-card featured" onclick="openArticle(0)">
+        <div class="news-img" style="height:280px;background:linear-gradient(135deg,#001E5A,#003080)">
+          <div class="news-img-bg">⚽</div>
+          <span class="news-cat cat-match">Match Report</span>
         </div>
         <div class="news-body">
           <div class="news-title">POMPEY SECURE SURVIVAL WITH BOWAT HEADER AGAINST FOXES</div>
           <div class="news-meta">18 Apr 2026 · Match Report</div>
-          <div class="news-excerpt">Ibane Bowat's 63rd-minute header sealed a crucial 1-0 win over Leicester City at Fratton Park, securing Portsmouth's Championship status with three games to spare.</div>
+          <div class="news-excerpt">Ibane Bowat's 63rd-minute header sealed a crucial 1-0 win over Leicester City, securing Championship status with three games to spare.</div>
         </div>
       </div>
-      <div class="news-card" onclick="openArticle(2)" style="cursor:pointer">
-        <div class="news-img" style="height:120px">
-          <img class="news-img-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Fratton_Park_-_geograph.org.uk_-_2025678.jpg/640px-Fratton_Park_-_geograph.org.uk_-_2025678.jpg" alt="Fratton Park" onerror="this.style.display='none'">
-          <div class="news-img-bg" style="position:relative;z-index:1;font-size:50px">🔄</div>
-          <span class="news-cat cat-transfer" style="position:relative;z-index:1">Transfer</span>
+      <div class="news-card" onclick="openArticle(1)">
+        <div class="news-img" style="height:120px;background:linear-gradient(135deg,#166534,#22C55E)">
+          <div class="news-img-bg" style="font-size:50px">🔄</div>
+          <span class="news-cat cat-transfer">Transfer</span>
         </div>
         <div class="news-body">
-          <div class="news-title">MOUSINHO EYES SUMMER REINFORCEMENTS AFTER SURVIVAL CONFIRMED</div>
+          <div class="news-title">MOUSINHO EYES SUMMER REINFORCEMENTS</div>
           <div class="news-meta">19 Apr 2026 · Transfer News</div>
         </div>
       </div>
-      <div class="news-card" onclick="openArticle(3)" style="cursor:pointer">
-        <div class="news-img" style="height:120px">
-          <img class="news-img-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Fratton_Park_-_geograph.org.uk_-_2025678.jpg/640px-Fratton_Park_-_geograph.org.uk_-_2025678.jpg" alt="" onerror="this.style.display='none'">
-          <div class="news-img-bg" style="position:relative;z-index:1;font-size:50px">🏟️</div>
-          <span class="news-cat cat-news" style="position:relative;z-index:1">Club News</span>
+      <div class="news-card" onclick="openArticle(2)">
+        <div class="news-img" style="height:120px;background:linear-gradient(135deg,#1E40AF,#3B82F6)">
+          <div class="news-img-bg" style="font-size:50px">🏟️</div>
+          <span class="news-cat cat-news">Club News</span>
         </div>
         <div class="news-body">
-          <div class="news-title">CHAPLIN LOAN SPELL HAILED AS "HUGE SUCCESS" AHEAD OF IPSWICH RETURN</div>
+          <div class="news-title">CHAPLIN LOAN SPELL HAILED AS HUGE SUCCESS</div>
           <div class="news-meta">17 Apr 2026 · Club News</div>
         </div>
       </div>
-      <div class="news-card" onclick="openArticle(4)" style="cursor:pointer">
-        <div class="news-img" style="height:120px">
-          <img class="news-img-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Fratton_Park_-_geograph.org.uk_-_2025678.jpg/640px-Fratton_Park_-_geograph.org.uk_-_2025678.jpg" alt="" onerror="this.style.display='none'">
-          <div class="news-img-bg" style="position:relative;z-index:1;font-size:50px">📊</div>
-          <span class="news-cat cat-news" style="position:relative;z-index:1">Analysis</span>
+      <div class="news-card" onclick="openArticle(3)">
+        <div class="news-img" style="height:120px;background:linear-gradient(135deg,#92400E,#C8960C)">
+          <div class="news-img-bg" style="font-size:50px">📊</div>
+          <span class="news-cat cat-news">Analysis</span>
         </div>
         <div class="news-body">
-          <div class="news-title">SEGECIC'S DEBUT SEASON: THE STATS BEHIND POMPEY'S AUSSIE STAR</div>
+          <div class="news-title">SEGECIC'S DEBUT SEASON: THE STATS</div>
           <div class="news-meta">15 Apr 2026 · Analysis</div>
         </div>
       </div>
-      <div class="news-card" onclick="openArticle(5)" style="cursor:pointer">
-        <div class="news-img" style="height:120px">
-          <img class="news-img-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Fratton_Park_-_geograph.org.uk_-_2025678.jpg/640px-Fratton_Park_-_geograph.org.uk_-_2025678.jpg" alt="" onerror="this.style.display='none'">
-          <div class="news-img-bg" style="position:relative;z-index:1;font-size:50px">⚠️</div>
-          <span class="news-cat cat-injury" style="position:relative;z-index:1">Injury</span>
+      <div class="news-card" onclick="openArticle(4)">
+        <div class="news-img" style="height:120px;background:linear-gradient(135deg,#7F1D1D,#CC0000)">
+          <div class="news-img-bg" style="font-size:50px">⚠️</div>
+          <span class="news-cat cat-injury">Injury</span>
         </div>
         <div class="news-body">
-          <div class="news-title">MURPHY, KOSZNOVSZKY OUT FOR SEASON — SWANSON RETURN DATE UNCLEAR</div>
+          <div class="news-title">MURPHY AND KOSZNOVSZKY OUT FOR SEASON</div>
           <div class="news-meta">14 Apr 2026 · Injury News</div>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- RECENT RESULTS -->
   <div class="section" style="padding-top:0">
     <div class="section-header">
       <div class="section-title">Recent <span>Results</span></div>
@@ -461,24 +471,13 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
     </div>
     <div class="results-list" id="home-results"></div>
   </div>
-
-  <!-- AD SLOT -->
-  <div class="section" style="padding-top:0">
-    <div class="ad-slot">
-      <span class="ad-slot-label">Advertisement</span>
-      <div class="ad-slot-placeholder">300×250 Rectangle Ad — Replace with AdSense code</div>
-    </div>
-  </div>
-
 </div>
 
-<!-- ===== FIXTURES PAGE ===== -->
+<!-- FIXTURES -->
 <div class="page" id="pg-fixtures">
   <div class="section">
-    <div class="section-header">
-      <div class="section-title">Fixtures & <span>Results</span></div>
-    </div>
-    <div class="ad-slot"><span class="ad-slot-label">Advertisement</span><div class="ad-slot-placeholder">728×90 Leaderboard Ad</div></div>
+    <div class="section-header"><div class="section-title">Fixtures &amp; <span>Results</span></div></div>
+    <div class="ad-slot"><span class="ad-slot-label">Advertisement</span><div class="ad-slot-placeholder">728x90 Ad</div></div>
     <div class="section-header" style="margin-top:24px"><div class="section-title" style="font-size:20px">Upcoming <span>Fixtures</span></div></div>
     <div class="fixtures-list" id="fixtures-upcoming"></div>
     <div class="section-header" style="margin-top:32px"><div class="section-title" style="font-size:20px">Recent <span>Results</span></div></div>
@@ -486,14 +485,12 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
   </div>
 </div>
 
-<!-- ===== TRANSFERS PAGE ===== -->
+<!-- TRANSFERS -->
 <div class="page" id="pg-transfers">
   <div class="section">
-    <div class="section-header">
-      <div class="section-title">Transfer <span>News & Rumours</span></div>
-    </div>
-    <div class="ad-slot"><span class="ad-slot-label">Advertisement</span><div class="ad-slot-placeholder">728×90 Leaderboard Ad</div></div>
-    <div class="section-header" style="margin-top:24px"><div class="section-title" style="font-size:20px">Done <span>Deals</span></div></div>
+    <div class="section-header"><div class="section-title">Transfer <span>News &amp; Rumours</span></div></div>
+    <div class="ad-slot"><span class="ad-slot-label">Advertisement</span><div class="ad-slot-placeholder">728x90 Ad</div></div>
+    <div class="section-header" style="margin-top:24px"><div class="section-title" style="font-size:20px">Summer <span>Signings</span></div></div>
     <div class="transfers-grid" id="transfers-done"></div>
     <div class="section-header" style="margin-top:32px"><div class="section-title" style="font-size:20px">🔥 Hot <span>Rumours</span></div></div>
     <div class="transfers-grid" id="transfers-rumours"></div>
@@ -502,142 +499,115 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
   </div>
 </div>
 
-<!-- ===== LINEUP PREDICTOR ===== -->
+<!-- LINEUP -->
 <div class="page" id="pg-lineup">
   <div class="section">
-    <div class="section-header">
-      <div class="section-title">Lineup <span>Predictor</span></div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:start" id="lineup-layout">
+    <div class="section-header"><div class="section-title">Lineup <span>Predictor</span></div></div>
+    <div class="lineup-layout" id="lineup-layout">
       <div>
         <div class="formation-select" id="formation-btns"></div>
         <div class="pitch" id="pitch"></div>
         <div class="sub-list" id="subs"></div>
-        <button class="share-lineup" onclick="shareLineup()">📋 Share My Lineup</button>
+        <button class="share-lineup" onclick="shareLineup()">📋 Copy Lineup</button>
       </div>
-      <div class="lineup-side">
-        <div style="background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:16px">
-          <div class="section-title" style="font-size:18px;margin-bottom:12px">Pick Your <span>XI</span></div>
-          <div id="player-picker"></div>
-        </div>
+      <div class="player-picker-box">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-bottom:12px">Pick Your <span style="color:var(--gold)">XI</span></div>
+        <div id="player-picker"></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ===== PLAYER RATINGS ===== -->
+<!-- RATINGS -->
 <div class="page" id="pg-ratings">
   <div class="section">
-    <div class="section-header">
-      <div class="section-title">Player <span>Ratings</span> 2025–26</div>
-    </div>
+    <div class="section-header"><div class="section-title">Player <span>Ratings</span> 2025–26</div></div>
     <div class="ratings-filter" id="ratings-filter"></div>
     <div class="ratings-grid" id="ratings-grid"></div>
   </div>
 </div>
 
-<!-- ===== LEAGUE TABLE ===== -->
+<!-- TABLE -->
 <div class="page" id="pg-table">
   <div class="section">
-    <div class="section-header">
-      <div class="section-title">Championship <span>Table</span> 2025–26</div>
-    </div>
-    <div class="ad-slot"><span class="ad-slot-label">Advertisement</span><div class="ad-slot-placeholder">728×90 Leaderboard Ad</div></div>
-    <div class="table-wrap" style="margin-top:16px">
-      <table class="lt" id="league-table"></table>
-    </div>
+    <div class="section-header"><div class="section-title">Championship <span>Table</span> 2025–26</div></div>
+    <div class="ad-slot"><span class="ad-slot-label">Advertisement</span><div class="ad-slot-placeholder">728x90 Ad</div></div>
+    <div class="table-wrap" style="margin-top:16px"><table class="lt" id="league-table"></table></div>
     <div class="zone-key">
       <div class="zk"><div class="zk-dot" style="background:#DCFCE7;border:1px solid #166534"></div>Promotion</div>
       <div class="zk"><div class="zk-dot" style="background:#DBEAFE;border:1px solid #1E40AF"></div>Play-offs</div>
       <div class="zk"><div class="zk-dot" style="background:#FEE2E2;border:1px solid #991B1B"></div>Relegation</div>
-      <div class="zk" style="margin-left:auto;font-size:10px">* Points deduction applied</div>
+      <div style="margin-left:auto;font-size:10px;color:var(--muted);font-family:'Space Mono',monospace">* = points deduction</div>
     </div>
   </div>
 </div>
 
-<!-- ===== DONATE PAGE ===== -->
+<!-- DONATE -->
 <div class="page" id="pg-donate">
   <div class="donate-wrap">
     <div class="donate-hero">
       <div class="donate-eyebrow">Fratton Faithful</div>
       <h1 class="donate-title">Keep The Blue Flag Flying</h1>
-      <p class="donate-msg">This site is built and maintained by a Pompey fan, for Pompey fans. It will always be completely free to use — no paywalls, no subscription, no login required. We run ads to cover hosting costs, but if you'd like to show your appreciation with a donation, every penny is genuinely appreciated and helps keep the site going.</p>
+      <p class="donate-msg">This site is built by a Pompey fan, for Pompey fans. It will always be completely free — no paywalls, no logins. We run ads to cover costs, but if you want to show your appreciation, every penny helps keep this going.</p>
     </div>
-
     <div class="donate-card">
-      <div class="free-badge">✓ Always Free</div>
+      <div class="free-badge">Always Free</div>
       <div class="donate-card-title">🌐 What Your Support Covers</div>
-      <p>Running costs for hosting, keeping fixtures & results up to date, writing match reports, and building new features for the Pompey community. No middle-men, no corporation — just one fan keeping the lights on at Fratton Faithful.</p>
+      <p>Hosting costs, keeping fixtures and results up to date, writing match reports and building new features for the Pompey community. No corporations — just one fan keeping the lights on.</p>
     </div>
-
     <div class="donate-card">
-      <div class="donate-card-title">💳 Buy Me a Pint (via PayPal)</div>
-      <p>Choose an amount below or pay whatever you feel like. Every donation goes directly to Jon who runs this site. Cheers!</p>
+      <div class="donate-card-title">💳 Buy Me a Pint via PayPal</div>
+      <p>Pick an amount and pay whatever you fancy. Goes straight to Jon who runs this site. Cheers!</p>
       <div class="donate-amounts">
-        <button class="donate-amt" onclick="setDonateAmt(2, this)">£2</button>
-        <button class="donate-amt on" onclick="setDonateAmt(5, this)">£5</button>
-        <button class="donate-amt" onclick="setDonateAmt(10, this)">£10</button>
-        <button class="donate-amt" onclick="setDonateAmt(20, this)">£20</button>
+        <button class="donate-amt" onclick="setAmt(2,this)">£2</button>
+        <button class="donate-amt on" onclick="setAmt(5,this)">£5</button>
+        <button class="donate-amt" onclick="setAmt(10,this)">£10</button>
+        <button class="donate-amt" onclick="setAmt(20,this)">£20</button>
       </div>
-      <a id="donate-paypal-btn" class="donate-btn" href="#" onclick="doDonate(event)" target="_blank">
-        <span style="font-family:'Space Mono',monospace;font-size:15px">Pay<em style="color:#009BE1;font-style:normal">Pal</em></span>
-        <span>Donate £<span id="donate-amount-label">5</span></span>
-      </a>
+      <button class="donate-btn" onclick="doDonate()">
+        <span style="font-size:15px">PayPal</span>
+        <span>Donate £<span id="donate-lbl">5</span></span>
+      </button>
       <div style="font-size:11px;color:var(--muted);margin-top:10px">Secure payment via PayPal · jonpompey@gmail.com · No account needed</div>
     </div>
-
-    <div class="donate-card" style="text-align:center;padding:20px">
-      <div style="font-size:28px;margin-bottom:8px">💙</div>
+    <div class="donate-card" style="text-align:center">
+      <div style="font-size:32px;margin-bottom:8px">💙</div>
       <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;color:var(--navy);margin-bottom:6px">Thank You From The Bottom of Fratton Park</div>
       <div style="font-size:13px;color:var(--muted)">Up the Blues · Play Up Pompey · PUSB</div>
     </div>
   </div>
 </div>
 
-<!-- MATCH DETAIL OVERLAY -->
-<div class="match-overlay" id="match-overlay" onclick="closeMatchOnBg(event)">
+<!-- MATCH OVERLAY -->
+<div class="overlay-bg" id="match-ov" onclick="closeOvBg(event,'match-ov')">
   <div class="match-box">
-    <div class="match-header">
-      <button class="match-close" onclick="closeMatch()">✕</button>
+    <div class="match-hdr">
+      <button class="ov-close" onclick="closeOv('match-ov')">✕</button>
       <div class="match-teams-row">
         <div class="match-team" id="mo-home"></div>
         <div class="match-score-big" id="mo-score"></div>
         <div class="match-team" id="mo-away"></div>
       </div>
-      <div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap">
-        <span class="match-pill" id="mo-comp"></span>
-        <span class="match-pill" id="mo-date"></span>
-        <span class="match-pill" id="mo-venue"></span>
-        <span class="match-pill" id="mo-att"></span>
+      <div class="match-pills">
+        <span class="mpill" id="mo-date"></span>
+        <span class="mpill" id="mo-venue"></span>
+        <span class="mpill" id="mo-att"></span>
       </div>
     </div>
-    <div class="match-body">
-      <div class="match-section">
-        <div class="match-section-title">⚽ Goal Scorers</div>
-        <div class="scorers-grid" id="mo-scorers"></div>
-      </div>
-      <div class="match-section" id="mo-cards-sec">
-        <div class="match-section-title">🟨 Cards</div>
-        <div id="mo-cards"></div>
-      </div>
-      <div class="match-section">
-        <div class="match-section-title">📊 Match Stats</div>
-        <div id="mo-stats"></div>
-      </div>
-    </div>
+    <div id="mo-body"></div>
   </div>
 </div>
 
-<!-- RUMOUR PLAYER OVERLAY -->
-<div class="rumour-overlay" id="rumour-overlay" onclick="closeRumourOnBg(event)">
+<!-- RUMOUR OVERLAY -->
+<div class="overlay-bg" id="rumour-ov" onclick="closeOvBg(event,'rumour-ov')">
   <div class="rumour-box">
-    <div class="rumour-header">
-      <button class="rumour-close" onclick="closeRumour()">✕</button>
-      <div class="rumour-name" id="ro-name"></div>
-      <div class="rumour-meta" id="ro-meta"></div>
+    <div class="rumour-hdr">
+      <button class="ov-close" onclick="closeOv('rumour-ov')">✕</button>
+      <div class="rumour-pname" id="ro-name"></div>
+      <div class="rumour-pmeta" id="ro-meta"></div>
     </div>
     <div class="rumour-body">
-      <div class="value-tag" id="ro-value"></div>
+      <div class="value-badge" id="ro-val"></div>
       <div class="rumour-stats-grid" id="ro-stats"></div>
       <div class="rumour-bio" id="ro-bio"></div>
     </div>
@@ -645,18 +615,17 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
 </div>
 
 <!-- ARTICLE OVERLAY -->
-<div class="article-overlay" id="article-overlay" onclick="closeArticleOnBg(event)">
-  <div class="article-box" id="article-box">
-    <div class="article-img" id="article-img">
-      <button class="article-close" onclick="closeArticle()">✕</button>
-      <span id="article-emoji">⚽</span>
+<div class="overlay-bg" id="article-ov" onclick="closeOvBg(event,'article-ov')">
+  <div class="article-box">
+    <div class="article-img-hdr" id="ao-img">
+      <button class="article-close" onclick="closeOv('article-ov')">✕</button>
+      <span class="news-cat" id="ao-cat"></span>
     </div>
-    <div class="article-header">
-      <div class="article-cat" id="article-cat"></div>
-      <h2 class="article-title" id="article-title"></h2>
-      <div class="article-meta" id="article-meta"></div>
+    <div class="article-content">
+      <h2 class="article-h" id="ao-title"></h2>
+      <div class="article-meta" id="ao-meta"></div>
+      <div class="article-body" id="ao-body"></div>
     </div>
-    <div class="article-body" id="article-body"></div>
   </div>
 </div>
 
@@ -664,22 +633,17 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
 <div class="modal-bg" id="rate-modal">
   <div class="modal">
     <button class="modal-close" onclick="closeRateModal()">✕</button>
-    <h3 id="rm-name">Player Name</h3>
-    <div class="modal-sub" id="rm-pos">Position · Apps</div>
+    <h3 id="rm-name">Player</h3>
+    <div class="modal-sub" id="rm-pos"></div>
     <div class="rate-stars" id="rm-stars">
-      <span class="star" onclick="setStar(1)">★</span>
-      <span class="star" onclick="setStar(2)">★</span>
-      <span class="star" onclick="setStar(3)">★</span>
-      <span class="star" onclick="setStar(4)">★</span>
-      <span class="star" onclick="setStar(5)">★</span>
-      <span class="star" onclick="setStar(6)">★</span>
-      <span class="star" onclick="setStar(7)">★</span>
-      <span class="star" onclick="setStar(8)">★</span>
-      <span class="star" onclick="setStar(9)">★</span>
-      <span class="star" onclick="setStar(10)">★</span>
+      <span class="star" onclick="setStar(1)">★</span><span class="star" onclick="setStar(2)">★</span>
+      <span class="star" onclick="setStar(3)">★</span><span class="star" onclick="setStar(4)">★</span>
+      <span class="star" onclick="setStar(5)">★</span><span class="star" onclick="setStar(6)">★</span>
+      <span class="star" onclick="setStar(7)">★</span><span class="star" onclick="setStar(8)">★</span>
+      <span class="star" onclick="setStar(9)">★</span><span class="star" onclick="setStar(10)">★</span>
     </div>
-    <div class="rate-label" id="rm-rating-label">Tap to rate out of 10</div>
-    <div class="stat-bars" id="rm-stats"></div>
+    <div class="rate-label" id="rm-lbl">Tap to rate out of 10</div>
+    <div id="rm-stats"></div>
     <button class="btn-rate" onclick="submitRating()">Submit Rating</button>
   </div>
 </div>
@@ -687,62 +651,67 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
 <div class="toast" id="toast"></div>
 
 <script>
-// ===== DATA =====
-const RESULTS = [
-  {date:'21 Apr',comp:'Championship',home:'Coventry City',away:'Portsmouth',score:'5-1',pfcResult:'loss',
-   scorers:{home:['Haji Wright 12\'','E. Mason-Clark 47\'','R. Poole OG 50\'','E. Mason-Clark 76\'','K. Kesler-Hayden 90+1\''],away:['Segecic 69\'']},
-   cards:{home:[],away:['Alli 62\' 🟨']},
-   attendance:31182,venue:'Coventry Building Society Arena',
-   stats:{possession:[71,29],shots:[15,4],shotsOnTarget:[6,2],corners:[3,1]}},
-  {date:'18 Apr',comp:'Championship',home:'Portsmouth',away:'Leicester City',score:'1-0',pfcResult:'win',
-   scorers:{home:['Bowat 63\''],away:[]},
-   cards:{home:[],away:['J. James 44\' 🟨']},
-   attendance:19842,venue:'Fratton Park',
-   stats:{possession:[44,56],shots:[9,11],shotsOnTarget:[3,2],corners:[5,4]}},
-  {date:'14 Apr',comp:'Championship',home:'Portsmouth',away:'Ipswich Town',score:'2-0',pfcResult:'win',
-   scorers:{home:['Shaughnessy 42\'','Bishop 44\''],away:[]},
-   cards:{home:['Dozzell 71\' 🟨','Williams 82\' 🟨'],away:['Dara O\'Shea 58\' 🟨','Chaplin 81\' 🟨']},
-   attendance:20251,venue:'Fratton Park',
-   stats:{possession:[40,60],shots:[11,11],shotsOnTarget:[4,2],corners:[3,7]}},
-  {date:'11 Apr',comp:'Championship',home:'Middlesbrough',away:'Portsmouth',score:'0-1',pfcResult:'win',
-   scorers:{home:[],away:['Chaplin 90+5\'']},
-   cards:{home:['Dael Fry 33\' 🟨'],away:['Pack 67\' 🟨']},
-   attendance:22814,venue:'Riverside Stadium',
-   stats:{possession:[58,42],shots:[14,8],shotsOnTarget:[3,3],corners:[7,3]}},
-  {date:'06 Apr',comp:'Championship',home:'Portsmouth',away:'Oxford United',score:'2-2',pfcResult:'draw',
-   scorers:{home:['Bishop 23\'','Segecic 55\''],away:['Brannagan 38\'','Bodin 78\'']},
-   cards:{home:['Adams 44\' 🟨'],away:['Elliott Moore 29\' 🟨']},
-   attendance:18744,venue:'Fratton Park',
-   stats:{possession:[47,53],shots:[12,10],shotsOnTarget:[4,4],corners:[4,5]}},
-  {date:'03 Apr',comp:'Championship',home:'Norwich City',away:'Portsmouth',score:'1-1',pfcResult:'draw',
-   scorers:{home:['Azaz 14\''],away:['Bishop 72\'']},
-   cards:{home:['McLean 55\' 🟨'],away:['Ogilvie 41\' 🟨']},
-   attendance:26318,venue:'Carrow Road',
-   stats:{possession:[62,38],shots:[16,7],shotsOnTarget:[4,2],corners:[8,2]}},
-  {date:'21 Mar',comp:'Championship',home:'QPR',away:'Portsmouth',score:'6-1',pfcResult:'loss',
-   scorers:{home:['Armstrong 8\'','De Barr 21\'','Bowen 34\'','Armstrong 51\'','Nájera 65\'','De Barr 80\''],away:['Swift 44\'']},
-   cards:{home:[],away:['Dozzell 28\' 🟨','Alese 72\' 🟨']},
-   attendance:14203,venue:'Loftus Road',
-   stats:{possession:[55,45],shots:[18,8],shotsOnTarget:[8,3],corners:[6,3]}},
-  {date:'15 Mar',comp:'Championship',home:'Portsmouth',away:'Charlton Athletic',score:'2-1',pfcResult:'win',
-   scorers:{home:['Bishop 34\'','Chaplin 62\''],away:['Carey 51\'']},
-   cards:{home:['Pack 78\' 🟨'],away:['Jones 44\' 🟨','Leaburn 88\' 🟨']},
-   attendance:17932,venue:'Fratton Park',
-   stats:{possession:[48,52],shots:[11,9],shotsOnTarget:[4,3],corners:[5,6]}},
+// ============================================================
+// DATA
+// ============================================================
+var RESULTS = [
+  {date:'21 Apr',home:'Coventry City',away:'Portsmouth',score:'5-1',pfc:'loss',
+   scorers:{h:['Haji Wright 12','E.Mason-Clark 47','Poole OG 50','E.Mason-Clark 76','Kesler-Hayden 90+1'],a:['Segecic 69']},
+   cards:{h:[],a:['Alli 62 Y']},att:31182,venue:'CBS Arena',
+   stats:{poss:[71,29],shots:[15,4],sot:[6,2],corners:[3,1]}},
+  {date:'18 Apr',home:'Portsmouth',away:'Leicester City',score:'1-0',pfc:'win',
+   scorers:{h:['Bowat 63'],a:[]},cards:{h:[],a:['J.James 44 Y']},att:19842,venue:'Fratton Park',
+   stats:{poss:[44,56],shots:[9,11],sot:[3,2],corners:[5,4]}},
+  {date:'14 Apr',home:'Portsmouth',away:'Ipswich Town',score:'2-0',pfc:'win',
+   scorers:{h:['Shaughnessy 42','Bishop 44'],a:[]},
+   cards:{h:['Dozzell 71 Y','Williams 82 Y'],a:['Chaplin 81 Y']},att:20251,venue:'Fratton Park',
+   stats:{poss:[40,60],shots:[11,11],sot:[4,2],corners:[3,7]}},
+  {date:'11 Apr',home:'Middlesbrough',away:'Portsmouth',score:'0-1',pfc:'win',
+   scorers:{h:[],a:['Chaplin 90+5']},cards:{h:['D.Fry 33 Y'],a:['Pack 67 Y']},att:22814,venue:'Riverside Stadium',
+   stats:{poss:[58,42],shots:[14,8],sot:[3,3],corners:[7,3]}},
+  {date:'06 Apr',home:'Portsmouth',away:'Oxford United',score:'2-2',pfc:'draw',
+   scorers:{h:['Bishop 23','Segecic 55'],a:['Brannagan 38','Bodin 78']},
+   cards:{h:['Adams 44 Y'],a:['Moore 29 Y']},att:18744,venue:'Fratton Park',
+   stats:{poss:[47,53],shots:[12,10],sot:[4,4],corners:[4,5]}},
+  {date:'03 Apr',home:'Norwich City',away:'Portsmouth',score:'1-1',pfc:'draw',
+   scorers:{h:['Azaz 14'],a:['Bishop 72']},cards:{h:[],a:['Ogilvie 41 Y']},att:26318,venue:'Carrow Road',
+   stats:{poss:[62,38],shots:[16,7],sot:[4,2],corners:[8,2]}},
+  {date:'21 Mar',home:'QPR',away:'Portsmouth',score:'6-1',pfc:'loss',
+   scorers:{h:['Armstrong 8','De Barr 21','Bowen 34','Armstrong 51','Najera 65','De Barr 80'],a:['Swift 44']},
+   cards:{h:[],a:['Dozzell 28 Y','Alese 72 Y']},att:14203,venue:'Loftus Road',
+   stats:{poss:[55,45],shots:[18,8],sot:[8,3],corners:[6,3]}},
+  {date:'15 Mar',home:'Portsmouth',away:'Charlton Athletic',score:'2-1',pfc:'win',
+   scorers:{h:['Bishop 34','Chaplin 62'],a:['Carey 51']},
+   cards:{h:['Pack 78 Y'],a:['Jones 44 Y','Leaburn 88 Y']},att:17932,venue:'Fratton Park',
+   stats:{poss:[48,52],shots:[11,9],sot:[4,3],corners:[5,6]}}
 ];
 
-const FIXTURES = [
-  {date:'Sat 25 Apr',time:'3:00pm',comp:'Championship',home:'Stoke City',away:'Portsmouth',venue:"bet365 Stadium",next:true,odds:{home:'2/1',draw:'12/5',away:'6/4'},form:['L','W','L','D','W']},
-  {date:'Sat 2 May',time:'3:00pm',comp:'Championship',home:'Portsmouth',away:'Birmingham City',venue:'Fratton Park',next:false,odds:{home:'6/5',draw:'9/4',away:'9/4'},form:['W','W','W','D','L']},
+var FIXTURES = [
+  {date:'Sat 25 Apr',time:'3:00pm',home:'Stoke City',away:'Portsmouth',venue:'bet365 Stadium',next:true,
+   odds:{h:'2/1',d:'12/5',a:'6/4'},
+   homeForm:['W','D','L','W','L'],
+   awayForm:['L','W','W','W','L']},
+  {date:'Sat 2 May',time:'3:00pm',home:'Portsmouth',away:'Birmingham City',venue:'Fratton Park',next:false,
+   odds:{h:'6/5',d:'9/4',a:'9/4'},
+   homeForm:['L','W','W','W','L'],
+   awayForm:['W','W','D','L','W']}
 ];
 
-const RUMOUR_DETAILS = {
-  'Jamal Lowe':{club:'Free Agent (ex Swansea City)',nation:'🏴󠁧󠁢󠁥󠁮󠁧󠁿 England',age:29,pos:'LW',lastSeason:'Swansea City — 24/25',goals:9,assists:6,apps:38,estValue:'Free',bio:'Pacy left winger who came through the Pompey academy and played here as a teenager. A romantic return would be popular with fans. Strong Championship pedigree.'},
-  'Pelle Mattsson':{club:'Malmö FF',nation:'🇸🇪 Sweden',age:24,pos:'CM',lastSeason:'Malmö FF — 24/25 (Allsvenskan)',goals:4,assists:7,apps:28,estValue:'£2.5m',bio:'Creative Swedish central midfielder with a reputation for dictating tempo. Linked with a move to English football following an impressive Allsvenskan campaign.'},
-  'Panagiotis Kikianis':{club:'Melbourne City (A-League)',nation:'🇦🇺 Australia',age:22,pos:'CB',lastSeason:'Melbourne City — 24/25 (A-League)',goals:2,assists:1,apps:22,estValue:'£3.5m',bio:'Powerful young centre-back who caught the eye in Australia\'s A-League. Mousinho has a history of targeting Australian talent after Segecic\'s strong debut season.'},
+var RUMOURS = {
+  'Jamal Lowe':{club:'Free Agent (ex-Swansea)',nation:'England',age:29,pos:'LW',
+    season:'Swansea City 24/25',goals:9,assists:6,apps:38,value:'Free',
+    bio:'Pacy left winger who came through the Pompey academy as a teenager. A romantic homecoming return that would be popular with fans. Strong Championship pedigree throughout his career.'},
+  'Pelle Mattsson':{club:'Malmo FF',nation:'Sweden',age:24,pos:'CM',
+    season:'Malmo FF 24/25 (Allsvenskan)',goals:4,assists:7,apps:28,value:'£2.5m',
+    bio:'Creative Swedish central midfielder with a reputation for dictating tempo. Linked with a move to English football following an impressive Allsvenskan campaign with Malmo.'},
+  'Panagiotis Kikianis':{club:'Melbourne City',nation:'Australia',age:22,pos:'CB',
+    season:'Melbourne City 24/25 (A-League)',goals:2,assists:1,apps:22,value:'£3.5m',
+    bio:'Powerful young centre-back who caught the eye in the A-League. Mousinho has a history of targeting Australian talent after Segecic\'s strong debut season at Fratton Park.'}
 };
+
+var TRANSFERS_DONE = [
   {name:'Conor Chaplin',detail:'Loan from Ipswich Town',dir:'in',init:'CC'},
-  {name:'Makenzie Kirk',detail:'Signed from St. Johnstone',dir:'in',init:'MK'},
+  {name:'Makenzie Kirk',detail:'Signed from St Johnstone',dir:'in',init:'MK'},
   {name:'Adrian Segecic',detail:'Signed from Sydney FC',dir:'in',init:'AS'},
   {name:'Franco Umeh',detail:'Signed from Crystal Palace',dir:'in',init:'FU'},
   {name:'Ebou Adams',detail:'Signed from Derby County',dir:'in',init:'EA'},
@@ -750,566 +719,595 @@ const RUMOUR_DETAILS = {
   {name:'Jacob Brown',detail:'Signed from Luton Town',dir:'in',init:'JB'},
   {name:'Gustavo Caballero',detail:'Signed from Santos FC',dir:'in',init:'GC'},
   {name:'Madiodio Dia',detail:'Signed from FK Haugesund',dir:'in',init:'MD'},
-  {name:'John Swift',detail:'Signed — free agent (ex West Brom)',dir:'in',init:'JS'},
+  {name:'John Swift',detail:'Free agent — ex West Brom',dir:'in',init:'JS'}
 ];
-const TRANSFERS_RUMOURS = [
-  {name:'Jamal Lowe',detail:'Interest reported · Free agent',dir:'rumour',init:'JL'},
-  {name:'Pelle Mattsson',detail:'Danish midfielder · Linked',dir:'rumour',init:'PM'},
-  {name:'Panagiotis Kikianis',detail:'A-League defender · £3.5m reported',dir:'rumour',init:'PK'},
+var TRANSFERS_RUMOURS = [
+  {name:'Jamal Lowe',detail:'Interest reported — free agent',dir:'rumour',init:'JL'},
+  {name:'Pelle Mattsson',detail:'Swedish midfielder — linked',dir:'rumour',init:'PM'},
+  {name:'Panagiotis Kikianis',detail:'A-League defender — £3.5m',dir:'rumour',init:'PK'}
 ];
-const TRANSFERS_OUT = [
+var TRANSFERS_OUT = [
   {name:'Christian Saydee',detail:'Sold to Wigan Athletic',dir:'out',init:'CS'},
   {name:'Kusini Yengi',detail:'Released',dir:'out',init:'KY'},
   {name:'Cohen Bramall',detail:'Released',dir:'out',init:'CB'},
   {name:'Tom Lowery',detail:'Released',dir:'out',init:'TL'},
   {name:'Alexander Milosevic',detail:'Released',dir:'out',init:'AM'},
-  {name:'Anthony Scully',detail:'Released',dir:'out',init:'AS'},
   {name:'Yang Min-hyeok',detail:'Recalled to Tottenham (Jan)',dir:'out',init:'YM'},
   {name:'Callum Lang',detail:'Joined Preston North End',dir:'out',init:'CL'},
   {name:'Tom McIntyre',detail:'Joined Aberdeen',dir:'out',init:'TM'},
-  {name:'Jacob Farrell',detail:'Joined Western Sydney',dir:'out',init:'JF'},
+  {name:'Jacob Farrell',detail:'Joined Western Sydney',dir:'out',init:'JF'}
 ];
 
-const SQUAD = [
-  // Goalkeepers
-  {num:1, name:'Schmid',     full:'Nicolas Schmid',      pos:'GK', section:'GK', apps:36, rating:6.39, goals:0, stats:{Distribution:72,Commanding:68,Reflexes:75,Communication:70}},
-  {num:26,name:'Bursik',     full:'Josef Bursik',         pos:'GK', section:'GK', apps:8,  rating:6.42, goals:0, stats:{Distribution:70,Commanding:65,Reflexes:74,Communication:68}},
-  {num:30,name:'Killip',     full:'Ben Killip',           pos:'GK', section:'GK', apps:2,  rating:6.10, goals:0, stats:{Distribution:65,Commanding:62,Reflexes:68,Communication:64}},
-  // Defenders
-  {num:5, name:'Poole',      full:'Regan Poole',          pos:'CB', section:'DEF', apps:36, rating:6.86, goals:1, stats:{Aerial:78,Tackling:76,Passing:66,Positioning:74}},
-  {num:6, name:'Shaughnessy',full:'Conor Shaughnessy',    pos:'CB', section:'DEF', apps:32, rating:6.91, goals:2, stats:{Aerial:80,Tackling:74,Passing:64,Positioning:72}},
-  {num:17,name:'Bowat',      full:'Ibane Bowat',          pos:'CB', section:'DEF', apps:26, rating:6.45, goals:3, stats:{Aerial:82,Tackling:76,Passing:68,Positioning:75}},
-  {num:4, name:'Knight',     full:'Josh Knight',          pos:'CB', section:'DEF', apps:18, rating:6.62, goals:1, stats:{Aerial:76,Tackling:72,Passing:65,Positioning:70}},
-  {num:55,name:'Dia',        full:'Madiodio Dia',         pos:'CB', section:'DEF', apps:14, rating:6.40, goals:0, stats:{Aerial:74,Tackling:70,Passing:62,Positioning:68}},
-  {num:34,name:'Alese',      full:'Ajibola Alese',        pos:'CB', section:'DEF', apps:10, rating:6.35, goals:0, stats:{Aerial:72,Tackling:70,Passing:60,Positioning:66}},
-  {num:2, name:'Williams',   full:'Jordan Williams',      pos:'RB', section:'DEF', apps:38, rating:6.48, goals:1, stats:{Defending:72,Attacking:68,Crossing:65,Tackling:74}},
-  {num:3, name:'Ogilvie',    full:'Connor Ogilvie',       pos:'LB', section:'DEF', apps:32, rating:6.68, goals:2, stats:{Defending:70,Attacking:72,Crossing:69,Tackling:68}},
-  {num:24,name:'Devlin',     full:'Terry Devlin',         pos:'RB', section:'DEF', apps:24, rating:6.72, goals:0, stats:{Defending:68,Attacking:74,Crossing:70,Tackling:66}},
-  {num:22,name:'Swanson',    full:'Zak Swanson',          pos:'RB', section:'DEF', apps:12, rating:6.69, goals:0, stats:{Defending:66,Attacking:72,Crossing:70,Tackling:64}},
-  // Midfielders
-  {num:7, name:'Pack',       full:'Marlon Pack',          pos:'CM', section:'MID', apps:40, rating:6.45, goals:2, stats:{Passing:82,Tackling:78,Vision:76,Work_Rate:85}},
-  {num:21,name:'Dozzell',    full:'Andre Dozzell',        pos:'CM', section:'MID', apps:34, rating:6.51, goals:3, stats:{Passing:78,Tackling:72,Vision:74,Work_Rate:76}},
-  {num:8, name:'Swift',      full:'John Swift',           pos:'AM', section:'MID', apps:28, rating:6.60, goals:4, stats:{Passing:80,Dribbling:74,Vision:78,Goals:68}},
-  {num:38,name:'Adams',      full:'Ebou Adams',           pos:'CM', section:'MID', apps:38, rating:6.92, goals:1, stats:{Passing:72,Tackling:76,Vision:68,Work_Rate:82}},
-  {num:16,name:'Le Roux',    full:'Luke Le Roux',         pos:'CM', section:'MID', apps:16, rating:6.40, goals:1, stats:{Passing:70,Tackling:70,Vision:66,Work_Rate:74}},
-  {num:18,name:'Kosznovszky',full:'Mark Kosznovszky',     pos:'CM', section:'MID', apps:10, rating:6.35, goals:1, stats:{Passing:72,Tackling:68,Vision:70,Work_Rate:74}},
-  {num:27,name:'Alli',       full:'Millenic Alli',        pos:'AM', section:'MID', apps:24, rating:6.55, goals:3, stats:{Dribbling:74,Creativity:72,Goals:68,Pressing:70}},
-  // Forwards
-  {num:36,name:'Chaplin',    full:'Conor Chaplin',        pos:'AM', section:'FWD', apps:26, rating:6.54, goals:8, stats:{Dribbling:78,Creativity:80,Goals:76,Pressing:72}},
-  {num:10,name:'Segecic',    full:'Adrian Segecic',       pos:'RW', section:'FWD', apps:30, rating:6.54, goals:5, stats:{Dribbling:76,Creativity:74,Goals:72,Pressing:74}},
-  {num:23,name:'Murphy',     full:'Josh Murphy',          pos:'LW', section:'FWD', apps:14, rating:6.58, goals:2, stats:{Pace:84,Dribbling:76,Goals:66,Crossing:74}},
-  {num:11,name:'Bianchini',  full:'Florian Bianchini',    pos:'ST', section:'FWD', apps:16, rating:6.42, goals:3, stats:{Finishing:72,Aerial:68,Pressing:70,Hold_Up:68}},
-  {num:9, name:'Bishop',     full:'Colby Bishop',         pos:'ST', section:'FWD', apps:40, rating:6.64, goals:12, stats:{Finishing:80,Aerial:76,Pressing:78,Hold_Up:74}},
-  {num:25,name:'Kirk',       full:'Makenzie Kirk',        pos:'ST', section:'FWD', apps:12, rating:6.48, goals:3, stats:{Finishing:70,Aerial:66,Pressing:72,Hold_Up:64}},
-  {num:40,name:'Brown',      full:'Jacob Brown',          pos:'ST', section:'FWD', apps:8,  rating:6.20, goals:1, stats:{Finishing:68,Aerial:72,Pressing:68,Hold_Up:70}},
-  {num:15,name:'Umeh',       full:'Millenic Alli',        pos:'LW', section:'FWD', apps:10, rating:6.38, goals:2, stats:{Pace:80,Dribbling:72,Goals:64,Crossing:68}},
+var SQUAD = [
+  {num:1,  name:'Schmid',     full:'Nicolas Schmid',    pos:'GK', sec:'GK',  apps:36, ws:6.39, goals:0, stats:{Distribution:72,Commanding:68,Reflexes:75,Communication:70}},
+  {num:26, name:'Bursik',     full:'Josef Bursik',      pos:'GK', sec:'GK',  apps:8,  ws:6.42, goals:0, stats:{Distribution:70,Commanding:65,Reflexes:74,Communication:68}},
+  {num:30, name:'Killip',     full:'Ben Killip',        pos:'GK', sec:'GK',  apps:2,  ws:6.10, goals:0, stats:{Distribution:65,Commanding:62,Reflexes:68,Communication:64}},
+  {num:5,  name:'Poole',      full:'Regan Poole',       pos:'CB', sec:'DEF', apps:36, ws:6.86, goals:1, stats:{Aerial:78,Tackling:76,Passing:66,Positioning:74}},
+  {num:6,  name:'Shaughnessy',full:'Conor Shaughnessy', pos:'CB', sec:'DEF', apps:32, ws:6.91, goals:2, stats:{Aerial:80,Tackling:74,Passing:64,Positioning:72}},
+  {num:17, name:'Bowat',      full:'Ibane Bowat',       pos:'CB', sec:'DEF', apps:26, ws:6.45, goals:3, stats:{Aerial:82,Tackling:76,Passing:68,Positioning:75}},
+  {num:4,  name:'Knight',     full:'Josh Knight',       pos:'CB', sec:'DEF', apps:18, ws:6.62, goals:1, stats:{Aerial:76,Tackling:72,Passing:65,Positioning:70}},
+  {num:55, name:'Dia',        full:'Madiodio Dia',      pos:'CB', sec:'DEF', apps:14, ws:6.40, goals:0, stats:{Aerial:74,Tackling:70,Passing:62,Positioning:68}},
+  {num:34, name:'Alese',      full:'Ajibola Alese',     pos:'CB', sec:'DEF', apps:10, ws:6.35, goals:0, stats:{Aerial:72,Tackling:70,Passing:60,Positioning:66}},
+  {num:2,  name:'Williams',   full:'Jordan Williams',   pos:'RB', sec:'DEF', apps:38, ws:6.48, goals:1, stats:{Defending:72,Attacking:68,Crossing:65,Tackling:74}},
+  {num:3,  name:'Ogilvie',    full:'Connor Ogilvie',    pos:'LB', sec:'DEF', apps:32, ws:6.68, goals:2, stats:{Defending:70,Attacking:72,Crossing:69,Tackling:68}},
+  {num:24, name:'Devlin',     full:'Terry Devlin',      pos:'RB', sec:'DEF', apps:24, ws:6.72, goals:0, stats:{Defending:68,Attacking:74,Crossing:70,Tackling:66}},
+  {num:22, name:'Swanson',    full:'Zak Swanson',       pos:'RB', sec:'DEF', apps:12, ws:6.69, goals:0, stats:{Defending:66,Attacking:72,Crossing:70,Tackling:64}},
+  {num:7,  name:'Pack',       full:'Marlon Pack',       pos:'CM', sec:'MID', apps:40, ws:6.45, goals:2, stats:{Passing:82,Tackling:78,Vision:76,Work_Rate:85}},
+  {num:21, name:'Dozzell',    full:'Andre Dozzell',     pos:'CM', sec:'MID', apps:34, ws:6.51, goals:3, stats:{Passing:78,Tackling:72,Vision:74,Work_Rate:76}},
+  {num:8,  name:'Swift',      full:'John Swift',        pos:'AM', sec:'MID', apps:28, ws:6.60, goals:4, stats:{Passing:80,Dribbling:74,Vision:78,Goals:68}},
+  {num:38, name:'Adams',      full:'Ebou Adams',        pos:'CM', sec:'MID', apps:38, ws:6.92, goals:1, stats:{Passing:72,Tackling:76,Vision:68,Work_Rate:82}},
+  {num:16, name:'LeRoux',     full:'Luke Le Roux',      pos:'CM', sec:'MID', apps:16, ws:6.40, goals:1, stats:{Passing:70,Tackling:70,Vision:66,Work_Rate:74}},
+  {num:18, name:'Kosznovszky',full:'Mark Kosznovszky',  pos:'CM', sec:'MID', apps:10, ws:6.35, goals:1, stats:{Passing:72,Tackling:68,Vision:70,Work_Rate:74}},
+  {num:27, name:'Alli',       full:'Millenic Alli',     pos:'AM', sec:'MID', apps:24, ws:6.55, goals:3, stats:{Dribbling:74,Creativity:72,Goals:68,Pressing:70}},
+  {num:36, name:'Chaplin',    full:'Conor Chaplin',     pos:'AM', sec:'FWD', apps:26, ws:6.54, goals:8, stats:{Dribbling:78,Creativity:80,Goals:76,Pressing:72}},
+  {num:10, name:'Segecic',    full:'Adrian Segecic',    pos:'RW', sec:'FWD', apps:30, ws:6.54, goals:5, stats:{Dribbling:76,Creativity:74,Goals:72,Pressing:74}},
+  {num:23, name:'Murphy',     full:'Josh Murphy',       pos:'LW', sec:'FWD', apps:14, ws:6.58, goals:2, stats:{Pace:84,Dribbling:76,Goals:66,Crossing:74}},
+  {num:11, name:'Bianchini',  full:'Florian Bianchini', pos:'ST', sec:'FWD', apps:16, ws:6.42, goals:3, stats:{Finishing:72,Aerial:68,Pressing:70,Hold_Up:68}},
+  {num:9,  name:'Bishop',     full:'Colby Bishop',      pos:'ST', sec:'FWD', apps:40, ws:6.64, goals:12,stats:{Finishing:80,Aerial:76,Pressing:78,Hold_Up:74}},
+  {num:25, name:'Kirk',       full:'Makenzie Kirk',     pos:'ST', sec:'FWD', apps:12, ws:6.48, goals:3, stats:{Finishing:70,Aerial:66,Pressing:72,Hold_Up:64}},
+  {num:40, name:'Brown',      full:'Jacob Brown',       pos:'ST', sec:'FWD', apps:8,  ws:6.20, goals:1, stats:{Finishing:68,Aerial:72,Pressing:68,Hold_Up:70}},
+  {num:15, name:'Umeh',       full:'Franco Umeh',       pos:'LW', sec:'FWD', apps:10, ws:6.38, goals:2, stats:{Pace:80,Dribbling:72,Goals:64,Crossing:68}}
 ];
 
-const FORMATIONS = {
-  '4-2-3-1': [[9],[36,10,11],[7,21],[2,17,5,3],[1]],
-  '4-3-3':   [[9,36,11],[8,7,21],[2,17,5,3],[1]],
-  '4-4-2':   [[9,36],[10,7,21,11],[2,17,5,3],[1]],
-  '3-5-2':   [[9,36],[24,8,7,21,11],[17,5,3],[1]],
+var TABLE = [
+  {p:1, t:'Coventry City',    pl:44,w:26,d:11,l:7, gf:90,ga:44,gd:46, pts:89,zone:'promo',  note:'(C)'},
+  {p:2, t:'Ipswich Town',     pl:43,w:22,d:13,l:8, gf:75,ga:45,gd:30, pts:79,zone:'promo',  note:''},
+  {p:3, t:'Millwall',         pl:44,w:23,d:10,l:11,gf:61,ga:48,gd:13, pts:79,zone:'playoff',note:''},
+  {p:4, t:'Southampton',      pl:44,w:21,d:13,l:10,gf:77,ga:53,gd:24, pts:76,zone:'playoff',note:''},
+  {p:5, t:'Middlesbrough',    pl:44,w:21,d:13,l:10,gf:65,ga:44,gd:21, pts:76,zone:'playoff',note:''},
+  {p:6, t:'Wrexham',          pl:44,w:19,d:13,l:12,gf:66,ga:60,gd:6,  pts:70,zone:'playoff',note:''},
+  {p:7, t:'Hull City',        pl:44,w:20,d:10,l:14,gf:67,ga:63,gd:4,  pts:70,zone:'safe',   note:''},
+  {p:8, t:'Derby County',     pl:44,w:19,d:9, l:16,gf:63,ga:55,gd:8,  pts:66,zone:'safe',   note:''},
+  {p:9, t:'Norwich City',     pl:44,w:19,d:7, l:18,gf:61,ga:53,gd:8,  pts:64,zone:'safe',   note:''},
+  {p:10,t:'Birmingham City',  pl:44,w:16,d:12,l:16,gf:54,ga:54,gd:0,  pts:60,zone:'safe',   note:''},
+  {p:11,t:'Swansea City',     pl:44,w:17,d:9, l:18,gf:53,ga:57,gd:-4, pts:60,zone:'safe',   note:''},
+  {p:12,t:'Bristol City',     pl:44,w:16,d:11,l:17,gf:56,ga:57,gd:-1, pts:59,zone:'safe',   note:''},
+  {p:13,t:'QPR',              pl:44,w:16,d:10,l:18,gf:59,ga:67,gd:-8, pts:58,zone:'safe',   note:''},
+  {p:14,t:'Sheffield United', pl:44,w:17,d:6, l:21,gf:62,ga:62,gd:0,  pts:57,zone:'safe',   note:''},
+  {p:15,t:'Watford',          pl:44,w:14,d:15,l:15,gf:52,ga:56,gd:-4, pts:57,zone:'safe',   note:''},
+  {p:16,t:'Preston NE',       pl:44,w:14,d:15,l:15,gf:51,ga:57,gd:-6, pts:57,zone:'safe',   note:''},
+  {p:17,t:'Stoke City',       pl:44,w:15,d:10,l:19,gf:50,ga:51,gd:-1, pts:55,zone:'safe',   note:''},
+  {p:18,t:'West Brom',        pl:44,w:13,d:13,l:18,gf:47,ga:56,gd:-9, pts:52,zone:'safe',   note:''},
+  {p:19,t:'Blackburn Rovers', pl:45,w:13,d:13,l:19,gf:42,ga:55,gd:-13,pts:52,zone:'safe',   note:''},
+  {p:20,t:'Portsmouth',       pl:44,w:13,d:12,l:19,gf:45,ga:62,gd:-17,pts:51,zone:'safe',   note:'',pompey:true},
+  {p:21,t:'Charlton Athletic',pl:44,w:12,d:14,l:18,gf:41,ga:54,gd:-13,pts:50,zone:'safe',   note:''},
+  {p:22,t:'Oxford United',    pl:44,w:10,d:14,l:20,gf:41,ga:56,gd:-15,pts:44,zone:'rel',    note:''},
+  {p:23,t:'Leicester City',   pl:44,w:11,d:15,l:18,gf:56,ga:67,gd:-11,pts:42,zone:'rel',    note:'* -6pts'},
+  {p:24,t:'Sheffield Wed',    pl:44,w:1, d:12,l:31,gf:26,ga:84,gd:-58,pts:-3,zone:'rel',    note:'* -18pts'}
+];
+
+var ARTICLES = [
+  {cat:'Match Report',catCls:'cat-match',bg:'linear-gradient(135deg,#001E5A,#003080)',emoji:'⚽',date:'18 Apr 2026',
+   title:'POMPEY SECURE SURVIVAL WITH BOWAT HEADER AGAINST FOXES',
+   body:'<p>Portsmouth Football Club secured their EFL Championship status for another season with a hard-fought 1-0 victory over relegated Leicester City at Fratton Park on Saturday afternoon.</p><p>Ibane Bowat was the hero, rising highest to power home a Conor Chaplin corner in the 63rd minute, sending the home support into raptures and confirming survival with three games to spare.</p><p>The Blues had come into the game in fine form following back-to-back wins over Middlesbrough and Ipswich Town, and John Mousinho\'s side were solid throughout. Nicolas Schmid was barely troubled as Leicester offered little going forward.</p><p>The final whistle was met with scenes of jubilation at Fratton Park. Survival in the Championship for a second successive season is a genuine achievement for a squad assembled on a tight budget. Up the Blues!</p>'},
+  {cat:'Transfer News',catCls:'cat-transfer',bg:'linear-gradient(135deg,#166534,#22C55E)',emoji:'🔄',date:'19 Apr 2026',
+   title:'MOUSINHO EYES SUMMER REINFORCEMENTS AFTER SURVIVAL CONFIRMED',
+   body:'<p>With Championship survival secured, John Mousinho is turning his attention to shaping the squad for 2026-27. The manager is keen to add creativity and pace in wide areas, with the departure of loan players Conor Chaplin and potentially John Swift creating gaps.</p><p>The club will operate within financial constraints but is expected to be active. Ebou Adams, who has been outstanding in the second half of the season, is expected to remain. Permanent deals for Kirk and Brown are also under consideration.</p><p>One name firmly on the radar is Jamal Lowe, the ex-Pompey academy product now a free agent after leaving Swansea. A popular signing that would excite the Fratton faithful.</p>'},
+  {cat:'Club News',catCls:'cat-news',bg:'linear-gradient(135deg,#1E40AF,#3B82F6)',emoji:'🏟️',date:'17 Apr 2026',
+   title:"CHAPLIN LOAN SPELL HAILED AS HUGE SUCCESS AHEAD OF IPSWICH RETURN",
+   body:"<p>Conor Chaplin's season-long loan from Ipswich Town has been widely celebrated as one of Pompey's shrewdest pieces of business in recent memory. The attacking midfielder contributed 8 goals and 6 assists in 26 appearances.</p><p>The Portsmouth-born player, who came through the Pompey academy before leaving as a teenager, has spoken emotionally about his return to the south coast and what the club means to him personally.</p><p>Whether a permanent deal is possible remains to be seen — Ipswich are unlikely to let him go cheaply. Fans will be hoping Mousinho can find a way to bring him back permanently this summer.</p>"},
+  {cat:'Analysis',catCls:'cat-news',bg:'linear-gradient(135deg,#92400E,#C8960C)',emoji:'📊',date:'15 Apr 2026',
+   title:"SEGECIC'S DEBUT SEASON: THE STATS BEHIND POMPEY'S AUSSIE STAR",
+   body:'<p>When Portsmouth signed Adrian Segecic from Sydney FC last summer, eyebrows were raised. A 21-year-old from the A-League in the EFL Championship seemed a sizeable gamble. Twelve months on, the numbers tell an encouraging story.</p><p>The Australian has made 30 Championship appearances, contributing 5 goals and 4 assists. His WhoScored average of 6.54 places him among the more consistent performers. His direct running and willingness to press have been particular assets.</p><p>With international recognition potentially on the horizon, Segecic could earn his first senior Australia call-up soon — which would represent well-deserved recognition of a strong debut English season.</p>'},
+  {cat:'Injury',catCls:'cat-injury',bg:'linear-gradient(135deg,#7F1D1D,#CC0000)',emoji:'⚠️',date:'14 Apr 2026',
+   title:'MURPHY AND KOSZNOVSZKY OUT FOR SEASON — SWANSON RETURN UNCLEAR',
+   body:'<p>Portsmouth manager John Mousinho has confirmed that Josh Murphy and Mark Kosznovszky will play no further part this season, while Zak Swanson\'s return remains uncertain ahead of the final two games.</p><p>Murphy, 30, has been sidelined since late February with a hamstring problem requiring surgery. The winger was in excellent form before the injury and will be eager to return to fitness for pre-season.</p><p>Kosznovszky suffered a knee injury in training that proved more serious than initially feared. Both players are expected to make full recoveries during the summer. Swanson returned to light training this week but Mousinho is cautious given survival is already secured.</p>'}
+];
+
+// ============================================================
+// STATE
+// ============================================================
+var userRatings = JSON.parse(localStorage.getItem('ff_r') || '{}');
+var curFormation = '4-2-3-1';
+var pitchXI = {0:1,1:2,2:55,3:5,4:3,5:38,6:21,7:10,8:36,9:27,10:9};
+var pickerSlot = null;
+var currentRating = 0;
+var ratingPlayerId = null;
+var donateAmt = 5;
+var ratFilter = 'GK';
+
+var FORMATIONS = {
+  '4-2-3-1':[[9],[36,10,27],[38,21],[2,55,5,3],[1]],
+  '4-3-3':  [[9,36,27],[8,38,21],[2,55,5,3],[1]],
+  '4-4-2':  [[9,36],[27,38,21,10],[2,55,5,3],[1]],
+  '3-5-2':  [[9,36],[24,8,38,21,27],[55,5,3],[1]]
 };
 
-const TABLE_DATA = [
-  {pos:1, team:'Coventry City',    p:44,w:27,d:8, l:9, gd:46, pts:89, zone:'promo',  note:'(C)'},
-  {pos:2, team:'Ipswich Town',     p:45,w:23,d:11,l:11,gd:24, pts:80, zone:'promo',  note:''},
-  {pos:3, team:'Southampton',      p:44,w:22,d:9, l:13,gd:19, pts:75, zone:'playoff',note:''},
-  {pos:4, team:'Millwall',         p:45,w:22,d:10,l:13,gd:21, pts:76, zone:'playoff',note:''},
-  {pos:5, team:'Wrexham',          p:45,w:19,d:11,l:15,gd:9,  pts:68, zone:'playoff',note:''},
-  {pos:6, team:'Middlesbrough',    p:44,w:19,d:11,l:14,gd:12, pts:68, zone:'playoff',note:''},
-  {pos:7, team:'Derby County',     p:45,w:20,d:7, l:18,gd:15, pts:67, zone:'safe',   note:''},
-  {pos:8, team:'Norwich City',     p:45,w:19,d:10,l:16,gd:11, pts:67, zone:'safe',   note:''},
-  {pos:9, team:'Hull City',        p:45,w:17,d:12,l:16,gd:4,  pts:63, zone:'safe',   note:''},
-  {pos:10,team:'Sheffield United', p:44,w:18,d:11,l:15,gd:13, pts:65, zone:'safe',   note:''},
-  {pos:11,team:'Birmingham City',  p:44,w:16,d:12,l:16,gd:-1, pts:60, zone:'safe',   note:''},
-  {pos:12,team:'Watford',          p:44,w:14,d:15,l:15,gd:-1, pts:57, zone:'safe',   note:''},
-  {pos:13,team:'Swansea City',     p:45,w:17,d:9, l:19,gd:-3, pts:60, zone:'safe',   note:''},
-  {pos:14,team:'Preston NE',       p:44,w:14,d:15,l:15,gd:-4, pts:57, zone:'safe',   note:''},
-  {pos:15,team:'Stoke City',       p:45,w:15,d:10,l:20,gd:0,  pts:55, zone:'safe',   note:''},
-  {pos:16,team:'QPR',              p:44,w:15,d:9, l:20,gd:-6, pts:54, zone:'safe',   note:''},
-  {pos:17,team:'Bristol City',     p:44,w:13,d:12,l:19,gd:-8, pts:51, zone:'safe',   note:''},
-  {pos:18,team:'Portsmouth',       p:45,w:13,d:12,l:20,gd:-17,pts:51, zone:'safe',   note:'',pompey:true},
-  {pos:19,team:'Charlton Athletic',p:44,w:12,d:14,l:18,gd:-12,pts:50, zone:'safe',   note:''},
-  {pos:20,team:'West Brom',        p:44,w:12,d:13,l:19,gd:-12,pts:49, zone:'safe',   note:''},
-  {pos:21,team:'Blackburn Rovers', p:45,w:13,d:13,l:19,gd:-13,pts:52, zone:'safe',   note:''},
-  {pos:22,team:'Oxford United',    p:45,w:10,d:14,l:21,gd:-15,pts:44, zone:'rel',    note:''},
-  {pos:23,team:'Leicester City',   p:45,w:11,d:15,l:19,gd:-9, pts:42, zone:'rel',    note:'* -6pts'},
-  {pos:24,team:'Sheffield Wed',    p:44,w:1, d:12,l:31,gd:-61,pts:-3, zone:'rel',    note:'* -18pts'},
-];
-
-// USER RATINGS STORAGE
-let userRatings = JSON.parse(localStorage.getItem('ff_ratings')||'{}');
-let currentRating = 0;
-let ratingPlayerId = null;
-let curFormation = '4-2-3-1';
-let pitchXI = {0:1,1:2,2:55,3:5,4:3,5:38,6:21,7:10,8:36,9:27,10:9};
-
-function getAvgRating(id){
-  const r = userRatings[id];
-  if(!r||!r.count) return null;
-  return (r.total/r.count).toFixed(1);
+// ============================================================
+// NAVIGATION
+// ============================================================
+function go(page) {
+  document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById('pg-' + page).classList.add('active');
+  document.querySelectorAll('.nl').forEach(function(l){ l.classList.remove('on'); });
+  var btn = document.getElementById('nl-' + page);
+  if (btn) btn.classList.add('on');
+  if (page === 'home') renderHome();
+  if (page === 'fixtures') renderFixtures();
+  if (page === 'transfers') renderTransfers();
+  if (page === 'lineup') renderLineup();
+  if (page === 'ratings') renderRatings(ratFilter);
+  if (page === 'table') renderTable();
+  window.scrollTo(0, 0);
 }
 
-// ===== NAVIGATION =====
-function go(page){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById('pg-'+page).classList.add('active');
-  document.querySelectorAll('.nl').forEach(l=>l.classList.remove('on'));
-  document.getElementById('nl-'+page)?.classList.add('on');
-  if(page==='home') renderHome();
-  if(page==='fixtures') renderFixtures();
-  if(page==='transfers') renderTransfers();
-  if(page==='lineup') renderLineup();
-  if(page==='ratings') renderRatings('GK');
-  if(page==='table') renderTable();
-  if(page==='donate'){/* static page, no render needed */}
-  window.scrollTo(0,0);
+// ============================================================
+// OVERLAYS
+// ============================================================
+function closeOv(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeOvBg(e, id) {
+  if (e.target === document.getElementById(id)) closeOv(id);
+}
+function openOv(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
-// ===== HOME =====
-function renderHome(){
-  const el = document.getElementById('home-results');
-  el.innerHTML = RESULTS.slice(0,5).map((r,i)=>resultHTML(r,i)).join('');
+// ============================================================
+// HOME
+// ============================================================
+function renderHome() {
+  var el = document.getElementById('home-results');
+  el.innerHTML = RESULTS.slice(0, 5).map(function(r, i){ return resultHTML(r, i); }).join('');
 }
 
-// ===== FIXTURES =====
-function renderFixtures(){
-  document.getElementById('fixtures-upcoming').innerHTML = FIXTURES.map(f=>`
-    <div class="fixture-item${f.next?' next':''}">
-      <div class="fixture-date">${f.date}</div>
-      <div class="fixture-time">${f.time}</div>
-      <div class="fixture-comp">${f.comp}</div>
-      <div class="fixture-teams">${f.home} <span class="fixture-vs">vs</span> ${f.away}</div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;flex-shrink:0">
-        <div class="fixture-venue">${f.venue}</div>
-        ${f.form?`<div class="form-dots">${f.form.map(r=>`<div class="fdot ${r}" title="${r==='W'?'Win':r==='D'?'Draw':'Loss'}">${r}</div>`).join('')}</div>`:''}
-      </div>
-      ${f.next?'<span class="next-badge">Next</span>':''}
-      ${f.odds?`<div style="display:flex;gap:4px;flex-shrink:0">
-        <span style="font-size:10px;padding:3px 6px;background:rgba(0,30,90,0.06);border:1px solid var(--border);border-radius:4px;font-family:'Space Mono',monospace;white-space:nowrap"><span style="color:var(--muted)">H</span> ${f.odds.home}</span>
-        <span style="font-size:10px;padding:3px 6px;background:rgba(0,30,90,0.06);border:1px solid var(--border);border-radius:4px;font-family:'Space Mono',monospace;white-space:nowrap"><span style="color:var(--muted)">D</span> ${f.odds.draw}</span>
-        <span style="font-size:10px;padding:3px 6px;background:rgba(0,30,90,0.06);border:1px solid var(--border);border-radius:4px;font-family:'Space Mono',monospace;white-space:nowrap"><span style="color:var(--muted)">A</span> ${f.odds.away}</span>
-      </div>`:''}
-    </div>`).join('');
-  document.getElementById('fixtures-results').innerHTML = RESULTS.map((r,i)=>resultHTML(r,i)).join('');
+function resultHTML(r, idx) {
+  var scoreClass = r.pfc;
+  var homeCls = r.home === 'Portsmouth' ? ' result-pfc' : '';
+  var awayCls = r.away === 'Portsmouth' ? ' result-pfc' : '';
+  return '<div class="result-item ' + scoreClass + '" onclick="openMatch(' + idx + ')" style="cursor:pointer">' +
+    '<div class="result-date">' + r.date + '</div>' +
+    '<div class="result-comp">Championship</div>' +
+    '<div class="result-match">' +
+    '<span class="result-home' + homeCls + '">' + r.home + '</span>' +
+    '<span class="result-score ' + scoreClass + '">' + r.score + '</span>' +
+    '<span class="result-away' + awayCls + '">' + r.away + '</span>' +
+    '</div>' +
+    '<span class="result-hint">stats →</span>' +
+    '</div>';
 }
 
-function resultHTML(r, idx){
-  const isPFC = name => name==='Portsmouth';
-  const res = r.pfcResult || (isPFC(r.home)?r.result:(r.result==='win'?'loss':r.result==='loss'?'win':r.result));
-  const clickable = r.scorers !== undefined;
-  return `<div class="result-item ${res}${clickable?' clickable':''}" ${clickable?`onclick="openMatch(${idx})" style="cursor:pointer"`:''}">
-    <div class="result-date">${r.date}</div>
-    <div class="result-comp">${r.comp}</div>
-    <div class="result-match">
-      <span class="result-home${isPFC(r.home)?' result-pfc':''}">${r.home}</span>
-      <span class="result-score ${res}">${r.score}</span>
-      <span class="result-away${isPFC(r.away)?' result-pfc':''}">${r.away}</span>
-    </div>
-    ${clickable?'<span style="font-size:10px;color:var(--muted);margin-left:auto;font-family:\'Space Mono\',monospace">stats →</span>':''}
-  </div>`;
+// ============================================================
+// MATCH OVERLAY
+// ============================================================
+function openMatch(idx) {
+  var r = RESULTS[idx];
+  document.getElementById('mo-home').textContent = r.home;
+  document.getElementById('mo-away').textContent = r.away;
+  document.getElementById('mo-score').textContent = r.score;
+  document.getElementById('mo-date').textContent = r.date;
+  document.getElementById('mo-venue').textContent = r.venue;
+  document.getElementById('mo-att').textContent = r.att ? 'Att: ' + r.att.toLocaleString() : '';
+
+  var homeGoals = r.scorers.h.map(function(s){ return '<div class="scorer-item">⚽ ' + s + '</div>'; }).join('') || '<div class="scorer-item" style="color:var(--muted)">—</div>';
+  var awayGoals = r.scorers.a.map(function(s){ return '<div class="scorer-item scorer-away">⚽ ' + s + '</div>'; }).join('') || '<div class="scorer-item scorer-away" style="color:var(--muted)">—</div>';
+
+  var allCards = r.cards.h.concat(r.cards.a);
+  var cardHtml = allCards.length ? allCards.map(function(c){ return '<div style="font-size:12px;margin-bottom:4px">🟨 ' + c + '</div>'; }).join('') : '<div style="font-size:12px;color:var(--muted)">No bookings</div>';
+
+  var statRows = [
+    {label:'Possession',hv:r.stats.poss[0],av:r.stats.poss[1],unit:'%'},
+    {label:'Shots',hv:r.stats.shots[0],av:r.stats.shots[1],unit:''},
+    {label:'On Target',hv:r.stats.sot[0],av:r.stats.sot[1],unit:''},
+    {label:'Corners',hv:r.stats.corners[0],av:r.stats.corners[1],unit:''}
+  ];
+  var statsHtml = statRows.map(function(s){
+    var tot = s.hv + s.av || 1;
+    var hw = Math.round(s.hv/tot*100);
+    var aw = 100 - hw;
+    return '<div class="stat-row">' +
+      '<span class="stat-num">' + s.hv + s.unit + '</span>' +
+      '<div style="flex:1">' +
+        '<div style="font-size:10px;color:var(--muted);text-align:center;font-weight:600;margin-bottom:3px">' + s.label + '</div>' +
+        '<div style="display:flex;height:6px;border-radius:3px;overflow:hidden">' +
+          '<div style="flex:' + hw + ';background:var(--navy);min-width:' + (s.hv?4:0) + 'px"></div>' +
+          '<div style="flex:' + aw + ';background:#ccc;min-width:' + (s.av?4:0) + 'px"></div>' +
+        '</div>' +
+      '</div>' +
+      '<span class="stat-num">' + s.av + s.unit + '</span>' +
+    '</div>';
+  }).join('');
+
+  document.getElementById('mo-body').innerHTML =
+    '<div class="match-section"><div class="ms-title">Scorers</div><div class="scorers-grid">' + homeGoals + '</div><div class="scorers-grid" style="margin-top:4px">' + awayGoals + '</div></div>' +
+    '<div class="match-section"><div class="ms-title">Cards</div>' + cardHtml + '</div>' +
+    '<div class="match-section"><div class="ms-title">Match Stats</div>' + statsHtml + '</div>';
+
+  openOv('match-ov');
 }
 
-// ===== TRANSFERS =====
-function transferHTML(t){
-  const dirClass = t.dir==='in'?'transfer-in':t.dir==='out'?'transfer-out':'transfer-rumour';
-  const tagClass = t.dir==='in'?'tag-in':t.dir==='out'?'tag-out':'tag-rumour';
-  const tagText = t.dir==='in'?'IN':t.dir==='out'?'OUT':'RUMOUR';
-  const isRumour = t.dir==='rumour' && RUMOUR_DETAILS[t.name];
-  return `<div class="transfer-card ${dirClass}" ${isRumour?`onclick="openRumour('${t.name.replace(/'/g,"\\'")}')" style="cursor:pointer"`:''}">
-    <div class="transfer-avatar">${t.init}</div>
-  return `<div class="transfer-card ${dirClass}" ${isRumour?`onclick="openRumour('${t.name.replace(/'/g,"\\'")}')" style="cursor:pointer"`:''}">
-    <div class="transfer-avatar">${t.init}</div>
-    <div class="transfer-info">
-      <div class="transfer-name">${t.name}</div>
-      <div class="transfer-detail">${t.detail}${isRumour?' · <span style="color:var(--gold)">tap for stats →</span>':''}</div>
-    </div>
-    <span class="transfer-tag ${tagClass}">${tagText}</span>
-  </div>`;
-}
-function renderTransfers(){
-  document.getElementById('transfers-done').innerHTML = TRANSFERS_DONE.map(transferHTML).join('');
-  document.getElementById('transfers-rumours').innerHTML = TRANSFERS_RUMOURS.map(transferHTML).join('');
-  document.getElementById('transfers-out').innerHTML = TRANSFERS_OUT.map(transferHTML).join('');
+// ============================================================
+// FIXTURES
+// ============================================================
+function renderFixtures() {
+  var upEl = document.getElementById('fixtures-upcoming');
+  upEl.innerHTML = FIXTURES.map(function(f){
+    function formDots(form) {
+      return '<div class="form-dots" style="margin-top:4px">' +
+        form.map(function(r){ return '<div class="fdot ' + r + '">' + r + '</div>'; }).join('') +
+      '</div>';
+    }
+    return '<div class="fixture-item' + (f.next ? ' next' : '') + '">' +
+      '<div class="fixture-date">' + f.date + '</div>' +
+      '<div class="fixture-time">' + f.time + '</div>' +
+      '<div class="fixture-teams">' +
+        '<div>' +
+          '<div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:800;font-size:16px">' + f.home + '</div>' +
+          (f.homeForm ? formDots(f.homeForm) : '') +
+        '</div>' +
+        '<span class="fixture-vs">vs</span>' +
+        '<div>' +
+          '<div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:800;font-size:16px">' + f.away + '</div>' +
+          (f.awayForm ? formDots(f.awayForm) : '') +
+        '</div>' +
+      '</div>' +
+      '<div class="fixture-form-wrap">' +
+        '<div style="font-size:11px;color:var(--muted);font-family:\'Space Mono\',monospace">' + f.venue + '</div>' +
+      '</div>' +
+      (f.next ? '<span class="next-badge">Next</span>' : '') +
+      (f.odds ? '<div class="odds-wrap"><span class="odd-pill">H ' + f.odds.h + '</span><span class="odd-pill">D ' + f.odds.d + '</span><span class="odd-pill">A ' + f.odds.a + '</span></div>' : '') +
+    '</div>';
+  }).join('');
+
+  var resEl = document.getElementById('fixtures-results');
+  resEl.innerHTML = RESULTS.map(function(r, i){ return resultHTML(r, i); }).join('');
 }
 
-// ===== LINEUP =====
-function renderLineup(){
-  const fBtns = document.getElementById('formation-btns');
-  fBtns.innerHTML = Object.keys(FORMATIONS).map(f=>`<button class="fsel${f===curFormation?' on':''}" onclick="setFormation('${f}')">${f}</button>`).join('');
-  renderPitch();
-  renderPlayerPicker();
+// ============================================================
+// TRANSFERS
+// ============================================================
+function renderTransfers() {
+  document.getElementById('transfers-done').innerHTML = TRANSFERS_DONE.map(tCard).join('');
+  document.getElementById('transfers-rumours').innerHTML = TRANSFERS_RUMOURS.map(tCard).join('');
+  document.getElementById('transfers-out').innerHTML = TRANSFERS_OUT.map(tCard).join('');
+}
+function tCard(t) {
+  var dc = t.dir === 'in' ? 'transfer-in' : t.dir === 'out' ? 'transfer-out' : 'transfer-rumour';
+  var tc = t.dir === 'in' ? 'tag-in' : t.dir === 'out' ? 'tag-out' : 'tag-rumour';
+  var tt = t.dir === 'in' ? 'IN' : t.dir === 'out' ? 'OUT' : 'RUMOUR';
+  var isR = t.dir === 'rumour' && RUMOURS[t.name];
+  var clickAttr = isR ? ' class="transfer-card ' + dc + ' clickable" onclick="openRumour(\'' + t.name.replace(/'/g,'\\\'') + '\')"' : ' class="transfer-card ' + dc + '"';
+  return '<div' + clickAttr + '>' +
+    '<div class="transfer-avatar">' + t.init + '</div>' +
+    '<div class="transfer-info">' +
+      '<div class="transfer-name">' + t.name + '</div>' +
+      '<div class="transfer-detail">' + t.detail + (isR ? '<br><span class="transfer-hint">tap for stats →</span>' : '') + '</div>' +
+    '</div>' +
+    '<span class="transfer-tag ' + tc + '">' + tt + '</span>' +
+  '</div>';
 }
 
-function setFormation(f){
-  curFormation=f;
-  pickerSlot=null;
-  document.querySelectorAll('.fsel').forEach(b=>{b.classList.toggle('on',b.textContent===f)});
-  // rebuild pitchXI from formation template
-  const rows=FORMATIONS[f];
-  const flat=rows.flat();
-  flat.forEach((num,i)=>{ pitchXI[i]=num; });
-  renderPitch();
-  renderPlayerPicker();
+// ============================================================
+// RUMOUR OVERLAY
+// ============================================================
+function openRumour(name) {
+  var d = RUMOURS[name];
+  if (!d) return;
+  document.getElementById('ro-name').textContent = name;
+  document.getElementById('ro-meta').textContent = d.nation + ' · ' + d.pos + ' · Age ' + d.age + ' · ' + d.club;
+  document.getElementById('ro-val').textContent = 'Est. Value: ' + d.value;
+  document.getElementById('ro-stats').innerHTML =
+    '<div class="rstat"><span class="rstat-n">' + d.goals + '</span><span class="rstat-l">Goals</span></div>' +
+    '<div class="rstat"><span class="rstat-n">' + d.assists + '</span><span class="rstat-l">Assists</span></div>' +
+    '<div class="rstat"><span class="rstat-n">' + d.apps + '</span><span class="rstat-l">Apps</span></div>';
+  document.getElementById('ro-bio').innerHTML =
+    '<div style="font-size:10px;color:var(--gold);font-family:\'Space Mono\',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">' + d.season + '</div>' + d.bio;
+  openOv('rumour-ov');
 }
 
-function renderPitch(){
-  const rows=FORMATIONS[curFormation];
-  const pitch=document.getElementById('pitch');
-  // rows[0]=GK, rows[1]=DEF, ... rows[last]=FWD
-  // display from top (FWD) to bottom (GK) on pitch visually
-  let slotIdx=0;
-  const rowsWithIdx=rows.map(row=>{
-    const r={nums:row,startIdx:slotIdx};
-    slotIdx+=row.length;
+// ============================================================
+// ARTICLES
+// ============================================================
+function openArticle(idx) {
+  var a = ARTICLES[idx];
+  var imgDiv = document.getElementById('ao-img');
+  imgDiv.style.background = a.bg;
+  document.getElementById('ao-cat').className = 'news-cat ' + a.catCls;
+  document.getElementById('ao-cat').textContent = a.cat;
+  document.getElementById('ao-title').textContent = a.title;
+  document.getElementById('ao-meta').textContent = a.date;
+  document.getElementById('ao-body').innerHTML = a.body;
+  openOv('article-ov');
+}
+
+// ============================================================
+// LINEUP
+// ============================================================
+function renderLineup() {
+  var fb = document.getElementById('formation-btns');
+  fb.innerHTML = Object.keys(FORMATIONS).map(function(f){
+    return '<button class="fsel' + (f === curFormation ? ' on' : '') + '" onclick="setFormation(\'' + f + '\')">' + f + '</button>';
+  }).join('');
+  drawPitch();
+  drawPicker();
+}
+
+function setFormation(f) {
+  curFormation = f;
+  pickerSlot = null;
+  var rows = FORMATIONS[f];
+  var idx = 0;
+  rows.forEach(function(row){
+    row.forEach(function(num){ pitchXI[idx] = num; idx++; });
+  });
+  document.querySelectorAll('.fsel').forEach(function(b){ b.classList.toggle('on', b.textContent === f); });
+  drawPitch();
+  drawPicker();
+}
+
+function drawPitch() {
+  var rows = FORMATIONS[curFormation];
+  var pitch = document.getElementById('pitch');
+  var slotIdx = 0;
+  var rowData = rows.map(function(row){
+    var r = {nums: row, start: slotIdx};
+    slotIdx += row.length;
     return r;
   });
-  // reverse so forwards appear at top of pitch
-  pitch.innerHTML=[...rowsWithIdx].reverse().map(({nums,startIdx})=>{
-    return `<div class="pitch-row">${nums.map((_, ci)=>{
-      const idx=startIdx+ci;
-      const pid=pitchXI[idx];
-      const p=SQUAD.find(s=>s.num===pid);
-      const initials=p?p.name.slice(0,3).toUpperCase():'?';
-      const isSelected=pickerSlot===idx;
-      return `<div class="player-slot${isSelected?' selected':''}" onclick="openPicker(${idx})">
-        <div class="player-circle${isSelected?' selected':''}">
-          <div class="num">${p?p.num:'?'}</div>${initials}
-        </div>
-        <div class="player-name">${p?p.name:'Click'}</div>
-      </div>`;
-    }).join('')}</div>`;
+
+  pitch.innerHTML = rowData.slice().reverse().map(function(rd){
+    return '<div class="pitch-row">' + rd.nums.map(function(_, ci){
+      var idx = rd.start + ci;
+      var pid = pitchXI[idx];
+      var pl = SQUAD.find(function(s){ return s.num === pid; });
+      var ini = pl ? pl.name.slice(0,3).toUpperCase() : '?';
+      var isSel = pickerSlot === idx;
+      return '<div class="player-slot' + (isSel ? ' sel' : '') + '" onclick="clickSlot(' + idx + ')">' +
+        '<div class="player-circle' + (isSel ? ' sel' : '') + '">' +
+          '<div class="num">' + (pl ? pl.num : '?') + '</div>' + ini +
+        '</div>' +
+        '<div class="player-name">' + (pl ? pl.name : 'Click') + '</div>' +
+      '</div>';
+    }).join('') + '</div>';
   }).join('');
 
-  const usedIds=Object.values(pitchXI);
-  const subPlayers=SQUAD.filter(p=>!usedIds.includes(p.num)).slice(0,7);
-  document.getElementById('subs').innerHTML=
-    `<div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;grid-column:1/-1">Substitutes</div>`+
-    subPlayers.map(p=>`<div class="sub-slot"><div class="sub-num">#${p.num}</div><div class="sub-name">${p.name}</div></div>`).join('');
+  var used = Object.values(pitchXI);
+  var subs = SQUAD.filter(function(p){ return used.indexOf(p.num) === -1; }).slice(0, 7);
+  document.getElementById('subs').innerHTML =
+    '<div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:700;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;grid-column:1/-1">Substitutes</div>' +
+    subs.map(function(p){
+      return '<div class="sub-slot"><div class="sub-num">#' + p.num + '</div><div class="sub-name">' + p.name + '</div></div>';
+    }).join('');
 }
 
-function openPicker(slot){
-  pickerSlot=slot;
-  renderPitch();
-  renderPlayerPicker();
+function clickSlot(idx) {
+  pickerSlot = idx;
+  drawPitch();
+  drawPicker();
 }
 
-function renderPlayerPicker(){
-  const pp=document.getElementById('player-picker');
-  const usedIds=Object.values(pitchXI);
-  if(pickerSlot===null){
-    pp.innerHTML=`<div style="text-align:center;padding:20px 10px;color:var(--muted);">
-      <div style="font-size:28px;margin-bottom:8px">👆</div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--navy)">Click a shirt on the pitch</div>
-      <div style="font-size:12px;margin-top:4px">to swap that player</div>
-    </div>`+SQUAD.map(p=>`
-    <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:7px;opacity:.5;font-size:12px;font-family:'Barlow Condensed',sans-serif;font-weight:700">
-      <div style="width:26px;height:26px;border-radius:50%;background:var(--off);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);flex-shrink:0">${p.num}</div>
-      ${p.full}${usedIds.includes(p.num)?' <span style="font-size:9px;background:var(--navy);color:white;padding:1px 5px;border-radius:3px;margin-left:auto">XI</span>':''}
-    </div>`).join('');
+function drawPicker() {
+  var pp = document.getElementById('player-picker');
+  var used = Object.values(pitchXI);
+
+  if (pickerSlot === null) {
+    pp.innerHTML = '<div style="text-align:center;padding:24px 10px;color:var(--muted)">' +
+      '<div style="font-size:28px;margin-bottom:8px">👆</div>' +
+      '<div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:700;font-size:15px;color:var(--navy)">Click a shirt on the pitch to swap that player</div>' +
+    '</div>' +
+    SQUAD.map(function(p){
+      var inXI = used.indexOf(p.num) !== -1;
+      return '<div class="picker-item' + (inXI ? ' in-xi' : '') + '" onclick="' + (inXI ? '' : 'assignPlayer(' + p.num + ')') + '">' +
+        '<div style="width:28px;height:28px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;font-family:\'Space Mono\',monospace">' + p.num + '</div>' +
+        '<div style="flex:1"><div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:800;font-size:14px">' + p.full + '</div>' +
+        '<div style="font-size:10px;color:var(--muted);font-family:\'Space Mono\',monospace">' + p.sec + ' · ' + p.apps + ' apps</div></div>' +
+        '<div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:900;font-size:16px;color:var(--gold)">' + p.ws + '</div>' +
+      '</div>';
+    }).join('');
     return;
   }
-  const curPlayer=SQUAD.find(s=>s.num===pitchXI[pickerSlot]);
-  pp.innerHTML=`<div style="background:rgba(0,30,90,0.06);border:1.5px solid var(--navy);border-radius:8px;padding:10px 12px;margin-bottom:12px;">
-    <div style="font-size:10px;color:var(--muted);font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px">Replacing</div>
-    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--navy)">${curPlayer?curPlayer.full:'Unknown'}</div>
-    <div style="font-size:11px;color:var(--gold);margin-top:2px">👇 Select a player below</div>
-  </div>`+
-  SQUAD.map(p=>{
-    const inXI=usedIds.includes(p.num)&&pitchXI[pickerSlot]!==p.num;
-    return `<div onclick="${inXI?'':'assignPlayer('+p.num+')'}" style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:7px;cursor:${inXI?'default':'pointer'};transition:background .1s;${inXI?'opacity:.35;':''}${pitchXI[pickerSlot]===p.num?'background:rgba(0,30,90,0.06);border:1.5px solid var(--navy);':''}" ${inXI?'':'onmouseover="this.style.background=\'var(--off)\'" onmouseout="this.style.background=\'\'"'}>
-      <div style="width:28px;height:28px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;flex-shrink:0">${p.num}</div>
-      <div style="flex:1">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px">${p.full}</div>
-        <div style="font-size:10px;color:var(--muted);font-family:'Space Mono',monospace">${p.section} · ${p.apps} apps</div>
-      </div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--gold)">${p.rating}</div>
-    </div>`;
+
+  var curP = SQUAD.find(function(s){ return s.num === pitchXI[pickerSlot]; });
+  pp.innerHTML = '<div style="background:rgba(0,30,90,0.06);border:1.5px solid var(--navy);border-radius:8px;padding:10px 12px;margin-bottom:12px">' +
+    '<div style="font-size:10px;color:var(--muted);font-family:\'Space Mono\',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px">Replacing</div>' +
+    '<div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:900;font-size:16px;color:var(--navy)">' + (curP ? curP.full : 'Unknown') + '</div>' +
+    '<div style="font-size:11px;color:var(--gold);margin-top:2px">Select a player below</div>' +
+  '</div>' +
+  SQUAD.map(function(p){
+    var inXI = used.indexOf(p.num) !== -1 && pitchXI[pickerSlot] !== p.num;
+    return '<div class="picker-item' + (inXI ? ' in-xi' : '') + '" onclick="' + (inXI ? '' : 'assignPlayer(' + p.num + ')') + '">' +
+      '<div style="width:28px;height:28px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;font-family:\'Space Mono\',monospace">' + p.num + '</div>' +
+      '<div style="flex:1"><div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:800;font-size:14px">' + p.full + '</div>' +
+      '<div style="font-size:10px;color:var(--muted);font-family:\'Space Mono\',monospace">' + p.sec + ' · ' + p.apps + ' apps</div></div>' +
+      '<div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:900;font-size:16px;color:var(--gold)">' + p.ws + '</div>' +
+    '</div>';
   }).join('');
 }
 
-function assignPlayer(num){
-  if(pickerSlot===null) return;
-  const existingSlot=Object.entries(pitchXI).find(([k,v])=>v===num);
-  if(existingSlot) pitchXI[existingSlot[0]]=pitchXI[pickerSlot];
-  pitchXI[pickerSlot]=num;
-  pickerSlot=null;
-  renderPitch();
-  renderPlayerPicker();
+function assignPlayer(num) {
+  if (pickerSlot === null) return;
+  var existing = null;
+  var keys = Object.keys(pitchXI);
+  for (var i = 0; i < keys.length; i++) {
+    if (pitchXI[keys[i]] === num) { existing = keys[i]; break; }
+  }
+  if (existing !== null) pitchXI[existing] = pitchXI[pickerSlot];
+  pitchXI[pickerSlot] = num;
+  pickerSlot = null;
+  drawPitch();
+  drawPicker();
 }
 
-function shareLineup(){
-  const rows=FORMATIONS[curFormation];
-  let slotIdx=0;
-  const byRow=rows.map(row=>{
-    const names=row.map((_,ci)=>{const p=SQUAD.find(s=>s.num===pitchXI[slotIdx+ci]);return p?p.name:'?';});
-    slotIdx+=row.length;
-    return names.join(', ');
+function shareLineup() {
+  var rows = FORMATIONS[curFormation];
+  var idx = 0;
+  var lines = rows.slice().reverse().map(function(row){
+    var names = row.map(function(){
+      var p = SQUAD.find(function(s){ return s.num === pitchXI[idx]; });
+      idx++;
+      return p ? p.name : '?';
+    });
+    return names.join(' | ');
   });
-  const text=`My Pompey XI (${curFormation}):\n`+[...byRow].reverse().join('\n')+'\n#Pompey #PUSB';
-  navigator.clipboard?.writeText(text).then(()=>showToast('Lineup copied to clipboard! 💙')).catch(()=>showToast('Lineup ready to share! 💙'));
+  var text = 'My Pompey XI (' + curFormation + '):\n' + lines.join('\n') + '\n#Pompey #PUSB';
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(function(){ toast('Lineup copied! 💙'); });
+  } else { toast('Lineup ready! 💙'); }
 }
 
-// ===== RATINGS =====
-let ratFilter='GK';
-function renderRatings(filter){
-  ratFilter=filter;
-  const sections=['GK','DEF','MID','FWD'];
-  document.getElementById('ratings-filter').innerHTML=sections.map(s=>`<button class="rf${ratFilter===s?' on':''}" onclick="renderRatings('${s}')">${s==='GK'?'Goalkeepers':s==='DEF'?'Defenders':s==='MID'?'Midfielders':'Forwards'}</button>`).join('');
-  const players=SQUAD.filter(p=>p.section===filter).sort((a,b)=>b.rating-a.rating);
-  const grid=document.getElementById('ratings-grid');
-  if(!players.length){grid.innerHTML='<div style="color:var(--muted);font-size:13px;">No players in this position</div>';return;}
-  grid.innerHTML=players.map(p=>{
-    const fanData=userRatings[p.num];
-    const fanAvg=fanData&&fanData.count?(fanData.total/fanData.count).toFixed(1):null;
-    const wsRating=p.rating;
-    const col=r=>r>=7?'green':r>=6.5?'gold':r>=6?'amber':'red';
-    const barCol=c=>c==='green'?'#22C55E':c==='gold'?'var(--gold)':c==='amber'?'#F59E0B':'var(--red)';
-    return `<div class="rating-card" onclick="openRateModal(${p.num})">
-      <div class="rating-avatar">${p.name.slice(0,2).toUpperCase()}</div>
-      <div class="rating-name">${p.full}</div>
-      <div class="rating-pos">#${p.num} · ${p.pos} · ${p.apps} apps · ${p.goals}⚽</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;margin-bottom:6px">
-        <div style="background:var(--off);border-radius:7px;padding:8px 6px;text-align:center">
-          <div style="font-size:9px;font-family:'Space Mono',monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">WhoScored</div>
-          <div class="rating-num-big ${col(wsRating)}" style="font-size:28px">${wsRating}</div>
-          <div class="rating-bar-wrap" style="margin-top:4px"><div class="rating-bar" style="width:${((wsRating-5)/5*100).toFixed(0)}%;background:${barCol(col(wsRating))}"></div></div>
-        </div>
-        <div style="background:var(--off);border-radius:7px;padding:8px 6px;text-align:center">
-          <div style="font-size:9px;font-family:'Space Mono',monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">Fan Avg</div>
-          ${fanAvg
-            ?`<div class="rating-num-big ${col(parseFloat(fanAvg))}" style="font-size:28px">${fanAvg}</div>
-               <div class="rating-bar-wrap" style="margin-top:4px"><div class="rating-bar" style="width:${((parseFloat(fanAvg)-5)/5*100).toFixed(0)}%;background:${barCol(col(parseFloat(fanAvg)))}"></div></div>`
-            :`<div style="font-size:22px;color:var(--muted);margin:4px 0">—</div>
-               <div style="font-size:9px;color:var(--gold);font-family:'Space Mono',monospace">tap to rate</div>`
-          }
-        </div>
-      </div>
-      <div class="rating-apps">${fanData?.count?fanData.count+' fan vote'+(fanData.count>1?'s':''):'Be first to rate!'}</div>
-    </div>`;
+// ============================================================
+// RATINGS
+// ============================================================
+function renderRatings(filter) {
+  ratFilter = filter;
+  var sections = ['GK','DEF','MID','FWD'];
+  var labels = {GK:'Goalkeepers',DEF:'Defenders',MID:'Midfielders',FWD:'Forwards'};
+  document.getElementById('ratings-filter').innerHTML = sections.map(function(s){
+    return '<button class="rf' + (ratFilter === s ? ' on' : '') + '" onclick="renderRatings(\'' + s + '\')">' + labels[s] + '</button>';
+  }).join('');
+
+  var players = SQUAD.filter(function(p){ return p.sec === filter; }).sort(function(a,b){ return b.ws - a.ws; });
+  document.getElementById('ratings-grid').innerHTML = players.map(function(p){
+    var fd = userRatings[p.num];
+    var fanAvg = fd && fd.count ? (fd.total / fd.count).toFixed(1) : null;
+    function col(v) { return v >= 7 ? 'green' : v >= 6.5 ? 'gold' : v >= 6 ? 'amber' : 'red'; }
+    function barCol(c) { return c === 'green' ? '#22C55E' : c === 'gold' ? 'var(--gold)' : c === 'amber' ? '#F59E0B' : 'var(--red)'; }
+    function barW(v) { return Math.max(0, Math.round((v - 5) / 5 * 100)); }
+    var wsBox = '<div class="rating-box">' +
+      '<div class="rating-box-label">WhoScored</div>' +
+      '<div class="rating-num ' + col(p.ws) + '">' + p.ws + '</div>' +
+      '<div class="rating-bar-wrap"><div class="rating-bar" style="width:' + barW(p.ws) + '%;background:' + barCol(col(p.ws)) + '"></div></div>' +
+    '</div>';
+    var fanBox = '<div class="rating-box">' +
+      '<div class="rating-box-label">Fan Avg</div>' +
+      (fanAvg
+        ? '<div class="rating-num ' + col(parseFloat(fanAvg)) + '">' + fanAvg + '</div><div class="rating-bar-wrap"><div class="rating-bar" style="width:' + barW(parseFloat(fanAvg)) + '%;background:' + barCol(col(parseFloat(fanAvg))) + '"></div></div>'
+        : '<div style="font-size:22px;color:var(--muted);margin:4px 0">—</div><div style="font-size:9px;color:var(--gold);font-family:\'Space Mono\',monospace">tap to rate</div>'
+      ) +
+    '</div>';
+    return '<div class="rating-card" onclick="openRateModal(' + p.num + ')">' +
+      '<div class="rating-avatar">' + p.name.slice(0,2).toUpperCase() + '</div>' +
+      '<div class="rating-name">' + p.full + '</div>' +
+      '<div class="rating-pos">#' + p.num + ' · ' + p.pos + ' · ' + p.apps + ' apps · ' + p.goals + ' goals</div>' +
+      '<div class="dual-ratings">' + wsBox + fanBox + '</div>' +
+      '<div class="rating-apps">' + (fd && fd.count ? fd.count + ' fan vote' + (fd.count > 1 ? 's' : '') : 'Be first to rate!') + '</div>' +
+    '</div>';
   }).join('');
 }
 
 // RATING MODAL
-function openRateModal(num){
-  const p = SQUAD.find(s=>s.num===num);
-  if(!p) return;
+function openRateModal(num) {
+  var p = SQUAD.find(function(s){ return s.num === num; });
+  if (!p) return;
   ratingPlayerId = num;
   currentRating = 0;
   document.getElementById('rm-name').textContent = p.full;
-  document.getElementById('rm-pos').textContent = `#${p.num} · ${p.pos} · ${p.apps} apps · ${p.goals} goals`;
+  document.getElementById('rm-pos').textContent = '#' + p.num + ' · ' + p.pos + ' · ' + p.apps + ' apps · ' + p.goals + ' goals';
   updateStars(0);
-  document.getElementById('rm-stats').innerHTML = Object.entries(p.stats).map(([k,v])=>`
-    <div class="sbar-row">
-      <span class="sbar-label">${k.replace(/_/g,' ')}</span>
-      <div class="sbar-track"><div class="sbar-fill" style="width:${v}%"></div></div>
-      <span class="sbar-val">${v}</span>
-    </div>`).join('');
-  document.getElementById('rm-rating-label').textContent = 'Tap to rate out of 10';
+  document.getElementById('rm-lbl').textContent = 'Tap to rate out of 10';
+  document.getElementById('rm-stats').innerHTML = Object.entries(p.stats).map(function(e){
+    return '<div class="sbar-row"><span class="sbar-label">' + e[0].replace(/_/g,' ') + '</span>' +
+      '<div class="sbar-track"><div class="sbar-fill" style="width:' + e[1] + '%"></div></div>' +
+      '<span class="sbar-val">' + e[1] + '</span></div>';
+  }).join('');
   document.getElementById('rate-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
-function closeRateModal(){ document.getElementById('rate-modal').classList.remove('open'); }
-function setStar(n){
+function closeRateModal() {
+  document.getElementById('rate-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function setStar(n) {
   currentRating = n;
   updateStars(n);
-  const labels = ['','Awful','Poor','Below Average','Average','Decent','Good','Very Good','Excellent','Outstanding','World Class!'];
-  document.getElementById('rm-rating-label').textContent = `${n}/10 — ${labels[n]}`;
+  var labels = ['','Awful','Poor','Below Average','Average','Decent','Good','Very Good','Excellent','Outstanding','World Class!'];
+  document.getElementById('rm-lbl').textContent = n + '/10 — ' + labels[n];
 }
-function updateStars(n){
-  document.querySelectorAll('.star').forEach((s,i)=>s.classList.toggle('on',i<n));
+function updateStars(n) {
+  document.querySelectorAll('.star').forEach(function(s,i){ s.classList.toggle('on', i < n); });
 }
-function submitRating(){
-  if(!currentRating){ showToast('Please select a rating!'); return; }
-  if(!userRatings[ratingPlayerId]) userRatings[ratingPlayerId]={total:0,count:0};
+function submitRating() {
+  if (!currentRating) { toast('Pick a rating first!'); return; }
+  if (!userRatings[ratingPlayerId]) userRatings[ratingPlayerId] = {total:0, count:0};
   userRatings[ratingPlayerId].total += currentRating;
-  userRatings[ratingPlayerId].count += 1;
-  localStorage.setItem('ff_ratings',JSON.stringify(userRatings));
+  userRatings[ratingPlayerId].count++;
+  localStorage.setItem('ff_r', JSON.stringify(userRatings));
   closeRateModal();
   renderRatings(ratFilter);
-  const p = SQUAD.find(s=>s.num===ratingPlayerId);
-  showToast(`Rated ${p.name} ${currentRating}/10! 💙`);
+  var p = SQUAD.find(function(s){ return s.num === ratingPlayerId; });
+  toast('Rated ' + p.name + ' ' + currentRating + '/10! 💙');
 }
 
-// ===== TABLE =====
-function renderTable(){
-  const zoneClass = {promo:'promo-zone',playoff:'playoff-zone',safe:'safe-zone',rel:'rel-zone'};
-  document.getElementById('league-table').innerHTML = `
-    <thead><tr>
-      <th>Pos</th><th>Team</th>
-      <th class="r">P</th><th class="r">W</th><th class="r">D</th><th class="r">L</th>
-      <th class="r">GD</th><th class="r">Pts</th>
-    </tr></thead>
-    <tbody>`+TABLE_DATA.map(t=>`
-      <tr class="${zoneClass[t.zone]||''}${t.pompey?' pompey':''}">
-        <td class="pos">${t.pos}</td>
-        <td class="team-name">${t.team}${t.pompey?' ⭐':''}${t.note?` <span style="font-size:9px;color:var(--red);font-family:'Space Mono',monospace">${t.note}</span>`:''}</td>
-        <td class="r">${t.p}</td><td class="r">${t.w}</td><td class="r">${t.d}</td><td class="r">${t.l}</td>
-        <td class="r">${t.gd>0?'+'+t.gd:t.gd}</td>
-        <td class="pts">${t.pts}</td>
-      </tr>`).join('')+`</tbody>`;
+// ============================================================
+// TABLE
+// ============================================================
+function renderTable() {
+  var zc = {promo:'promo-zone',playoff:'playoff-zone',safe:'',rel:'rel-zone'};
+  var rows = TABLE.map(function(t){
+    return '<tr class="' + (zc[t.zone]||'') + (t.pompey ? ' pompey' : '') + '">' +
+      '<td class="pos">' + t.p + '</td>' +
+      '<td class="team-name">' + t.t + (t.pompey ? ' ⭐' : '') + (t.note ? ' <span style="font-size:9px;color:var(--red);font-family:\'Space Mono\',monospace">' + t.note + '</span>' : '') + '</td>' +
+      '<td class="r">' + t.pl + '</td>' +
+      '<td class="r">' + t.w + '</td>' +
+      '<td class="r">' + t.d + '</td>' +
+      '<td class="r">' + t.l + '</td>' +
+      '<td class="r">' + t.gf + '</td>' +
+      '<td class="r">' + t.ga + '</td>' +
+      '<td class="r">' + (t.gd > 0 ? '+' + t.gd : t.gd) + '</td>' +
+      '<td class="pts">' + t.pts + '</td>' +
+    '</tr>';
+  }).join('');
+  document.getElementById('league-table').innerHTML =
+    '<thead><tr>' +
+    '<th>Pos</th><th>Team</th>' +
+    '<th class="r">P</th><th class="r">W</th><th class="r">D</th><th class="r">L</th>' +
+    '<th class="r">F</th><th class="r">A</th><th class="r">GD</th><th class="r">Pts</th>' +
+    '</tr></thead><tbody>' + rows + '</tbody>';
 }
 
-// ===== MATCH OVERLAY =====
-function openMatch(idx){
-  const r=RESULTS[idx];
-  if(!r||!r.scorers) return;
-  document.getElementById('mo-home').textContent=r.home;
-  document.getElementById('mo-away').textContent=r.away;
-  document.getElementById('mo-score').textContent=r.score;
-  document.getElementById('mo-comp').textContent=r.comp;
-  document.getElementById('mo-date').textContent=r.date;
-  document.getElementById('mo-venue').textContent=r.venue||'';
-  document.getElementById('mo-att').textContent=r.attendance?'👥 '+r.attendance.toLocaleString():'';
-  // scorers
-  const homeScorers=r.scorers.home.map(s=>`<div class="scorer-item">⚽ ${s}</div>`).join('')||'<div class="scorer-item" style="color:var(--muted)">—</div>';
-  const awayScorers=r.scorers.away.map(s=>`<div class="scorer-item away-item">⚽ ${s}</div>`).join('')||'<div class="scorer-item away-item" style="color:var(--muted)">—</div>';
-  document.getElementById('mo-scorers').innerHTML=`<div class="scorer-col">${homeScorers}</div><div class="scorer-col" style="text-align:right">${awayScorers}</div>`;
-  // cards
-  const allCards=[...r.cards.home,...r.cards.away];
-  if(allCards.length){
-    document.getElementById('mo-cards-sec').style.display='block';
-    document.getElementById('mo-cards').innerHTML=allCards.map(c=>`<div style="font-size:12px;margin-bottom:4px">${c}</div>`).join('');
-  } else {
-    document.getElementById('mo-cards-sec').style.display='none';
-  }
-  // stats
-  if(r.stats){
-    const {possession,shots,shotsOnTarget,corners}=r.stats;
-    const statRows=[
-      {label:'Possession',home:possession[0],away:possession[1],unit:'%'},
-      {label:'Shots',home:shots[0],away:shots[1],unit:''},
-      {label:'On Target',home:shotsOnTarget[0],away:shotsOnTarget[1],unit:''},
-      {label:'Corners',home:corners[0],away:corners[1],unit:''},
-    ];
-    document.getElementById('mo-stats').innerHTML=statRows.map(s=>{
-      const total=s.home+s.away||1;
-      const hw=Math.round(s.home/total*100);
-      const aw=Math.round(s.away/total*100);
-      return `<div class="stat-row">
-        <span class="stat-num">${s.home}${s.unit}</span>
-        <div style="flex:1;display:flex;flex-direction:column;gap:2px">
-          <div style="font-size:10px;color:var(--muted);text-align:center;font-weight:600">${s.label}</div>
-          <div style="display:flex;gap:3px;height:6px">
-            <div style="flex:${s.home};background:var(--navy);border-radius:3px 0 0 3px;min-width:${s.home?4:0}px"></div>
-            <div style="flex:${s.away};background:var(--muted);border-radius:0 3px 3px 0;min-width:${s.away?4:0}px"></div>
-          </div>
-        </div>
-        <span class="stat-num">${s.away}${s.unit}</span>
-      </div>`;
-    }).join('');
-  }
-  document.getElementById('match-overlay').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeMatch(){document.getElementById('match-overlay').classList.remove('open');document.body.style.overflow='';}
-function closeMatchOnBg(e){if(e.target===document.getElementById('match-overlay'))closeMatch();}
-
-// ===== RUMOUR OVERLAY =====
-function openRumour(name){
-  const d=RUMOUR_DETAILS[name];
-  if(!d) return;
-  document.getElementById('ro-name').textContent=name;
-  document.getElementById('ro-meta').textContent=`${d.nation} · ${d.pos} · Age ${d.age} · ${d.club}`;
-  document.getElementById('ro-value').textContent=`Est. Value: ${d.estValue}`;
-  document.getElementById('ro-stats').innerHTML=`
-    <div class="rstat"><span class="rstat-n">${d.goals}</span><span class="rstat-l">Goals</span></div>
-    <div class="rstat"><span class="rstat-n">${d.assists}</span><span class="rstat-l">Assists</span></div>
-    <div class="rstat"><span class="rstat-n">${d.apps}</span><span class="rstat-l">Apps</span></div>`;
-  document.getElementById('ro-bio').innerHTML=`<div style="font-size:10px;color:var(--gold);font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">${d.lastSeason}</div>${d.bio}`;
-  document.getElementById('rumour-overlay').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeRumour(){document.getElementById('rumour-overlay').classList.remove('open');document.body.style.overflow='';}
-function closeRumourOnBg(e){if(e.target===document.getElementById('rumour-overlay'))closeRumour();}
-
-// ===== ARTICLES =====
-const ARTICLES = [
-  {
-    id:1, cat:'Match Report', catClass:'cat-match', emoji:'⚽', date:'18 Apr 2026',
-    title:'POMPEY SECURE SURVIVAL WITH BOWAT HEADER AGAINST FOXES',
-    body:`<p>Portsmouth Football Club secured their EFL Championship status for another season with a hard-fought 1-0 victory over already-doomed Leicester City at Fratton Park on Saturday afternoon.</p>
-<p>Ibane Bowat was the hero, rising highest to power home a Conor Chaplin corner in the 63rd minute — sending the home support into raptures and all but mathematically confirming Pompey's survival with three games to spare.</p>
-<p>The Blues had come into the game in fine form following back-to-back wins over Middlesbrough and Ipswich Town, and John Mousinho's side were solid and disciplined throughout, limiting the relegated Foxes to very little of note.</p>
-<p>Chaplin, on loan from Ipswich, was a constant threat and deserved his assist. Colby Bishop led the line well, and Nicolas Schmid was rarely troubled in goal as Leicester's players — now condemned to League One — showed little appetite for the battle.</p>
-<p>The final whistle was met with scenes of jubilation at Fratton Park. Survival in the Championship for a second successive season represents a genuine achievement for a squad assembled on a shoestring budget. Up the Blues!</p>`
-  },
-  {
-    id:2, cat:'Transfer News', catClass:'cat-transfer', emoji:'🔄', date:'19 Apr 2026',
-    title:'MOUSINHO EYES SUMMER REINFORCEMENTS AFTER SURVIVAL CONFIRMED',
-    body:`<p>With Championship survival secured, John Mousinho is now turning his attention to shaping Portsmouth's squad for the 2026-27 season — and the manager has reportedly identified several targets as he looks to build on another creditable campaign.</p>
-<p>Sources close to the club suggest Mousinho is keen to add more creativity and pace in wide areas, with the departure of loan players Conor Chaplin (back to Ipswich) and potentially John Swift creating gaps to fill.</p>
-<p>The club is expected to be active in the market this summer but will again operate carefully within financial constraints. Ebou Adams, who has been one of the standout performers in the second half of the season, is expected to remain.</p>
-<p>Permanent deals for some of the summer signings, including Makenzie Kirk and Jacob Brown, are also understood to be under consideration depending on discussions with parent clubs.</p>`
-  },
-  {
-    id:3, cat:'Club News', catClass:'cat-news', emoji:'🏟️', date:'17 Apr 2026',
-    title:"CHAPLIN LOAN SPELL HAILED AS 'HUGE SUCCESS' AHEAD OF IPSWICH RETURN",
-    body:`<p>Conor Chaplin's season-long loan from Ipswich Town has been widely celebrated as one of the shrewdest pieces of business Pompey have conducted in recent memory, with the attacking midfielder contributing 8 goals and 6 assists in 26 appearances.</p>
-<p>The Portsmouth-born player, who came through the Pompey academy before leaving as a teenager, has spoken emotionally about his return to the south coast and the meaning the club holds for him personally.</p>
-<p>"This place will always be special to me," Chaplin said after the Leicester win. "The fans have been brilliant and I've loved every minute. I just want to give something back before I head back to Ipswich."</p>
-<p>Whether a permanent deal is possible this summer remains to be seen, with Ipswich unlikely to let him go cheaply given his performances. Pompey fans will be hoping the club can find a way to bring him back.</p>`
-  },
-  {
-    id:4, cat:'Analysis', catClass:'cat-news', emoji:'📊', date:'15 Apr 2026',
-    title:"SEGECIC'S DEBUT SEASON: THE STATS BEHIND POMPEY'S AUSSIE STAR",
-    body:`<p>When Portsmouth signed Adrian Segecic from Sydney FC last summer for an undisclosed fee, many eyebrows were raised. A 21-year-old from the A-League arriving in the EFL Championship seemed like a sizeable gamble. Twelve months on, the numbers tell an encouraging story.</p>
-<p>The Australian has made 30 Championship appearances, contributing 5 goals and 4 assists. His WhoScored average rating of 6.54 ranks him among the more consistent performers in Mousinho's side, and his ability to play across the front line has given the manager valuable tactical flexibility.</p>
-<p>His direct running and willingness to press have been particular assets, and he has grown significantly as the season has progressed. Pompey fans will be hoping the technical level of the Championship hasn't been too steep a learning curve for the young attacker.</p>
-<p>With the international window approaching, there is also speculation that Segecic could earn his first senior Australia call-up — recognition that would be thoroughly deserved based on his debut season in English football.</p>`
-  },
-  {
-    id:5, cat:'Injury News', catClass:'cat-injury', emoji:'⚠️', date:'14 Apr 2026',
-    title:'MURPHY, KOSZNOVSZKY OUT FOR SEASON — SWANSON RETURN DATE UNCLEAR',
-    body:`<p>Portsmouth manager John Mousinho has confirmed that both Josh Murphy and Márk Kosznovszky will play no further part in the 2025-26 season due to injury, while Zak Swanson's return remains uncertain ahead of the final two games.</p>
-<p>Murphy, 30, has been sidelined since late February with a hamstring problem that has required surgery. The winger had been in excellent form before his injury and will be eager to return to fitness ahead of pre-season.</p>
-<p>Kosznovszky, the young Hungarian midfielder, suffered a knee injury in training that has proved more serious than initially feared. The 23-year-old is expected to make a full recovery during the summer.</p>
-<p>Swanson returned to light training this week but Mousinho is not willing to risk him ahead of the Stoke and Birmingham fixtures given Pompey's survival is already secured. Gustavo Caballero and Josh Knight also remain unavailable.</p>`
-  }
-];
-
-function openArticle(id){
-  const a=ARTICLES.find(x=>x.id===id);
-  if(!a) return;
-  document.getElementById('article-cat').innerHTML=`<span class="news-cat ${a.catClass}">${a.cat}</span>`;
-  document.getElementById('article-emoji').textContent=a.emoji;
-  document.getElementById('article-title').textContent=a.title;
-  document.getElementById('article-meta').textContent=a.date;
-  document.getElementById('article-body').innerHTML=a.body;
-  document.getElementById('article-overlay').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeArticle(){
-  document.getElementById('article-overlay').classList.remove('open');
-  document.body.style.overflow='';
-}
-function closeArticleOnBg(e){
-  if(e.target===document.getElementById('article-overlay')) closeArticle();
-}
-
-// ===== DONATE =====
-let donateAmt=5;
-function setDonateAmt(amt,el){
-  donateAmt=amt;
-  document.querySelectorAll('.donate-amt').forEach(b=>b.classList.remove('on'));
+// ============================================================
+// DONATE
+// ============================================================
+function setAmt(n, el) {
+  donateAmt = n;
+  document.querySelectorAll('.donate-amt').forEach(function(b){ b.classList.remove('on'); });
   el.classList.add('on');
-  document.getElementById('donate-amount-label').textContent=amt;
+  document.getElementById('donate-lbl').textContent = n;
 }
-function doDonate(e){
-  e.preventDefault();
-  const url=`https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jonpompey%40gmail.com&amount=${donateAmt}&currency_code=GBP&item_name=Fratton+Faithful+Donation&no_shipping=1`;
-  window.open(url,'_blank');
-}
-let tt;
-function showToast(msg){
-  const el=document.getElementById('toast');
-  el.textContent=msg; el.classList.add('show');
-  clearTimeout(tt); tt=setTimeout(()=>el.classList.remove('show'),2800);
+function doDonate() {
+  var url = 'https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jonpompey%40gmail.com&amount=' + donateAmt + '&currency_code=GBP&item_name=Fratton+Faithful+Donation&no_shipping=1';
+  window.open(url, '_blank');
 }
 
+// ============================================================
+// TOAST
+// ============================================================
+var toastTimer;
+function toast(msg) {
+  var el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ el.classList.remove('show'); }, 2800);
+}
+
+// ============================================================
+// INIT
+// ============================================================
 renderHome();
-renderRatings('GK');
 </script>
 </body>
 </html>
