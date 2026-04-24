@@ -137,7 +137,8 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
 .transfer-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;line-height:1}
 .transfer-detail{font-size:12px;color:var(--muted);margin-top:2px}
 .transfer-hint{font-size:10px;color:var(--gold);font-weight:600}
-.transfer-tag{font-size:9px;font-weight:700;font-family:'Space Mono',monospace;padding:2px 7px;border-radius:3px;text-transform:uppercase;letter-spacing:1px;flex-shrink:0}
+.transfer-tab{padding:10px 22px;border:1.5px solid var(--border);border-radius:7px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;cursor:pointer;background:var(--white);transition:all .15s;color:var(--muted);letter-spacing:.3px}
+.transfer-tab:hover,.transfer-tab.on{background:var(--navy);color:var(--white);border-color:var(--navy)}font-weight:700;font-family:'Space Mono',monospace;padding:2px 7px;border-radius:3px;text-transform:uppercase;letter-spacing:1px;flex-shrink:0}
 .tag-in{background:#DCFCE7;color:#166534}
 .tag-out{background:#FEE2E2;color:#991B1B}
 .tag-rumour{background:var(--gold-pale);color:#92400E}
@@ -464,24 +465,21 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
       </div>
     </div>
   </div>
+
   <div class="section" style="padding-top:0">
     <div class="section-header">
-      <div class="section-title">Recent <span>Results</span></div>
-      <span class="section-link" onclick="go('fixtures')">All Fixtures →</span>
+      <div class="section-title">Upcoming <span>Fixtures</span></div>
     </div>
-    <div class="results-list" id="home-results"></div>
+    <div class="fixtures-list" id="home-fixtures"></div>
   </div>
+
 </div>
 
 <!-- FIXTURES -->
 <div class="page" id="pg-fixtures">
   <div class="section">
-    <div class="section-header"><div class="section-title">Fixtures &amp; <span>Results</span></div></div>
-    <div class="ad-slot"><span class="ad-slot-label">Advertisement</span><div class="ad-slot-placeholder">728x90 Ad</div></div>
-    <div class="section-header" style="margin-top:24px"><div class="section-title" style="font-size:20px">Upcoming <span>Fixtures</span></div></div>
+    <div class="section-header"><div class="section-title">Upcoming <span>Fixtures</span></div></div>
     <div class="fixtures-list" id="fixtures-upcoming"></div>
-    <div class="section-header" style="margin-top:32px"><div class="section-title" style="font-size:20px">Recent <span>Results</span></div></div>
-    <div class="results-list" id="fixtures-results"></div>
   </div>
 </div>
 
@@ -490,12 +488,30 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
   <div class="section">
     <div class="section-header"><div class="section-title">Transfer <span>News &amp; Rumours</span></div></div>
     <div class="ad-slot"><span class="ad-slot-label">Advertisement</span><div class="ad-slot-placeholder">728x90 Ad</div></div>
-    <div class="section-header" style="margin-top:24px"><div class="section-title" style="font-size:20px">Summer <span>Signings</span></div></div>
-    <div class="transfers-grid" id="transfers-done"></div>
-    <div class="section-header" style="margin-top:32px"><div class="section-title" style="font-size:20px">🔥 Hot <span>Rumours</span></div></div>
-    <div class="transfers-grid" id="transfers-rumours"></div>
-    <div class="section-header" style="margin-top:32px"><div class="section-title" style="font-size:20px">Departures</div></div>
-    <div class="transfers-grid" id="transfers-out"></div>
+
+    <!-- Transfer tabs -->
+    <div style="display:flex;gap:8px;margin:20px 0 0">
+      <button class="transfer-tab on" id="ttab-confirmed" onclick="switchTransferTab('confirmed')">✅ Confirmed Transfers</button>
+      <button class="transfer-tab" id="ttab-rumours" onclick="switchTransferTab('rumours')">🔥 Rumours</button>
+    </div>
+
+    <!-- Confirmed panel -->
+    <div id="tpanel-confirmed">
+      <div class="section-header" style="margin-top:20px"><div class="section-title" style="font-size:20px">☀️ Summer <span>2025 — Signings</span></div></div>
+      <div class="transfers-grid" id="transfers-summer-in"></div>
+      <div class="section-header" style="margin-top:32px"><div class="section-title" style="font-size:20px">❄️ January <span>2026 — Signings</span></div></div>
+      <div class="transfers-grid" id="transfers-jan-in"></div>
+      <div class="section-header" style="margin-top:32px"><div class="section-title" style="font-size:20px">Departures</div></div>
+      <div class="transfers-grid" id="transfers-out"></div>
+    </div>
+
+    <!-- Rumours panel -->
+    <div id="tpanel-rumours" style="display:none">
+      <div class="section-header" style="margin-top:20px"><div class="section-title" style="font-size:20px">🔥 Summer 2026 <span>Targets</span></div></div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;font-family:'Barlow',sans-serif">Click any rumour card for player details and stats.</p>
+      <div class="transfers-grid" id="transfers-rumours"></div>
+    </div>
+
   </div>
 </div>
 
@@ -578,25 +594,6 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
   </div>
 </div>
 
-<!-- MATCH OVERLAY -->
-<div class="overlay-bg" id="match-ov" onclick="closeOvBg(event,'match-ov')">
-  <div class="match-box">
-    <div class="match-hdr">
-      <button class="ov-close" onclick="closeOv('match-ov')">✕</button>
-      <div class="match-teams-row">
-        <div class="match-team" id="mo-home"></div>
-        <div class="match-score-big" id="mo-score"></div>
-        <div class="match-team" id="mo-away"></div>
-      </div>
-      <div class="match-pills">
-        <span class="mpill" id="mo-date"></span>
-        <span class="mpill" id="mo-venue"></span>
-        <span class="mpill" id="mo-att"></span>
-      </div>
-    </div>
-    <div id="mo-body"></div>
-  </div>
-</div>
 
 <!-- RUMOUR OVERLAY -->
 <div class="overlay-bg" id="rumour-ov" onclick="closeOvBg(event,'rumour-ov')">
@@ -654,38 +651,6 @@ nav{background:var(--navy-dark);position:sticky;top:0;z-index:200;border-bottom:
 // ============================================================
 // DATA
 // ============================================================
-var RESULTS = [
-  {date:'21 Apr',home:'Coventry City',away:'Portsmouth',score:'5-1',pfc:'loss',
-   scorers:{h:['Haji Wright 12','E.Mason-Clark 47','Poole OG 50','E.Mason-Clark 76','Kesler-Hayden 90+1'],a:['Segecic 69']},
-   cards:{h:[],a:['Alli 62 Y']},att:31182,venue:'CBS Arena',
-   stats:{poss:[71,29],shots:[15,4],sot:[6,2],corners:[3,1]}},
-  {date:'18 Apr',home:'Portsmouth',away:'Leicester City',score:'1-0',pfc:'win',
-   scorers:{h:['Bowat 63'],a:[]},cards:{h:[],a:['J.James 44 Y']},att:19842,venue:'Fratton Park',
-   stats:{poss:[44,56],shots:[9,11],sot:[3,2],corners:[5,4]}},
-  {date:'14 Apr',home:'Portsmouth',away:'Ipswich Town',score:'2-0',pfc:'win',
-   scorers:{h:['Shaughnessy 42','Bishop 44'],a:[]},
-   cards:{h:['Dozzell 71 Y','Williams 82 Y'],a:['Chaplin 81 Y']},att:20251,venue:'Fratton Park',
-   stats:{poss:[40,60],shots:[11,11],sot:[4,2],corners:[3,7]}},
-  {date:'11 Apr',home:'Middlesbrough',away:'Portsmouth',score:'0-1',pfc:'win',
-   scorers:{h:[],a:['Chaplin 90+5']},cards:{h:['D.Fry 33 Y'],a:['Pack 67 Y']},att:22814,venue:'Riverside Stadium',
-   stats:{poss:[58,42],shots:[14,8],sot:[3,3],corners:[7,3]}},
-  {date:'06 Apr',home:'Portsmouth',away:'Oxford United',score:'2-2',pfc:'draw',
-   scorers:{h:['Bishop 23','Segecic 55'],a:['Brannagan 38','Bodin 78']},
-   cards:{h:['Adams 44 Y'],a:['Moore 29 Y']},att:18744,venue:'Fratton Park',
-   stats:{poss:[47,53],shots:[12,10],sot:[4,4],corners:[4,5]}},
-  {date:'03 Apr',home:'Norwich City',away:'Portsmouth',score:'1-1',pfc:'draw',
-   scorers:{h:['Azaz 14'],a:['Bishop 72']},cards:{h:[],a:['Ogilvie 41 Y']},att:26318,venue:'Carrow Road',
-   stats:{poss:[62,38],shots:[16,7],sot:[4,2],corners:[8,2]}},
-  {date:'21 Mar',home:'QPR',away:'Portsmouth',score:'6-1',pfc:'loss',
-   scorers:{h:['Armstrong 8','De Barr 21','Bowen 34','Armstrong 51','Najera 65','De Barr 80'],a:['Swift 44']},
-   cards:{h:[],a:['Dozzell 28 Y','Alese 72 Y']},att:14203,venue:'Loftus Road',
-   stats:{poss:[55,45],shots:[18,8],sot:[8,3],corners:[6,3]}},
-  {date:'15 Mar',home:'Portsmouth',away:'Charlton Athletic',score:'2-1',pfc:'win',
-   scorers:{h:['Bishop 34','Chaplin 62'],a:['Carey 51']},
-   cards:{h:['Pack 78 Y'],a:['Jones 44 Y','Leaburn 88 Y']},att:17932,venue:'Fratton Park',
-   stats:{poss:[48,52],shots:[11,9],sot:[4,3],corners:[5,6]}}
-];
-
 var FIXTURES = [
   {date:'Sat 25 Apr',time:'3:00pm',home:'Stoke City',away:'Portsmouth',venue:'bet365 Stadium',next:true,
    odds:{h:'2/1',d:'12/5',a:'6/4'},
@@ -710,32 +675,47 @@ var RUMOURS = {
 };
 
 var TRANSFERS_DONE = [
-  {name:'Conor Chaplin',detail:'Loan from Ipswich Town',dir:'in',init:'CC'},
-  {name:'Makenzie Kirk',detail:'Signed from St Johnstone',dir:'in',init:'MK'},
-  {name:'Adrian Segecic',detail:'Signed from Sydney FC',dir:'in',init:'AS'},
-  {name:'Franco Umeh',detail:'Signed from Crystal Palace',dir:'in',init:'FU'},
-  {name:'Ebou Adams',detail:'Signed from Derby County',dir:'in',init:'EA'},
-  {name:'Ajibola Alese',detail:'Signed from Sunderland',dir:'in',init:'AA'},
-  {name:'Jacob Brown',detail:'Signed from Luton Town',dir:'in',init:'JB'},
-  {name:'Gustavo Caballero',detail:'Signed from Santos FC',dir:'in',init:'GC'},
-  {name:'Madiodio Dia',detail:'Signed from FK Haugesund',dir:'in',init:'MD'},
-  {name:'John Swift',detail:'Free agent — ex West Brom',dir:'in',init:'JS'}
+  // Summer 2025
+  {name:'Adrian Segecic',detail:'Sydney FC · Jun 2025 · Undisclosed',dir:'in',init:'AS'},
+  {name:'John Swift',detail:'West Brom · Jul 2025 · Free transfer',dir:'in',init:'JS'},
+  {name:'Luke Le Roux',detail:'IFK Varnamo · Jul 2025 · Undisclosed',dir:'in',init:'LR'},
+  {name:'Mark Kosznovszky',detail:'MTK Budapest · Jul 2025 · Undisclosed',dir:'in',init:'MK'},
+  {name:'Yang Min-hyeok',detail:'Tottenham · Aug 2025 · Loan',dir:'in',init:'YM'},
+  {name:'Josef Bursik',detail:'Club Brugge · Sep 2025 · Undisclosed',dir:'in',init:'JBu'},
+  {name:'Makenzie Kirk',detail:'St Johnstone · Sep 2025 · Undisclosed',dir:'in',init:'MKi'},
+  {name:'Franco Umeh',detail:'Crystal Palace · Sep 2025 · Undisclosed',dir:'in',init:'FU'},
+  {name:'Conor Chaplin',detail:'Ipswich Town · Sep 2025 · Loan',dir:'in',init:'CC'},
+  // January 2026
+  {name:'Millenic Alli',detail:'Luton Town · Jan 2026 · Loan',dir:'in',init:'MA'},
+  {name:'Ebou Adams',detail:'Derby County · Jan 2026 · Undisclosed',dir:'in',init:'EA'},
+  {name:'Keshi Anderson',detail:'Free agent · Jan 2026 · Free transfer',dir:'in',init:'KA'},
+  {name:'Ajibola Alese',detail:'Sunderland · Jan 2026 · Loan',dir:'in',init:'AA'},
+  {name:'Jacob Brown',detail:'Luton Town · Feb 2026 · Loan',dir:'in',init:'JBr'},
+  {name:'Madiodio Dia',detail:'FK Haugesund · Feb 2026 · Undisclosed',dir:'in',init:'MD'},
+  {name:'Gustavo Caballero',detail:'Santos FC · Feb 2026 · Loan (£4.25m buy option)',dir:'in',init:'GC'}
 ];
 var TRANSFERS_RUMOURS = [
-  {name:'Jamal Lowe',detail:'Interest reported — free agent',dir:'rumour',init:'JL'},
-  {name:'Pelle Mattsson',detail:'Swedish midfielder — linked',dir:'rumour',init:'PM'},
-  {name:'Panagiotis Kikianis',detail:'A-League defender — £3.5m',dir:'rumour',init:'PK'}
+  {name:'Conor Chaplin',detail:'Permanent deal pursued · Ex-Ipswich loan · £2m+ est',dir:'rumour',init:'CC'},
+  {name:'Millenic Alli',detail:'Permanent from Luton sought · £1m est',dir:'rumour',init:'MA'},
+  {name:'Jamal Lowe',detail:'Free agent · Ex-Swansea · Strong interest',dir:'rumour',init:'JL'},
+  {name:'Gustavo Caballero',detail:'Pompey hold £4.25m buy option · Santos · Decision summer 2026',dir:'rumour',init:'GC'},
+  {name:'Pelle Mattsson',detail:'Swedish midfielder · Linked pre-season',dir:'rumour',init:'PM'}
 ];
 var TRANSFERS_OUT = [
-  {name:'Christian Saydee',detail:'Sold to Wigan Athletic',dir:'out',init:'CS'},
-  {name:'Kusini Yengi',detail:'Released',dir:'out',init:'KY'},
-  {name:'Cohen Bramall',detail:'Released',dir:'out',init:'CB'},
-  {name:'Tom Lowery',detail:'Released',dir:'out',init:'TL'},
-  {name:'Alexander Milosevic',detail:'Released',dir:'out',init:'AM'},
-  {name:'Yang Min-hyeok',detail:'Recalled to Tottenham (Jan)',dir:'out',init:'YM'},
-  {name:'Callum Lang',detail:'Joined Preston North End',dir:'out',init:'CL'},
-  {name:'Tom McIntyre',detail:'Joined Aberdeen',dir:'out',init:'TM'},
-  {name:'Jacob Farrell',detail:'Joined Western Sydney',dir:'out',init:'JF'}
+  // Summer 2025 — Released / Sold
+  {name:'Christian Saydee',detail:'Sold to Wigan Athletic · Jun 2025',dir:'out',init:'CS'},
+  {name:'Kusini Yengi',detail:'Released · Jun 2025',dir:'out',init:'KY'},
+  {name:'Cohen Bramall',detail:'Released · Jun 2025',dir:'out',init:'CB'},
+  {name:'Tom Lowery',detail:'Released · Jun 2025',dir:'out',init:'TL'},
+  {name:'Alexander Milosevic',detail:'Released · Jun 2025',dir:'out',init:'AM'},
+  {name:'Anthony Scully',detail:'Released · Jun 2025',dir:'out',init:'AS2'},
+  {name:'Gavin Bazunu',detail:'End of loan (Southampton) · Jun 2025',dir:'out',init:'GB'},
+  {name:'Zak Swanson',detail:'End of loan (Arsenal) · Jun 2025',dir:'out',init:'ZS'},
+  {name:'Callum Lang',detail:'Joined Preston North End · Jul 2025',dir:'out',init:'CL'},
+  {name:'Tom McIntyre',detail:'Joined Aberdeen · Jul 2025',dir:'out',init:'TM'},
+  {name:'Jacob Farrell',detail:'Joined Western Sydney Wanderers · Aug 2025',dir:'out',init:'JF'},
+  // January 2026
+  {name:'Yang Min-hyeok',detail:'Recalled to Tottenham · Jan 2026',dir:'out',init:'YM'}
 ];
 
 var SQUAD = [
@@ -843,7 +823,7 @@ function go(page) {
   var btn = document.getElementById('nl-' + page);
   if (btn) btn.classList.add('on');
   if (page === 'home') renderHome();
-  if (page === 'fixtures') renderFixtures();
+  if (page === 'fixtures') { renderFixtureList(document.getElementById('fixtures-upcoming')); }
   if (page === 'transfers') renderTransfers();
   if (page === 'lineup') renderLineup();
   if (page === 'ratings') renderRatings(ratFilter);
@@ -870,81 +850,19 @@ function openOv(id) {
 // HOME
 // ============================================================
 function renderHome() {
-  var el = document.getElementById('home-results');
-  el.innerHTML = RESULTS.slice(0, 5).map(function(r, i){ return resultHTML(r, i); }).join('');
-}
-
-function resultHTML(r, idx) {
-  var scoreClass = r.pfc;
-  var homeCls = r.home === 'Portsmouth' ? ' result-pfc' : '';
-  var awayCls = r.away === 'Portsmouth' ? ' result-pfc' : '';
-  return '<div class="result-item ' + scoreClass + '" onclick="openMatch(' + idx + ')" style="cursor:pointer">' +
-    '<div class="result-date">' + r.date + '</div>' +
-    '<div class="result-comp">Championship</div>' +
-    '<div class="result-match">' +
-    '<span class="result-home' + homeCls + '">' + r.home + '</span>' +
-    '<span class="result-score ' + scoreClass + '">' + r.score + '</span>' +
-    '<span class="result-away' + awayCls + '">' + r.away + '</span>' +
-    '</div>' +
-    '<span class="result-hint">stats →</span>' +
-    '</div>';
+  var el = document.getElementById('home-fixtures');
+  if (el) renderFixtureList(el);
 }
 
 // ============================================================
 // MATCH OVERLAY
 // ============================================================
-function openMatch(idx) {
-  var r = RESULTS[idx];
-  document.getElementById('mo-home').textContent = r.home;
-  document.getElementById('mo-away').textContent = r.away;
-  document.getElementById('mo-score').textContent = r.score;
-  document.getElementById('mo-date').textContent = r.date;
-  document.getElementById('mo-venue').textContent = r.venue;
-  document.getElementById('mo-att').textContent = r.att ? 'Att: ' + r.att.toLocaleString() : '';
-
-  var homeGoals = r.scorers.h.map(function(s){ return '<div class="scorer-item">⚽ ' + s + '</div>'; }).join('') || '<div class="scorer-item" style="color:var(--muted)">—</div>';
-  var awayGoals = r.scorers.a.map(function(s){ return '<div class="scorer-item scorer-away">⚽ ' + s + '</div>'; }).join('') || '<div class="scorer-item scorer-away" style="color:var(--muted)">—</div>';
-
-  var allCards = r.cards.h.concat(r.cards.a);
-  var cardHtml = allCards.length ? allCards.map(function(c){ return '<div style="font-size:12px;margin-bottom:4px">🟨 ' + c + '</div>'; }).join('') : '<div style="font-size:12px;color:var(--muted)">No bookings</div>';
-
-  var statRows = [
-    {label:'Possession',hv:r.stats.poss[0],av:r.stats.poss[1],unit:'%'},
-    {label:'Shots',hv:r.stats.shots[0],av:r.stats.shots[1],unit:''},
-    {label:'On Target',hv:r.stats.sot[0],av:r.stats.sot[1],unit:''},
-    {label:'Corners',hv:r.stats.corners[0],av:r.stats.corners[1],unit:''}
-  ];
-  var statsHtml = statRows.map(function(s){
-    var tot = s.hv + s.av || 1;
-    var hw = Math.round(s.hv/tot*100);
-    var aw = 100 - hw;
-    return '<div class="stat-row">' +
-      '<span class="stat-num">' + s.hv + s.unit + '</span>' +
-      '<div style="flex:1">' +
-        '<div style="font-size:10px;color:var(--muted);text-align:center;font-weight:600;margin-bottom:3px">' + s.label + '</div>' +
-        '<div style="display:flex;height:6px;border-radius:3px;overflow:hidden">' +
-          '<div style="flex:' + hw + ';background:var(--navy);min-width:' + (s.hv?4:0) + 'px"></div>' +
-          '<div style="flex:' + aw + ';background:#ccc;min-width:' + (s.av?4:0) + 'px"></div>' +
-        '</div>' +
-      '</div>' +
-      '<span class="stat-num">' + s.av + s.unit + '</span>' +
-    '</div>';
-  }).join('');
-
-  document.getElementById('mo-body').innerHTML =
-    '<div class="match-section"><div class="ms-title">Scorers</div><div class="scorers-grid">' + homeGoals + '</div><div class="scorers-grid" style="margin-top:4px">' + awayGoals + '</div></div>' +
-    '<div class="match-section"><div class="ms-title">Cards</div>' + cardHtml + '</div>' +
-    '<div class="match-section"><div class="ms-title">Match Stats</div>' + statsHtml + '</div>';
-
-  openOv('match-ov');
-}
-
 // ============================================================
 // FIXTURES
 // ============================================================
-function renderFixtures() {
-  var upEl = document.getElementById('fixtures-upcoming');
-  upEl.innerHTML = FIXTURES.map(function(f){
+function renderFixtureList(el) {
+  if (!el) return;
+  el.innerHTML = FIXTURES.map(function(f){
     function formDots(form) {
       return '<div class="form-dots" style="margin-top:4px">' +
         form.map(function(r){ return '<div class="fdot ' + r + '">' + r + '</div>'; }).join('') +
@@ -964,23 +882,32 @@ function renderFixtures() {
           (f.awayForm ? formDots(f.awayForm) : '') +
         '</div>' +
       '</div>' +
-      '<div class="fixture-form-wrap">' +
-        '<div style="font-size:11px;color:var(--muted);font-family:\'Space Mono\',monospace">' + f.venue + '</div>' +
-      '</div>' +
+      '<div class="fixture-form-wrap"><div style="font-size:11px;color:var(--muted);font-family:\'Space Mono\',monospace">' + f.venue + '</div></div>' +
       (f.next ? '<span class="next-badge">Next</span>' : '') +
       (f.odds ? '<div class="odds-wrap"><span class="odd-pill">H ' + f.odds.h + '</span><span class="odd-pill">D ' + f.odds.d + '</span><span class="odd-pill">A ' + f.odds.a + '</span></div>' : '') +
     '</div>';
   }).join('');
+}
 
-  var resEl = document.getElementById('fixtures-results');
-  resEl.innerHTML = RESULTS.map(function(r, i){ return resultHTML(r, i); }).join('');
+function renderFixtures() {
+  renderFixtureList(document.getElementById('fixtures-upcoming'));
 }
 
 // ============================================================
 // TRANSFERS
 // ============================================================
+function switchTransferTab(tab) {
+  document.getElementById('tpanel-confirmed').style.display = tab === 'confirmed' ? 'block' : 'none';
+  document.getElementById('tpanel-rumours').style.display = tab === 'rumours' ? 'block' : 'none';
+  document.getElementById('ttab-confirmed').classList.toggle('on', tab === 'confirmed');
+  document.getElementById('ttab-rumours').classList.toggle('on', tab === 'rumours');
+}
+
 function renderTransfers() {
-  document.getElementById('transfers-done').innerHTML = TRANSFERS_DONE.map(tCard).join('');
+  var summerIn = TRANSFERS_DONE.filter(function(t){ return t.detail.indexOf('Jan 2026') === -1 && t.detail.indexOf('Feb 2026') === -1; });
+  var janIn = TRANSFERS_DONE.filter(function(t){ return t.detail.indexOf('Jan 2026') !== -1 || t.detail.indexOf('Feb 2026') !== -1; });
+  document.getElementById('transfers-summer-in').innerHTML = summerIn.map(tCard).join('');
+  document.getElementById('transfers-jan-in').innerHTML = janIn.map(tCard).join('');
   document.getElementById('transfers-rumours').innerHTML = TRANSFERS_RUMOURS.map(tCard).join('');
   document.getElementById('transfers-out').innerHTML = TRANSFERS_OUT.map(tCard).join('');
 }
@@ -1014,7 +941,7 @@ function openRumour(name) {
     '<div class="rstat"><span class="rstat-n">' + d.assists + '</span><span class="rstat-l">Assists</span></div>' +
     '<div class="rstat"><span class="rstat-n">' + d.apps + '</span><span class="rstat-l">Apps</span></div>';
   document.getElementById('ro-bio').innerHTML =
-    '<div style="font-size:10px;color:var(--gold);font-family:\'Space Mono\',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">' + d.season + '</div>' + d.bio;
+    '<div style="font-size:10px;color:var(--gold);font-family:Space Mono,monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">' + d.season + '</div>' + d.bio;
   openOv('rumour-ov');
 }
 
@@ -1111,9 +1038,9 @@ function drawPicker() {
     SQUAD.map(function(p){
       var inXI = used.indexOf(p.num) !== -1;
       return '<div class="picker-item' + (inXI ? ' in-xi' : '') + '" onclick="' + (inXI ? '' : 'assignPlayer(' + p.num + ')') + '">' +
-        '<div style="width:28px;height:28px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;font-family:\'Space Mono\',monospace">' + p.num + '</div>' +
+        '<div style="width:28px;height:28px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;font-family:Space Mono,monospace">' + p.num + '</div>' +
         '<div style="flex:1"><div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:800;font-size:14px">' + p.full + '</div>' +
-        '<div style="font-size:10px;color:var(--muted);font-family:\'Space Mono\',monospace">' + p.sec + ' · ' + p.apps + ' apps</div></div>' +
+        '<div style="font-size:10px;color:var(--muted);font-family:Space Mono,monospace">' + p.sec + ' · ' + p.apps + ' apps</div></div>' +
         '<div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:900;font-size:16px;color:var(--gold)">' + p.ws + '</div>' +
       '</div>';
     }).join('');
@@ -1122,16 +1049,16 @@ function drawPicker() {
 
   var curP = SQUAD.find(function(s){ return s.num === pitchXI[pickerSlot]; });
   pp.innerHTML = '<div style="background:rgba(0,30,90,0.06);border:1.5px solid var(--navy);border-radius:8px;padding:10px 12px;margin-bottom:12px">' +
-    '<div style="font-size:10px;color:var(--muted);font-family:\'Space Mono\',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px">Replacing</div>' +
+    '<div style="font-size:10px;color:var(--muted);font-family:Space Mono,monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px">Replacing</div>' +
     '<div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:900;font-size:16px;color:var(--navy)">' + (curP ? curP.full : 'Unknown') + '</div>' +
     '<div style="font-size:11px;color:var(--gold);margin-top:2px">Select a player below</div>' +
   '</div>' +
   SQUAD.map(function(p){
     var inXI = used.indexOf(p.num) !== -1 && pitchXI[pickerSlot] !== p.num;
     return '<div class="picker-item' + (inXI ? ' in-xi' : '') + '" onclick="' + (inXI ? '' : 'assignPlayer(' + p.num + ')') + '">' +
-      '<div style="width:28px;height:28px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;font-family:\'Space Mono\',monospace">' + p.num + '</div>' +
+      '<div style="width:28px;height:28px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;font-family:Space Mono,monospace">' + p.num + '</div>' +
       '<div style="flex:1"><div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:800;font-size:14px">' + p.full + '</div>' +
-      '<div style="font-size:10px;color:var(--muted);font-family:\'Space Mono\',monospace">' + p.sec + ' · ' + p.apps + ' apps</div></div>' +
+      '<div style="font-size:10px;color:var(--muted);font-family:Space Mono,monospace">' + p.sec + ' · ' + p.apps + ' apps</div></div>' +
       '<div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:900;font-size:16px;color:var(--gold)">' + p.ws + '</div>' +
     '</div>';
   }).join('');
@@ -1195,7 +1122,7 @@ function renderRatings(filter) {
       '<div class="rating-box-label">Fan Avg</div>' +
       (fanAvg
         ? '<div class="rating-num ' + col(parseFloat(fanAvg)) + '">' + fanAvg + '</div><div class="rating-bar-wrap"><div class="rating-bar" style="width:' + barW(parseFloat(fanAvg)) + '%;background:' + barCol(col(parseFloat(fanAvg))) + '"></div></div>'
-        : '<div style="font-size:22px;color:var(--muted);margin:4px 0">—</div><div style="font-size:9px;color:var(--gold);font-family:\'Space Mono\',monospace">tap to rate</div>'
+        : '<div style="font-size:22px;color:var(--muted);margin:4px 0">—</div><div style="font-size:9px;color:var(--gold);font-family:Space Mono,monospace">tap to rate</div>'
       ) +
     '</div>';
     return '<div class="rating-card" onclick="openRateModal(' + p.num + ')">' +
@@ -1259,7 +1186,7 @@ function renderTable() {
   var rows = TABLE.map(function(t){
     return '<tr class="' + (zc[t.zone]||'') + (t.pompey ? ' pompey' : '') + '">' +
       '<td class="pos">' + t.p + '</td>' +
-      '<td class="team-name">' + t.t + (t.pompey ? ' ⭐' : '') + (t.note ? ' <span style="font-size:9px;color:var(--red);font-family:\'Space Mono\',monospace">' + t.note + '</span>' : '') + '</td>' +
+      '<td class="team-name">' + t.t + (t.pompey ? ' ⭐' : '') + (t.note ? ' <span style="font-size:9px;color:var(--red);font-family:Space Mono,monospace">' + t.note + '</span>' : '') + '</td>' +
       '<td class="r">' + t.pl + '</td>' +
       '<td class="r">' + t.w + '</td>' +
       '<td class="r">' + t.d + '</td>' +
